@@ -49,6 +49,18 @@ h3 {
     align-items: center;
 }
 
+header nav {
+    position: relative;
+}
+
+.burger {
+    position: absolute;
+    color: #3eb5cf;
+    top: 30%;
+    right: 3%;
+    display: none;
+}
+
 header nav ul {
     display: flex;
     justify-content: space-evenly;

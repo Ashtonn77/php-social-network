@@ -1,3 +1,7 @@
+/*********************
+/  LOGIN             /
+/********************/
+
 @media screen and (max-width:805px) {
 
 
@@ -74,4 +78,45 @@
 
     }
 
+}
+
+
+/*********************
+/    HOME            /
+/********************/
+
+
+
+@media screen and (max-width:905px) {
+    h1 {
+        font-size: 150%;
+    }
+
+    h3 {
+        font-size: 80%;
+    }
+
+    .header-container ul li a:link,
+    .header-container ul li a:visited {
+        padding: 3px 15px;
+        font-size: 70%;
+    }
+}
+
+@media screen and (max-width:678px) {
+    h1 {
+        font-size: 120%;
+    }
+
+    h3 {
+        font-size: 60%;
+    }
+
+    header nav ul li a {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+    }
 }
