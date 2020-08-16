@@ -1,0 +1,39 @@
+:root {
+    --btn-base-color: #3BA7BF;
+    --btn-hover-color: #195973;
+}
+
+header {
+    height: 100vh;
+}
+
+header nav {
+    background-color: blue;
+    height: 5%;
+    width: 100%;
+}
+
+h1,
+h3 {
+    text-align: center;
+    text-justify: inter-word;
+}
+
+h1 {
+    font-size: 130%;
+}
+
+h3 {
+    font-size: 95%;
+}
+
+.header-container {
+    margin: 0 auto;
+    height: 95%;
+    width: 80%;
+    max-width: 1000px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
