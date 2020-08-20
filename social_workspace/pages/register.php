@@ -107,10 +107,8 @@ if (isset($_POST['reg_submit_btn'])) {
 
         }
 
-    }
 
-
-    //profile picture assignment
+           //profile picture assignment
     $rand = rand(1, 2);
     if($rand == 1){
 
@@ -134,6 +132,9 @@ if (isset($_POST['reg_submit_btn'])) {
     $_SESSION['reg_last_name'] = "";
     $_SESSION['reg_email'] = "";
 
+
+
+    }
 
 }
 
