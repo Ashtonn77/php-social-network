@@ -1,12 +1,7 @@
 <?php 
-$connect = mysqli_connect("localhost", "root", "", "social_network");
-
-if(mysqli_connect_errno()){
-    echo "Failed to connect - " . mysql_connect_errno();
-}
+require "config/config.php";
 
 $query = mysqli_query($connect, "INSERT INTO test VALUES(NULL, 'Ash')");
-
 
 ?>
 
