@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600&display=swap');
+
+:root {
+    --btn-base-color: #02d8a2;
+    --btn-hover-color: #34bd9b;
+    --btn-error-msg: #ac1212;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,45 +14,145 @@
 }
 
 html {
+    background-color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
     overflow-x: hidden;
+
 }
 
 .wrapper {
-    background-image: url("../images/backgrounds/login_1.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/backgrounds/login_1.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     width: 100%;
     height: 100vh;
-    min-width: 950px;
-}
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
 
-form {
-    text-align: center;
+
 }
 
 /*use a fancy font for name of app*/
 /*use text shadow for name of app*/
 .login-box {
-    position: relative;
-    margin: 0 auto;
-    top: 7%;
-    width: 35%;
-    background-color: #fff;
-    border: 1px solid #ededed;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #fff;
     border-radius: 5px;
-    padding: 15px 0;
+    padding: 15px 10px;
+}
+
+.login-box label {
+    font-size: 80%;
+    margin: 20px 0 3px;
+    font-weight: 500;
+}
+
+.login-box input {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.3px;
+}
+
+.login-box input[type='text'],
+.login-box input[type='email'],
+.login-box input[type='password'] {
+    padding: 6px;
+    font-size: 70%;
+    border: 1px solid #555;
+    border-radius: 5px;
+    transition: border-color 0.2s ease;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.login-box input[type='text']:hover,
+.login-box input[type='email']:hover,
+.login-box input[type='password']:hover {
+    border-color: var(--btn-hover-color);
+}
+
+.login-box input[type='submit'] {
+    width: 100px !important;
+    padding: 5px 0;
+    border-radius: 20px;
+    background-color: var(--btn-base-color);
+    border: 1px solid var(--btn-base-color);
+    color: #fff;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.login-form-container input[type='submit'] {
+    width: 90px !important;
+    margin: 30px 0 20px;
+}
+
+.login-form-container input[type='submit'],
+.register-form-container input[type='submit'] {
+    margin: 30px 0 20px;
+}
+
+.login-box input[type='submit']:hover {
+    cursor: pointer;
+    background-color: var(--btn-hover-color);
+    border: 1px solid var(--btn-hover-color);
 }
 
 .login-header {
     width: 100%;
     text-align: center;
-    background-color: #555;
+    background-color: rgba(2, 216, 162, 0.3);
     color: #fff;
+    padding: 15px;
+    border-radius: 5px;
 }
 
-/*input:hover -> change border-color*/
+.login-header h1 {
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+.login-header p {
+    font-size: 80%;
+    font-weight: 600;
+}
+
+.login-form-container form,
+.register-form-container form {
+    display: flex;
+    flex-flow: column;
+}
+
+.login-form-container form:first-child,
+.register-form-container form:first-child {
+    margin-top: 15px;
+}
+
+
+.link-msg {
+    font-size: 70%;
+}
+
+.link-msg a {
+    color: var(--btn-base-color);
+    font-weight: 500;
+}
 
 .register-form-container {
     display: none;
+}
+
+.err-msg {
+    color: var(--btn-error-msg);
+    font-size: 60%;
+    font-weight: 600;
+    margin-top: 10px;
 }
