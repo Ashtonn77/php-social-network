@@ -16,13 +16,54 @@ require "includes/form_handlers/login_handler.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to untitled</title>
+    <link rel="stylesheet" type="text/css" href="../resources/css/register_style.css">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
 
+    <!-- to ensure we remain on the correct page if an error occurs -->
+    <?php
+    
+    if(isset($_POST['reg_submit_btn'])){
 
-    <!-- login -->
-  <form action="" method="POST">
+        echo '        
+        <script>
+        
+        $(document).ready(function(){
+
+            $(".login-form-container").hide();
+            $(".register-form-container").show();
+
+        });
+        
+        </script>
+        
+        ';
+
+    }
+    
+    
+    ?>
+
+
+   <div class="wrapper">
+
+        <div class="login-box">
+        
+        <div class="login-header">
+        
+        <h1>untitled social network</h1>
+        <p>Login or sign up below</p>
+
+        </div>
+
+             <!-- login -->
+        <div class="login-form-container">
+
+        <form action="" method="POST">
 
         <input type="email" name="log_email" id="log_email" placeholder="Email" value="<?php if(isset($_SESSION['reg_email'])){ echo $_SESSION['reg_email'];}?>" 
         required> <br>
@@ -33,12 +74,17 @@ require "includes/form_handlers/login_handler.php";
 
         <?php if(in_array("Email or password is incorrect<br>", $error_array)){echo "Email or password is incorrect<br>";}?>
 
+        <a href="#" id="sign-up" class="sign-up">Need an account? Sign up here</a>
+
     </form> <br>
+
+        </div>
 
 
 
     <!-- register -->
-    <form action="register.php" method="post">
+        <div class="register-form-container">
+            <form action="register.php" method="post">
 
         <input type="text" name="reg_first_name" id="reg_first_name" placeholder="First Name" 
         value="<?php if(isset($_SESSION['reg_first_name'])){ echo $_SESSION['reg_first_name'];}?>" 
@@ -79,9 +125,17 @@ require "includes/form_handlers/login_handler.php";
 
         <?php if(in_array("<span style='color:green;'>Success...time to log in :)</span><br>", $error_array)){ echo "<span style='color:green;'>Success...time to log in :)</span><br>"; } ?>
 
+         <a href="#" id="sign-in" class="sign-in">Already have an account? Sign in here</a>
 
     </form>
+        </div>
+   
+        
+        </div>
 
+   </div>
+
+<script src="../resources/js/register.js"></script>
 
 </body>
 
