@@ -23,11 +23,16 @@ html {
 
 }
 
-.wrapper {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/backgrounds/login_1.jpg");
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url("../images/backgrounds/login_1.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    height: 100vh;
+}
+
+.wrapper {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -35,8 +40,6 @@ html {
     justify-content: center;
     align-items: center;
     color: #fff;
-
-
 }
 
 /*use a fancy font for name of app*/
@@ -50,6 +53,9 @@ html {
     border-radius: 5px;
     padding: 15px 10px;
     background-color: rgba(0, 0, 0, 0.5);
+    width: 80%;
+    max-width: 600px;
+
 }
 
 .login-box label {
@@ -66,6 +72,7 @@ html {
 .login-box input[type='text'],
 .login-box input[type='email'],
 .login-box input[type='password'] {
+    width: 90%;
     padding: 6px;
     font-size: 70%;
     border: 1px solid #555;

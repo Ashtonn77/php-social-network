@@ -26,23 +26,35 @@ else{
     <title>untitled</title>
     <link rel="stylesheet" href="../resources/css/style.css?v=<?php echo time(); ?>">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
 </head>
 <body>
 
     <div class="top-nav">
         <div class="logo">
-            <a href="index.php">untitled</a>
+            <a href="index.php">The Network Expressive</a>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+            <input type="submit" value="s">
         </div>
 
         <nav>
             <ul>
                 <li><a href="#"><?= $user['first_name']?></a></li>
-                <li><a href="index.php">home</a></li>
-                <li><a href="#"><messages/a></li>
-                <li><a href="#">notifications</a></li>
-                <li><a href="#">users</a></li>
-                <li><a href="#">settings</a></li>
-                <li><a href="#">logout</a></li>
+
+                <li><a href="index.php" class="nav-icon"><ion-icon name="home-outline"></ion-icon></a></li>
+
+                <li><a href="#"><ion-icon name="mail-outline"></ion-icon></a></li>
+
+                <li><a href="#"><ion-icon name="notifications-outline"></ion-icon></a></li>
+
+                <li><a href="#"><ion-icon name="people-outline"></ion-icon></a></li>
+
+                <li><a href="#"><ion-icon name="settings-outline"></ion-icon></a></li>
+
+                <li><a href="#"><ion-icon name="log-out-outline"></ion-icon></a></li>
             </ul>
         </nav>
     </div>
