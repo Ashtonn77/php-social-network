@@ -105,13 +105,13 @@ if (isset($_POST['reg_submit_btn'])) {
            //profile picture assignment
     $rand = rand(1, 2);
     if($rand == 1){
+     
+        $profile_pic =  "../../includes/form_handlers/profile_pics/defaults/default_pro_pic.png";
 
-        $profile_pic = "/social_workspace/resources/images/profile_pics/defaults/default_pro_pic.png";
-
-    }
+    }                   
     else{
 
-        $profile_pic = "/social_workspace/resources/images/profile_pics/defaults/default_pro_pic_2.png";
+        $profile_pic = "../../includes/form_handlers/profile_pics/defaults/default_pro_pic_2.png";
 
     }
 

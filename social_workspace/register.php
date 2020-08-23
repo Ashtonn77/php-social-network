@@ -16,8 +16,8 @@ require "includes/form_handlers/login_handler.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to untitled</title>
-    <link rel="stylesheet" href="../resources/css/queries.css?v=<?php echo time(); ?>">
-    <link rel="stylesheet" type="text/css" href="../resources/css/register_style.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="./resources/css/queries.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" type="text/css" href="./resources/css/register_style.css?v=<?php echo time(); ?>">
     
 
 
@@ -57,7 +57,7 @@ require "includes/form_handlers/login_handler.php";
         
         <div class="login-header">
         
-        <h1>The Network Expressive</h1>
+        <h1>Expressive</h1>
         <p>Login or sign up below</p>
 
         </div>
@@ -144,7 +144,7 @@ require "includes/form_handlers/login_handler.php";
 
    </div>
 
-<script src="../resources/js/register.js"></script>
+<script src="./resources/js/register.js"></script>
 
 </body>
 

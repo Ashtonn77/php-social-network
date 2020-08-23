@@ -23,8 +23,9 @@ else{
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>untitled</title>
-    <link rel="stylesheet" href="../resources/css/style.css?v=<?php echo time(); ?>">
+    <title>Expressive</title>
+    <link rel="stylesheet" href="./resources/css/style.css?v=<?php echo time(); ?>">
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
 </head>
@@ -32,7 +33,7 @@ else{
 
     <div class="top-nav">
         <div class="logo">
-            <a href="index.php">The Network Expressive</a>
+            <a href="index.php">Expressive</a>
         </div>
 
         <div class="search-bar">
@@ -42,7 +43,7 @@ else{
 
         <nav>
             <ul>
-                <li><a href="#"><?= $user['first_name']?></a></li>
+                <li><a href="<?=$userLoggedIn;?>"><?= $user['first_name']?></a></li>
 
                 <li><a href="index.php" class="nav-icon"><ion-icon name="home-outline"></ion-icon></a></li>
 
@@ -58,3 +59,5 @@ else{
             </ul>
         </nav>
     </div>
+
+    <div class="wrapper">
