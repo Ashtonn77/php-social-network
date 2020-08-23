@@ -37,8 +37,8 @@ else{
         </div>
 
         <div class="search-bar">
-            <input type="text" placeholder="Search">
-            <input type="submit" value="s">
+            <input type="text" placeholder="Looking for something?">
+            <input type="submit" value="GO">
         </div>
 
         <nav>

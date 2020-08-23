@@ -5,6 +5,7 @@
     --btn-hover-color: #02d8a2;
     --btn-error-msg: #ac1212;
     --btn-font-hover: #0f0f0f;
+    --border-grey: #d8d8d8;
 }
 
 * {
@@ -66,6 +67,43 @@ NAV-BAR
 
 ion-icon {
     font-size: 90%;
+}
+
+
+.search-bar input[type="text"],
+.search-bar input[type="submit"] {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 70%;
+    border: 1px solid var(--border-grey);
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.search-bar input[type="text"] {
+    margin-right: -4px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    padding-left: 8px;
+}
+
+.search-bar input[type="submit"] {
+    background-color: #fff;
+    color: var(--btn-base-color);
+    font-size: 60%;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 4.7px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    transition: all 0.3s ease;
+}
+
+.search-bar input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: var(--btn-hover-color);
+    color: var(--btn-font-hover);
+    border: 1px solid var(--btn-hover-color);
+    padding-top: 5px;
 }
 
 /*
@@ -144,7 +182,7 @@ INDEX
 .post-form textarea {
     width: 98%;
     margin: 0 auto;
-    border: 1px solid #d8d8d8;
+    border: 1px solid var(--border-grey);
     border-radius: 5px;
     padding: 8px;
 }
