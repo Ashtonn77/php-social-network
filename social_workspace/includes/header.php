@@ -55,7 +55,7 @@ else{
 
                 <li><a href="#"><ion-icon name="settings-outline"></ion-icon></a></li>
 
-                <li><a href="#"><ion-icon name="log-out-outline"></ion-icon></a></li>
+                <li><a href="./includes/logout.php"><ion-icon name="log-out-outline"></ion-icon></a></li>
             </ul>
         </nav>
     </div>

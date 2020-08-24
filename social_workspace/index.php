@@ -1,5 +1,16 @@
 <?php
 include("./includes/header.php");
+include("./includes/classes/User.php");
+include("./includes/classes/Post.php");
+
+
+
+if(isset($_POST['post-btn'])){
+
+  $post_obj = new Post($connect, $userLoggedIn);
+  $post_obj->submit_post($_POST['post-text'], 'none');
+
+}
 
 ?>
     
@@ -32,8 +43,17 @@ include("./includes/header.php");
 
     <textarea name="post-text" id="post-text" cols="30" rows="5" placeholder="Speak your truth..."></textarea>
     <input type="submit" name="post-btn" id="post-btn" value="Post">
-    
+   
     </form>
+
+  <?php
+  
+  $user_obj = new User($connect, $userLoggedIn);
+  echo $user_obj->get_first_and_last_name();
+  
+  
+  ?>
+
 
     </div>   
   

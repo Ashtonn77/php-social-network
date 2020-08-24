@@ -6,6 +6,7 @@
     --btn-error-msg: #ac1212;
     --btn-font-hover: #0f0f0f;
     --border-grey: #d8d8d8;
+    --search-btn: #F2622E;
 }
 
 * {
@@ -100,9 +101,9 @@ ion-icon {
 
 .search-bar input[type="submit"]:hover {
     cursor: pointer;
-    background-color: var(--btn-hover-color);
+    background-color: var(--search-btn);
     color: var(--btn-font-hover);
-    border: 1px solid var(--btn-hover-color);
+    border: 1px solid var(--search-btn);
     padding-top: 5px;
 }
 
