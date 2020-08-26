@@ -46,18 +46,72 @@ if(isset($_POST['post-btn'])){
    
     </form>
 
-  <?php
-  
-  $user_obj = new User($connect, $userLoggedIn);
-  echo $user_obj->get_first_and_last_name();
-  
-  
-  ?>
-
+      <div class="posts-area"></div>
+      <img src="./resources/images/icons/loading.gif" alt="loading" id="loading">
 
     </div>   
   
-  </div>
+  </div>   
+
+    <script>
+
+    let userLoggedIn = '<?= $userLoggedIn; ?>';
+
+    $(document).ready(function() {
+      $('#loading').show();
+
+      //ajax call
+      $.ajax({
+        url:"./includes/ajax_load_posts.php",
+        type:"POST",
+        data:"page=1&userLoggedIn=" + userLoggedIn,
+        cache:false,
+
+        success: function(data){
+          $('#loading').hide();
+          $('.posts-area').html(data);
+        }
+      });
+
+      $(window).scroll(function() {
+      
+        let height = $('.posts-area').height();
+        let scroll_top = $(this).scrollTop();
+
+        let page = $('.posts-area').find('.next-page').val();
+        let no_more_posts = $('.posts-area').find('.no-more-posts').val();        
+        
+
+        if((document.body.scrollHeight == ($(this).scrollTop() + window.innerHeight)) && no_more_posts == 'false'){
+          $('#loading').show();
+          
+
+          let ajaxReq = $.ajax({
+            url:"./includes/ajax_load_posts.php",
+            type:"POST",
+            data:"page=" + page + "&userLoggedIn=" + userLoggedIn,
+            cache:false,
+
+            success: function(response){
+              $('.posts-area').find('.next-page').remove(); //removes current next page
+              $('.posts-area').find('.no-more-posts').remove(); //removes current no more posts page
+
+
+              $('#loading').hide();
+              $('.posts-area').append(response);
+            }
+
+          });
+
+        }//end if
+        return false;
+
+      }); //end window scroll function
+
+
+
+    });
+    </script>
     
     
     </div>

@@ -211,3 +211,47 @@ INDEX
 /*
 END INDEX
 */
+
+/*
+POSTS
+*/
+
+.status_post {
+    display: flex;
+    width: 98%;
+    margin: 15px auto 0 auto;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 15px;
+}
+
+.name-and-body {
+    margin-left: 15px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.name-and-body a {
+    text-decoration: none;
+    color: var(--btn-base-color);
+    font-size: 80%;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.name-and-body a:hover {
+    color: var(--btn-font-hover);
+}
+
+.post-body {
+    font-size: 80%;
+    margin-top: 10px;
+}
+
+.time-msg {
+    font-size: 60%;
+}
+
+/*
+END POSTS
+*/

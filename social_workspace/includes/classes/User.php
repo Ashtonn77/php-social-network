@@ -35,6 +35,21 @@ class User {
 
     }
 
+    public function is_closed(){
+
+        $username = $this->user['username'];
+        $query_isClosed = mysqli_query($this->connect, "SELECT user_closed FROM users WHERE username='$username'");
+        $row = mysqli_fetch_array($query_isClosed);
+
+        if($row['user_closed'] == 'yes'){
+            return true;
+        }
+        else{
+            return false;
+        }
+
+    }
+
 
 }
 
