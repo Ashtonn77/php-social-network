@@ -50,6 +50,14 @@ class User {
 
     }
 
+    public function is_friend($username_to_check){
+        $username_comma = "," . $username_to_check . ",";
+        if((strstr($this->user['friends_array'], $username_comma)) || $username_to_check == $this->user['username']){
+            return true;
+        }
+        return false;
+    }
+
 
 }
 
