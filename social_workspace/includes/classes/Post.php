@@ -128,7 +128,33 @@ class Post {
                 $profile_pic = $user_row['profile_pic'];
                 $profile_pic = substr(strrchr($profile_pic, "/"), 1);           
                 
+                ?>
 
+
+                    <script>
+                        
+                        function toggle<?php echo $id; ?>(){
+
+                            let element = document.getElementById('toggle-comment<?php echo $id; ?>');
+
+                            if(element.style.display == 'block'){
+                                element.style.display = 'none';
+                            }
+                            else{
+                                element.style.display = 'block';
+                            }
+
+                        }
+
+                        function test(){
+                            console.log(<?=$id;?>);
+                        }
+
+                        </script>   
+
+
+
+                <?php
                 //timeframe
                 $date_time_now = date('Y-m-d H:i:s');
 
@@ -208,7 +234,7 @@ class Post {
 
                 }
             
-                    $str .= "<div class='status_post'>
+                    $str .= "<div class='status_post' onclick='return toggle$id();'>
 
                                 <div class='profile-pic'> 
                                 <img src='./resources/images/profile_pics/defaults/$profile_pic' width='70'>
@@ -227,7 +253,13 @@ class Post {
                                 </div>
                                                             
 
-                                </div>";
+                                </div>
+                                
+                                <div class='post-comment' id='toggle-comment$id' style='display:none;'>
+                                   <iframe src='comments.php?post_id=$id' id='comment-iframe' class='comment-iframe' frameborder='0'></iframe> 
+                                </div>
+                                
+                                ";
         }
         } 
         

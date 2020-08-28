@@ -35,6 +35,18 @@ class User {
 
     }
 
+    public function get_profile_pic(){
+
+        $username = $this->user['username'];
+        $profile_pic_query = mysqli_query($this->connect, "SELECT profile_pic FROM users WHERE username='$username'");
+        $row = mysqli_fetch_array($profile_pic_query);
+        $profile_pic = $row['profile_pic'];
+        $profile_pic = substr(strrchr($profile_pic, "/"), 1);   
+
+        return  "./resources/images/profile_pics/defaults/" . $profile_pic;
+
+    }
+
     public function is_closed(){
 
         $username = $this->user['username'];
