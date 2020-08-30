@@ -7,6 +7,8 @@
     --btn-font-hover: #0f0f0f;
     --border-grey: #d8d8d8;
     --search-btn: #F2622E;
+    --sub-base-one: #0984e3;
+    --sub-base-two: #ecf0f1;
 }
 
 * {
@@ -229,6 +231,7 @@ POSTS
     display: flex;
     flex-flow: column;
     justify-content: center;
+
 }
 
 .name-and-body a {
@@ -252,6 +255,17 @@ POSTS
     font-size: 60%;
 }
 
+.news-feed-post-options {
+    margin-top: 20%;
+}
+
+.news-feed-post-options p {
+    font-size: 65%;
+    color: var(--sub-base-one);
+    font-weight: 500;
+}
+
+
 /*
 END POSTS
 */
@@ -263,9 +277,12 @@ COMMENTS
 
 .comment-iframe {
     width: 100%;
-
-
 }
+
+.status_post {
+    cursor: pointer;
+}
+
 
 /*
 END COMMENTS

@@ -1,3 +1,25 @@
+<?php 
+
+require "./config/config.php";
+include("./includes/classes/User.php");
+include("./includes/classes/Post.php");
+
+if(isset($_SESSION['username'])){
+
+    $userLoggedIn = $_SESSION['username'];
+    $user_datails_query = mysqli_query($connect, "SELECT * FROM users WHERE username='$userLoggedIn'");
+    $user = mysqli_fetch_array($user_datails_query);
+
+}
+else{
+
+    header("location: register.php");
+
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +41,8 @@
             --btn-font-hover: #0f0f0f;
             --border-grey: #d8d8d8;
             --search-btn: #F2622E;
+            --sub-base-one: #0984e3;
+            --sub-base-two: #ecf0f1;
         }
 
         *{
@@ -28,13 +52,15 @@
         textarea{
             display:block;            
             width:90%;
+            max-width:90%;
+            min-width:90%;
             margin: 10px auto 0 auto;                     
         }
 
         input[type='submit']{
           margin: 8px 0 20px 5%;
-          padding: 5px 10px;
-          font-size:70%;
+          padding: 5px 12px;
+          font-size:60%;
           background-color: var(--btn-base-color);
           border:1px solid var(--btn-base-color);
           color:#fff; 
@@ -56,6 +82,7 @@
 
         .comment-section a{
             text-decoration:none;
+            color: var(--sub-base-two);
         }
 
         .comment-section a img{
@@ -92,28 +119,6 @@
 
 </head>
 <body>
-
-<?php 
-
-require "./config/config.php";
-include("./includes/classes/User.php");
-include("./includes/classes/Post.php");
-
-if(isset($_SESSION['username'])){
-
-    $userLoggedIn = $_SESSION['username'];
-    $user_datails_query = mysqli_query($connect, "SELECT * FROM users WHERE username='$userLoggedIn'");
-    $user = mysqli_fetch_array($user_datails_query);
-
-}
-else{
-
-    header("location: register.php");
-
-}
-
-?>
-
 
   <script>
   
@@ -159,7 +164,7 @@ else{
 
   <form action="comments.php?post_id=<?=$post_id;?>" class="comment-form" id="comment-form" name="post-comment-<?=$post_id;?>" method="POST">
     <textarea name="post-body" cols="30" rows="5" class='comment-area'></textarea>
-    <input type="submit" name="post-comment-<?=$post_id;?>" value="Post">
+    <input type="submit" name="post-comment-<?=$post_id;?>" value="Speak your mind">
   
   </form>
 
@@ -289,7 +294,12 @@ else{
                     <?php
 
       }
-  }  
+  } 
+  else{
+
+    echo "<center><br><p style='margin-bottom:10px;font-size:65%;'>No comments to show</p></center>";
+
+  } 
   
   ?>
 

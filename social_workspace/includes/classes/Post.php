@@ -155,6 +155,10 @@ class Post {
 
 
                 <?php
+
+                 $comments_check = mysqli_query($this->connect, "SELECT * FROM comments WHERE post_id='$id'");
+                 $comments_count = mysqli_num_rows($comments_check);       
+
                 //timeframe
                 $date_time_now = date('Y-m-d H:i:s');
 
@@ -250,10 +254,15 @@ class Post {
                                     $body 
                                 </div>  
 
+                                <div class='news-feed-post-options'>
+                                
+                                <p>$comments_count comments</p>
+                                
                                 </div>
-                                                            
 
-                                </div>
+                                </div>     
+
+                                </div>                                
                                 
                                 <div class='post-comment' id='toggle-comment$id' style='display:none;'>
                                    <iframe src='comments.php?post_id=$id' id='comment-iframe' class='comment-iframe' frameborder='0'></iframe> 
