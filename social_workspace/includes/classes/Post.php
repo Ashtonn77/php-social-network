@@ -130,20 +130,28 @@ class Post {
                 
                 ?>
 
-
                     <script>
                         
                         function toggle<?php echo $id; ?>(){
 
+                            let target = $(event.target);
+                            if(!target.is("a")){
+
                             let element = document.getElementById('toggle-comment<?php echo $id; ?>');
 
                             if(element.style.display == 'block'){
+
                                 element.style.display = 'none';
+
                             }
                             else{
+
                                 element.style.display = 'block';
+
                             }
 
+
+                            }
                         }
 
                         function test(){
@@ -151,7 +159,6 @@ class Post {
                         }
 
                         </script>   
-
 
 
                 <?php
@@ -257,6 +264,7 @@ class Post {
                                 <div class='news-feed-post-options'>
                                 
                                 <p>$comments_count comments</p>
+                                <embed type='text/html' src='likes.php?post_id=$id'>
                                 
                                 </div>
 

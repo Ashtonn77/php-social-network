@@ -257,6 +257,9 @@ POSTS
 
 .news-feed-post-options {
     margin-top: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .news-feed-post-options p {
@@ -277,13 +280,29 @@ COMMENTS
 
 .comment-iframe {
     width: 100%;
+    border-radius: 5px;
 }
 
 .status_post {
     cursor: pointer;
 }
 
-
 /*
 END COMMENTS
+*/
+
+
+
+/*
+LIKES
+*/
+embed {
+    height: 50px;
+    margin-left: 10px;
+    position: relative;
+}
+
+
+/*
+END LIKES
 */

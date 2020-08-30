@@ -54,13 +54,14 @@ else{
             width:90%;
             max-width:90%;
             min-width:90%;
-            margin: 10px auto 0 auto;                     
+            margin: 10px auto 0 auto;   
+            border-radius:5px;                  
         }
 
         input[type='submit']{
-          margin: 8px 0 20px 5%;
-          padding: 5px 12px;
-          font-size:60%;
+          margin: 8px 0 25px 5%;
+          padding: 4px 11px;
+          font-size:55%;
           background-color: var(--btn-base-color);
           border:1px solid var(--btn-base-color);
           color:#fff; 
@@ -106,7 +107,7 @@ else{
         }
 
         .name-time a{
-            font-size: 75%;                              
+            font-size: 70%;                              
         }
 
         .comment-body{
