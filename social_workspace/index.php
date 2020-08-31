@@ -2,7 +2,7 @@
 include("./includes/header.php");
 include("./includes/classes/User.php");
 include("./includes/classes/Post.php");
-
+include("./includes/functions.php");
 
 
 if(isset($_POST['post-btn'])){
@@ -19,13 +19,9 @@ if(isset($_POST['post-btn'])){
       <div class="user-details"> 
 
         <div class="profile-pic">
-            <!-- get path of profile pic then cut out the name -->
-            <?php
-            $str = $user['profile_pic'];
-            $str = substr(strrchr($str, "/"), 1);           
-            ?>
+           
+            <a href="<?=$userLoggedIn;?>"><img src="<?=load_profile_pic($user['profile_pic']);?>" alt="user_profile"></a>
 
-            <a href="<?=$userLoggedIn;?>"><img src="./resources/images/profile_pics/defaults/<?=$str;?>" alt="user_profile"></a>
         </div>
         
         <div class="personals">
@@ -41,7 +37,7 @@ if(isset($_POST['post-btn'])){
 
     <form class="post-form" action="index.php" method="POST">
 
-    <textarea name="post-text" id="post-text" cols="30" rows="5" placeholder="Speak your truth..."></textarea>
+    <textarea name="post-text" id="post-text" cols="30" rows="5" placeholder="Express yourself..."></textarea>
     <input type="submit" name="post-btn" id="post-btn" value="Post">
    
     </form>

@@ -27,7 +27,7 @@ html {
 }
 
 body {
-    background-color: #6e6e6e;
+    background-color: #e9e9e9;
 }
 
 /*
@@ -138,8 +138,7 @@ INDEX
     padding: 10px;
     border: 1px solid #fff;
     border-radius: 5px;
-    box-shadow: 2px 2px 1px #555;
-
+    box-shadow: 0 10px 6px -6px #777;
 }
 
 .user-details {
@@ -168,6 +167,7 @@ INDEX
 
 .feed-details {
     width: 65%;
+    box-shadow: 0 10px 6px -6px #777;
 }
 
 .post-form {
@@ -296,13 +296,62 @@ END COMMENTS
 /*
 LIKES
 */
+
 embed {
     height: 50px;
     margin-left: 10px;
     position: relative;
 }
 
-
 /*
 END LIKES
+*/
+
+
+
+
+/*
+PROFILE
+*/
+
+.left-profile {
+    background-color: var(--btn-base-color);
+    color: var(--sub-base-two);
+    width: 32%;
+    text-align: center;
+    border-radius: 5px;
+    border-right: 3px solid var(--btn-hover-color);
+    box-shadow: 0 10px 6px -6px #777;
+
+}
+
+.left-profile h3 {
+    margin: 15px 0;
+    font-weight: 400;
+}
+
+.left-profile .user-info {
+    margin: 15px 0;
+}
+
+.left-profile .user-info p {
+    margin: 8px 0;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.right-profile {
+    background-color: #fff;
+    width: 66%;
+    font-size: 75%;
+    word-spacing: 1.5px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 10px 6px -6px #777;
+
+}
+
+
+/*
+END PROFILE
 */

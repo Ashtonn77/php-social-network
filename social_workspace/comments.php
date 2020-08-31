@@ -165,7 +165,7 @@ else{
 
   <form action="comments.php?post_id=<?=$post_id;?>" class="comment-form" id="comment-form" name="post-comment-<?=$post_id;?>" method="POST">
     <textarea name="post-body" cols="30" rows="5" class='comment-area'></textarea>
-    <input type="submit" name="post-comment-<?=$post_id;?>" value="Speak your mind">
+    <input type="submit" name="post-comment-<?=$post_id;?>" value="Speak your truth">
   
   </form>
 
