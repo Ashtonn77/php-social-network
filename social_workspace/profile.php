@@ -31,6 +31,45 @@ if(isset($_GET['profile_username'])){
         <p>Friends: <?=$num_friends;?></p>
       </div>
 
+      <form action="<?=$username;?>">
+      
+        <?php
+
+          $user_profile_obj = new User($connect, $username);
+          if($user_profile_obj->is_closed()){
+            header("Location: account_closed.php");
+          }
+
+          $user_logged_in_obj = new User($connect, $userLoggedIn);
+          if($userLoggedIn != $username){
+
+            if($user_logged_in_obj->is_friend($username)){
+
+              echo '<input type="submit" name="remove-friend-btn" class="remove-friend-btn" value="Drop friend">';
+
+            }
+            else if($user_logged_in_obj->did_recieve_request($username)){
+
+              echo '<input type="submit" name="recieved-request-btn" class="recieved-request-btn" value="Someone wants to be friends. Respond?">';
+
+            }
+            else if($user_logged_in_obj->did_send_request($username)){
+
+              echo '<input type="submit" name="request-sent-btn" class="request-sentbtn" value="Friend request submitted">';
+
+            }
+            else{
+
+              echo '<input type="submit" name="add-friend-btn" class="add-friend-btn" value="Add friend">';
+
+            } 
+
+          }
+        
+        ?>
+
+      </form>
+
      </div>
      <!-- end left -->
 

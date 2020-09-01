@@ -9,6 +9,11 @@
   --search-btn: #f2622e;
   --sub-base-one: #0984e3;
   --sub-base-two: #ecf0f1;
+  --btn-remove: #eb2f06;
+  --btn-add: #78e08f;
+  --btn-recieved: #82ccdd;
+  --btn-sent: #779ae7;
+  --btn-misc-hover: #b71540;
 }
 
 * {
@@ -28,6 +33,10 @@ html {
 
 body {
   background-color: #555;
+}
+
+input {
+  font-family: "Montserrat", sans-serif;
 }
 
 /*
@@ -337,6 +346,47 @@ PROFILE
   box-shadow: 0 10px 6px -6px rgb(20, 20, 20);
 }
 
+.remove-friend-btn {
+  background-color: var(--btn-remove);
+  color: #000;
+  border: 1px solid var(--btn-remove);
+}
+
+.add-friend-btn {
+  background-color: var(--btn-add);
+  color: #000;
+  border: 1px solid var(--btn-add);
+}
+
+.request-sent-btn {
+  background-color: var(--btn-sent);
+  color: #000;
+  border: 1px solid var(--btn-sent);
+}
+
+.recieved-request-btn {
+  background-color: var(--btn-recieved);
+  color: #000;
+  border: 1px solid var(--btn-recieved);
+}
+
+.left-profile input[type="submit"] {
+  border-radius: 5px;
+  font-size: 75%;
+  font-weight: 600;
+  padding: 5px 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 6px -6px rgb(20 20 20);
+}
+
+.left-profile input[type="submit"]:hover {
+  cursor: pointer;
+  background-color: var(--btn-misc-hover);
+  color: #fff;
+  border: 1px solid var(--btn-misc-hover);
+  box-shadow: 0 5px 3px -3px rgb(20 20 20);
+}
+
 /*
 END PROFILE
 */
@@ -384,5 +434,5 @@ ACCOUNT CLOSED
 }
 
 /*
-ACCOUNT CLOSED
+END ACCOUNT CLOSED
 */

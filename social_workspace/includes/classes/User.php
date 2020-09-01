@@ -70,6 +70,18 @@ class User {
         return false;
     }
 
+    public function did_recieve_request($user_to){
+        $user_from = $this->user['username'];
+        $request_query = mysqli_query($this->connect, "SELECT * FROM friend_requests WHERE user_to='$user_to' AND user_from='$user_from'");
+        return mysqli_num_rows($request_query) > 0 ? true : false;
+    }
+
+      public function did_send_request($user_from){
+        $user_to = $this->user['username'];
+        $request_query = mysqli_query($this->connect, "SELECT * FROM friend_requests WHERE user_to='$user_to' AND user_from='$user_from'");
+        return mysqli_num_rows($request_query) > 0 ? true : false;
+    }
+
 
 }
 
