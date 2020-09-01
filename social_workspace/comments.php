@@ -49,6 +49,10 @@ else{
             font-family: 'Montserrat', sans-serif;
         }
 
+        body{
+            background-color:#555;
+        }
+
         textarea{
             display:block;            
             width:90%;
