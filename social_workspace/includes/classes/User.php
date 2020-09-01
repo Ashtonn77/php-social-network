@@ -70,18 +70,38 @@ class User {
         return false;
     }
 
-    public function did_recieve_request($user_to){
-        $user_from = $this->user['username'];
-        $request_query = mysqli_query($this->connect, "SELECT * FROM friend_requests WHERE user_to='$user_to' AND user_from='$user_from'");
-        return mysqli_num_rows($request_query) > 0 ? true : false;
-    }
-
-      public function did_send_request($user_from){
+    public function did_recieve_request($user_from){
         $user_to = $this->user['username'];
         $request_query = mysqli_query($this->connect, "SELECT * FROM friend_requests WHERE user_to='$user_to' AND user_from='$user_from'");
         return mysqli_num_rows($request_query) > 0 ? true : false;
     }
 
+      public function did_send_request($user_to){
+        $user_from = $this->user['username'];
+        $request_query = mysqli_query($this->connect, "SELECT * FROM friend_requests WHERE user_to='$user_to' AND user_from='$user_from'");
+        return mysqli_num_rows($request_query) > 0 ? true : false;
+    }
+
+    public function remove_friend($user_to_remove){
+        $user_logged_in = $this->user['username'];
+
+        $friend_array_query = mysqli_query($this->connect, "SELECT friends_array FROM users WHERE username='$user_to_remove'");
+        $row = mysqli_fetch_array($friend_array_query);
+        $friend_array_of_user_to_remove = $row['friends_array'];
+
+        $new_friend_array = str_replace($user_to_remove.",", "", $this->user['friends_array']);
+        $remove_friend = mysqli_query($this->connect, "UPDATE users SET friends_array='$new_friend_array' WHERE username='$user_logged_in'");
+
+        $new_friend_array = str_replace($this->user['username'].",", "", $friend_array_of_user_to_remove);
+        $remove_friend = mysqli_query($this->connect, "UPDATE users SET friends_array='$new_friend_array' WHERE username='$user_to_remove'");
+
+    }
+
+
+    public function send_friend_request($user_to){
+         $user_from = $this->user['username'];
+         $sent_query = mysqli_query($this->connect, "INSERT INTO friend_requests VALUES(NULL, '$user_to', '$user_from')");
+    }
 
 }
 

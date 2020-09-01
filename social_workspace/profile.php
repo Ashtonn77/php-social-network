@@ -14,6 +14,20 @@ if(isset($_GET['profile_username'])){
 
 }
 
+if(isset($_POST['remove-friend-btn'])){
+  $user_obj = new User($connect, $userLoggedIn);
+  $user_obj->remove_friend($username);
+}
+
+if(isset($_POST['add-friend-btn'])){
+  $user_obj = new User($connect, $userLoggedIn);
+  $user_obj->send_friend_request($username);
+}
+
+if(isset($_POST['recieved-request-btn'])){
+  header("Location: requests.php");
+}
+
 ?>  
 
 
@@ -31,7 +45,7 @@ if(isset($_GET['profile_username'])){
         <p>Friends: <?=$num_friends;?></p>
       </div>
 
-      <form action="<?=$username;?>">
+      <form action="<?=$username;?>" method="POST">
       
         <?php
 
@@ -55,7 +69,7 @@ if(isset($_GET['profile_username'])){
             }
             else if($user_logged_in_obj->did_send_request($username)){
 
-              echo '<input type="submit" name="request-sent-btn" class="request-sentbtn" value="Friend request submitted">';
+              echo '<input type="submit" name="request-sent-btn" class="request-sent-btn" value="Friend request submitted">';
 
             }
             else{
