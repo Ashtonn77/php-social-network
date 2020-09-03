@@ -51,7 +51,7 @@ else{
 
                 <li><a href="#"><ion-icon name="notifications-outline"></ion-icon></a></li>
 
-                <li><a href="#"><ion-icon name="people-outline"></ion-icon></a></li>
+                <li><a href="requests.php"><ion-icon name="people-outline"></ion-icon></a></li>
 
                 <li><a href="#"><ion-icon name="settings-outline"></ion-icon></a></li>
 

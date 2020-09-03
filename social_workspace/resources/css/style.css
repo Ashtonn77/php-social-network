@@ -387,6 +387,12 @@ PROFILE
   box-shadow: 0 5px 3px -3px rgb(20 20 20);
 }
 
+.post-msg-btn {
+  background-color: var(--sub-base-one);
+  color: #000;
+  border: 1px solid var(--sub-base-one);
+}
+
 /*
 END PROFILE
 */

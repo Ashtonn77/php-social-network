@@ -47,6 +47,15 @@ class User {
 
     }
 
+     public function get_friends_array(){
+
+        $username = $this->user['username'];
+        $friends_array_query = mysqli_query($this->connect, "SELECT friends_array FROM users WHERE username='$username'");
+        $row = mysqli_fetch_array($friends_array_query);
+        return $row['friends_array'];
+
+    }
+
     public function is_closed(){
 
         $username = $this->user['username'];
@@ -73,13 +82,19 @@ class User {
     public function did_recieve_request($user_from){
         $user_to = $this->user['username'];
         $request_query = mysqli_query($this->connect, "SELECT * FROM friend_requests WHERE user_to='$user_to' AND user_from='$user_from'");
-        return mysqli_num_rows($request_query) > 0 ? true : false;
+         if(mysqli_num_rows($request_query) > 0){
+            return true;
+        }
+        return false;
     }
 
       public function did_send_request($user_to){
         $user_from = $this->user['username'];
         $request_query = mysqli_query($this->connect, "SELECT * FROM friend_requests WHERE user_to='$user_to' AND user_from='$user_from'");
-        return mysqli_num_rows($request_query) > 0 ? true : false;
+        if(mysqli_num_rows($request_query) > 0){
+            return true;
+        }
+        return false;
     }
 
     public function remove_friend($user_to_remove){

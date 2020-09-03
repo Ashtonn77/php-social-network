@@ -84,6 +84,8 @@ if(isset($_POST['recieved-request-btn'])){
 
       </form>
 
+      <input type="submit" class="post-msg-btn" name="post-msg-btn" value="Got something to say?">
+
      </div>
      <!-- end left -->
 
