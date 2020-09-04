@@ -1,0 +1,69 @@
+@media screen and (max-width: 1171px) {
+
+    .right-section h4 {
+        font-size: 100%;
+    }
+
+    .name-pic a {
+        font-size: 90%;
+    }
+
+    .name-pic img {
+        width: 22px;
+    }
+
+    .possible-friends img:last-child {
+        width: 18px;
+        height: 18px;
+    }
+
+    .post-body {
+        font-size: 90%;
+    }
+}
+
+
+@media screen and (max-width: 981px) {
+    .right-section {
+        display: none;
+    }
+
+    .left-section {
+        display: none;
+    }
+
+    .middle-section {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .top-nav nav ul {
+        display: none;
+    }
+
+
+    .logo-search-container p {
+        font-size: 90%;
+    }
+
+    .logo-search-container input[type="search"] {
+        display: none;
+
+    }
+
+    .logo-search-container input[type="submit"] {
+        display: none;
+    }
+
+}
+
+
+@media screen and (max-width: 495px) {
+    .post-author-info {
+        flex-flow: column;
+    }
+
+    .post-body {
+        font-size: 110%;
+    }
+}
