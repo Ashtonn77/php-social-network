@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css?v=<?php echo time(); ?>">
 
 </head>
 <body>
@@ -15,8 +15,8 @@
     <nav>        
         <div class="logo-search-container">
             <p>Expressive</p>
-            <input type="search" name="search-bar" id="search-bar" class="search-bar" placeholder="Looking for something?">
-        <input type="submit" value="Go" name="search-btn" class="search-btn" id="search-btn">
+            <input type="search" name="search-bar" id="search-bar" class="search-bar" placeholder="Looking for someone?">
+        <input type="submit" value="&raquo;" name="search-btn" class="search-btn" id="search-btn">
         </div>
 
         <ul>

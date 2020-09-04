@@ -51,6 +51,7 @@ body {
 
 .top-nav nav ul {
     display: flex;
+    margin: auto 0;
 }
 
 .top-nav ul li {
@@ -63,6 +64,7 @@ body {
     margin-left: 15px;
 }
 
+
 .logo-search-container p {
     display: inline;
     font-weight: 700;
@@ -74,30 +76,24 @@ body {
     padding: 5px;
     padding-left: 8px;
     border: 0;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+    border-radius: 5px;
 
 }
 
 .logo-search-container input[type='submit'] {
-    letter-spacing: 1px;
-    padding: 4px;
-    padding-top: 3.3px;
-    padding-right: 6px;
-    background-color: var(--body-back);
+    padding: 0 0 8px 0;
+    background-color: transparent;
     border: 0;
     font-weight: 600;
-    font-size: 75%;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    margin-left: -5px;
+    color: var(--btn-hover-one);
     transition: all 0.3s ease;
+    font-size: 165%;
+    margin-left: -1px;
 }
 
 .logo-search-container input[type='submit']:hover {
     cursor: pointer;
-    background-color: var(--btn-hover-one);
-
+    transform: scale(1.1);
 }
 
 /**END TOP NAV**/
@@ -181,7 +177,7 @@ body {
     border-radius: 5px;
     padding: 5px;
     margin-bottom: 15px;
-    width: 40%;
+    width: 200px;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3),
         0 4px 6px -2px rgba(0, 0, 0, 0.1);
 }
