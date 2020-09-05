@@ -17,9 +17,13 @@ $current_date = date("Y-m-d");
 </head>
 <body>
 
+<div class="sub-body">
+
 <div class="top-nav">
 
-    <nav>        
+    <nav>          
+   
+
         <div class="logo-search-container">
             <p>Expressive</p>
             <input type="search" name="search-bar" id="search-bar" class="search-bar" placeholder="Looking for someone?">
@@ -81,8 +85,23 @@ $current_date = date("Y-m-d");
     <section class="middle-section">
 
     <div class="post-something">
+
+
+        <!-- modal function -->
+         <script type='text/javascript'>
+            function openModal() {
+
+                const modal = document.querySelector('.modal');
+                const overlay = document.getElementById('overlay');            
+                if (modal == null) return;
+                modal.classList.add('active');            
+                overlay.classList.add('active');
+            }
+
+    </script>
+
         <ul>
-            <li><a href="#"><img src="./images/icons_logos/post_something2.png" alt="post_something"></a></li>
+            <li><a class="open-post-modal" href="#"><img onclick="openModal()" src="./images/icons_logos/post_something2.png" alt="post_something"></a></li>
             <li><a href="#"><img src="./images/icons_logos/add_file2.png" alt="attach_file"></a></li>            
         </ul>
     </div>
@@ -171,7 +190,9 @@ $current_date = date("Y-m-d");
 
 </div>
 
-     <!-- <div class="sidebar">
+</div>
+
+     <div class="sidebar">
         <div class="toggle-btn" onclick="show()">
             <span></span>
             <span></span>
@@ -180,13 +201,47 @@ $current_date = date("Y-m-d");
 
 
         <ul>
-            <li>Home</li>
-            <li>Work</li>
-            <li>About</li>
-            <li>Contact</li>
+            <li><input type="search" name="search-bar" id="search-bar" class="search-bar" placeholder="Looking for someone?">
+        <input type="submit" value="&raquo;" name="search-btn" class="search-btn" id="search-btn"></li>
+            <li><a href="#"><ion-icon name="home-outline" style="color:#fff; --ionicon-stroke-width: 22px;" size="large"></ion-icon><span class="tooltiptext">Home</span></a></li>
+            <li><a href="#"><ion-icon name="people-outline" style="color:#fff; --ionicon-stroke-width: 22px;" size="large"></ion-icon><span class="tooltiptext">My Network</span></a></li>
+            <li><a href="#"><ion-icon name="mail-open-outline" style="color:#fff; --ionicon-stroke-width: 22px;" size="large"></ion-icon><span class="tooltiptext">Messages</span></a></li>
+            <li><a href="#"><ion-icon name="notifications-outline" style="color:#fff; --ionicon-stroke-width: 22px;" size="large"></ion-icon><span class="tooltiptext">Notifications</span></a></li>
+            <li><a href="#"><img src="./images/lion.png" alt="profile-pic" width="30px" size="large"><span class="tooltiptext">My profile</span></a></li>
+            <li><a href="#"><ion-icon name="log-out-outline" style="color:#fff; --ionicon-stroke-width: 22px;" size="large"></ion-icon><span class="tooltiptext">Logout</span></a></li>
         </ul>
 
-    </div> -->
+    </div>
+    
+    <!-- MODAL FOR POST AND ATTACH BTNS -->
+    <div class="modal" id="modal">
+
+    <div class="modal-header">
+
+            <script type="text/javascript">
+        
+            function closeModal() {
+
+                const modal = document.querySelector('.modal');
+                const overlay = document.getElementById('overlay');
+
+                if (modal == null) return;
+                modal.classList.remove('active');
+                overlay.classList.remove('active');
+            }
+        </script>
+
+        <div class="title">Some Text</div>
+        <button class="close-button" onclick="closeModal()">&times;</button>
+    </div>
+
+    <div class="modal-body">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod aspernatur nemo dolor ducimus debitis, adipisci minima doloribus. Velit, est repellendus. Fugiat iste earum suscipit ex natus molestias laudantium libero ratione beatae neque sit facilis et quasi architecto ipsa repellat pariatur, voluptatum odio quas. Eaque fugiat quod commodi, nostrum non, distinctio dicta sit aut impedit corporis magnam? Reiciendis, assumenda magnam! Blanditiis dignissimos aperiam eveniet voluptatibus doloremque minima aliquid ad suscipit itaque enim rem at a voluptatum perspiciatis, odit, ullam nam neque!
+    </div>
+
+    </div>
+
+    <div class="" id="overlay"></div>
 
 <script src="./js/script.js"></script>
 <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>    

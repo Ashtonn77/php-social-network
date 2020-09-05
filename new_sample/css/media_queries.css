@@ -55,6 +55,21 @@
         display: none;
     }
 
+    .top-nav nav {
+        justify-content: flex-end;
+    }
+
+    .sidebar .toggle-btn {
+        display: block;
+    }
+
+}
+
+@media screen and (min-width: 982px) {
+
+    .sidebar {
+        display: none;
+    }
 }
 
 
