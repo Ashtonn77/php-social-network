@@ -59,11 +59,22 @@
         justify-content: flex-end;
     }
 
-    .sidebar .toggle-btn {
+    .toggle-btn {
         display: block;
     }
 
 }
+
+@media screen and (max-width:700px) {
+    .sidebar ul {
+        flex-flow: column;
+    }
+
+    .sidebar ul li {
+        width: 100%;
+    }
+}
+
 
 @media screen and (min-width: 982px) {
 

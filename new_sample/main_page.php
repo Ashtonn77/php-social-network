@@ -17,6 +17,12 @@ $current_date = date("Y-m-d");
 </head>
 <body>
 
+        <div class="toggle-btn" onclick="show()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
 <div class="sub-body">
 
 <div class="top-nav">
@@ -24,7 +30,7 @@ $current_date = date("Y-m-d");
     <nav>          
    
 
-        <div class="logo-search-container">
+        <div class="logo-search-container">           
             <p>Expressive</p>
             <input type="search" name="search-bar" id="search-bar" class="search-bar" placeholder="Looking for someone?">
         <input type="submit" value="&raquo;" name="search-btn" class="search-btn" id="search-btn">
@@ -193,16 +199,11 @@ $current_date = date("Y-m-d");
 </div>
 
      <div class="sidebar">
-        <div class="toggle-btn" onclick="show()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
 
+     <div class="sidebar-search"><input type="search" name="search-bar" id="search-bar" class="search-bar" placeholder="Looking for someone?">
+        <input type="submit" value="&raquo;" name="search-btn" class="search-btn" id="search-btn"></div>
 
-        <ul>
-            <li><input type="search" name="search-bar" id="search-bar" class="search-bar" placeholder="Looking for someone?">
-        <input type="submit" value="&raquo;" name="search-btn" class="search-btn" id="search-btn"></li>
+        <ul>            
             <li><a href="#"><ion-icon name="home-outline" style="color:#fff; --ionicon-stroke-width: 22px;" size="large"></ion-icon><span class="tooltiptext">Home</span></a></li>
             <li><a href="#"><ion-icon name="people-outline" style="color:#fff; --ionicon-stroke-width: 22px;" size="large"></ion-icon><span class="tooltiptext">My Network</span></a></li>
             <li><a href="#"><ion-icon name="mail-open-outline" style="color:#fff; --ionicon-stroke-width: 22px;" size="large"></ion-icon><span class="tooltiptext">Messages</span></a></li>
