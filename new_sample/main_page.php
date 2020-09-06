@@ -104,11 +104,20 @@ $current_date = date("Y-m-d");
                 overlay.classList.add('active');
             }
 
+            function openModalTwo() {
+
+                const modal = document.querySelector('.modal-two');
+                const overlay = document.getElementById('overlay');            
+                if (modal == null) return;
+                modal.classList.add('active');            
+                overlay.classList.add('active');
+            }
+
     </script>
 
         <ul>
             <li><a class="open-post-modal" href="#"><img onclick="openModal()" src="./images/icons_logos/post_something2.png" alt="post_something"></a></li>
-            <li><a href="#"><img src="./images/icons_logos/add_file2.png" alt="attach_file"></a></li>            
+            <li><a href="#"><img onclick="openModalTwo()" src="./images/icons_logos/add_file2.png" alt="attach_file"></a></li>            
         </ul>
     </div>
 
@@ -215,6 +224,7 @@ $current_date = date("Y-m-d");
     </div>
     
     <!-- MODAL FOR POST AND ATTACH BTNS -->
+    <!-- POST MODAL -->
     <div class="modal" id="modal">
 
     <div class="modal-header">
@@ -232,15 +242,75 @@ $current_date = date("Y-m-d");
             }
         </script>
 
-        <div class="title">Some Text</div>
+        <div class="title">If you got somthing to say, say it...</div>
         <button class="close-button" onclick="closeModal()">&times;</button>
     </div>
 
     <div class="modal-body">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod aspernatur nemo dolor ducimus debitis, adipisci minima doloribus. Velit, est repellendus. Fugiat iste earum suscipit ex natus molestias laudantium libero ratione beatae neque sit facilis et quasi architecto ipsa repellat pariatur, voluptatum odio quas. Eaque fugiat quod commodi, nostrum non, distinctio dicta sit aut impedit corporis magnam? Reiciendis, assumenda magnam! Blanditiis dignissimos aperiam eveniet voluptatibus doloremque minima aliquid ad suscipit itaque enim rem at a voluptatum perspiciatis, odit, ullam nam neque!
+        <form action="main_page.php" method="POST">
+            <textarea id=""class="post-modal" placeholder="Speak your truth..."></textarea>
+        <input type="submit" name="post-modal-btn" class="post-modal-btn" value="Post">
+        </form>
     </div>
 
     </div>
+
+            <!-- ATTACH MODAL -->
+        <div class="modal modal-two" id="modal">
+
+    <div class="modal-header">
+
+            <script type="text/javascript">
+        
+            function closeModal() {
+
+                const modal = document.querySelector('.modal');
+                const overlay = document.getElementById('overlay');
+
+                if (modal == null) return;
+                modal.classList.remove('active');
+                overlay.classList.remove('active');
+            }
+
+             function closeModalTwo() {
+
+                const modal = document.querySelector('.modal-two');
+                const overlay = document.getElementById('overlay');
+
+                if (modal == null) return;
+                modal.classList.remove('active');
+                overlay.classList.remove('active');
+            }
+        </script>
+
+        <div class="title">Sometimes words aren't enough</div>
+        <button class="close-button" onclick="closeModalTwo()">&times;</button>
+    </div>
+
+    <div class="modal-body">
+
+            <!-- php file upload test -->
+            <?php
+                if(isset($_FILES['user-file'])){
+                    move_uploaded_file($_FILES['user-file']['tmp_name'], './images/uploads/'.$_FILES['user-file']['name']);
+                    echo "Success";
+                }else{
+                    echo "Fail";
+                }
+            
+            ?>
+
+        <!-- if this dont work make action empty -->
+        <form action="main_page.ph" method="POST" enctype="multipart/form-data">
+
+         <input type="file" name="user-file" class="user-file">
+         <input type="submit" value="Upload" name="attach-file-btn" class="attach-file-btn">   
+          
+        </form>
+    </div>
+
+    </div>       
+
 
     <div class="" id="overlay"></div>
 

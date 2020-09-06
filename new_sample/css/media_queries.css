@@ -72,13 +72,38 @@
 
     .sidebar ul li {
         width: 100%;
+        height: 25%;
     }
 }
-
 
 @media screen and (min-width: 982px) {
 
     .sidebar {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 242px) {
+
+    .sidebar-search input[type="search"] {
+        width: 80%;
+        font-size: 50%;
+        margin-left: 10%;
+    }
+
+    .sidebar-search input[type="submit"] {
+        font-size: 150%;
+        margin-right: 10%;
+    }
+
+    .post-something {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 214px) {
+
+    body {
         display: none;
     }
 }
