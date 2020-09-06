@@ -28,6 +28,19 @@ body {
   overflow: scroll;
 }
 
+.tile {
+  padding: 10px;
+  border: 0;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #000;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
 .sub-body {
   width: 100vw;
   height: 100vh;
@@ -592,6 +605,64 @@ body {
 }
 
 
-
-
 /*END MODALS FOR POST AND ATTACH BTNS*/
+
+
+
+
+/*PROFILE_MAIN*/
+
+.wrapper {
+  height: 94vh;
+  width: 100vw;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wrapper div:first-child {
+  margin-top: 20px;
+}
+
+.profile-first {
+  width: 90%;
+
+}
+
+.personal-info {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  min-height: 520px;
+  max-height: 520px;
+  text-align: center;
+}
+
+.personal-info .profile-pic {
+  height: 40%;
+}
+
+.personal-info .profile-pic img {
+  width: 150px;
+
+}
+
+.personal-info .personal-details {
+  height: 60%;
+  max-height: 550px;
+}
+
+.personal-info .personal-details p {
+  margin: 15px 10px 0 0;
+  font-size: 90%;
+}
+
+.personal-info .personal-details p span {
+  font-weight: 600;
+  letter-spacing: 0.8px;
+}
+
+/*END PROFILE_MAIN*/

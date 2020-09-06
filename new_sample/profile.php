@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Profile</title>
     <link rel="stylesheet" href="./css/style.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="./css/media_queries.css?v=<?php echo time(); ?>">
 </head>
@@ -56,7 +56,21 @@
         </div>
 
 
-        <div class="main-container">
+        <div class="wrapper">
+
+            <div class="personal-info tile profile-first">
+                <div class="profile-pic">
+                    <img src="./images/lion.png" alt="profile-pic">
+                </div>
+
+                <div class="personal-details">
+                    <p><span>What they call me:</span><br> Ashton Naidoo</p>
+                    <p><span>Date landed on planet Earth:</span><br>05-10-88</p>
+                    <p><span>Ruling lands:</span><br> Seatides, Durban</p>
+                    <p><span>Place of study/work:</span><br> Richfield</p>
+                </div>
+
+            </div>
 
         </div>
 
