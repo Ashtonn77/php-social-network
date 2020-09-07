@@ -5,6 +5,7 @@
   --base-clr: #026873;
   --btn-hover-one: #03a678;
   --name-clr: #2f3547;
+  --lighter-base: #d9ecf5;
 }
 
 * {
@@ -29,12 +30,13 @@ body {
 }
 
 .tile {
-  padding: 10px;
+  padding: 12px;
   border: 0;
   border-radius: 5px;
   background-color: #fff;
   color: #000;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3),
+    0 4px 6px -2px rgba(0, 0, 0, 0.1);
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
@@ -52,7 +54,6 @@ body {
 /**TOP NAV**/
 
 .top-nav {
-  position: static;
   height: 6vh;
   width: 100vw;
   background-color: var(--base-clr);
@@ -355,7 +356,7 @@ body {
 /*SIDEBAR ON SMALL SCREENS*/
 .sidebar {
   z-index: 5;
-  position: absolute;
+  position: fixed;
   width: 100vw;
   height: 94%;
   min-height: 820px;
@@ -405,11 +406,9 @@ body {
   font-size: 80%;
 }
 
-
 .sidebar ul li:hover {
   border: 1px solid #fff;
 }
-
 
 .toggle-btn {
   position: absolute;
@@ -473,8 +472,6 @@ body {
 
 /*END SIDEBAR ON SMALL SCREENS*/
 
-
-
 /*MODALS FOR POST AND ATTACH BTNS*/
 .modal {
   position: fixed;
@@ -516,7 +513,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
 
 .modal-header .title {
@@ -552,7 +548,7 @@ body {
   -o-border-radius: 5px;
 }
 
-.modal-body input[type='submit'] {
+.modal-body input[type="submit"] {
   padding: 4px 14px;
   background-color: var(--base-clr);
   color: #fff;
@@ -572,13 +568,13 @@ body {
   -o-transition: all 0.3s ease;
 }
 
-.modal-body input[type='submit']:hover {
+.modal-body input[type="submit"]:hover {
   cursor: pointer;
   background-color: var(--btn-hover-one);
   color: #000;
 }
 
-.modal-body input[type='file'] {
+.modal-body input[type="file"] {
   font-size: 80%;
   border: 0;
 }
@@ -604,21 +600,18 @@ body {
   pointer-events: all;
 }
 
-
 /*END MODALS FOR POST AND ATTACH BTNS*/
-
-
-
 
 /*PROFILE_MAIN*/
 
 .wrapper {
   height: 94vh;
-  width: 100vw;
+  width: 90%;
   display: flex;
   flex-flow: column;
   justify-content: space-between;
   align-items: center;
+  margin: 0 auto;
 }
 
 .wrapper div:first-child {
@@ -626,19 +619,19 @@ body {
 }
 
 .profile-first {
-  width: 90%;
-
+  width: 100%;
+  margin: 20px 0;
 }
 
+/*PERSONAL INFO*/
 .personal-info {
   display: flex;
   flex-flow: column;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
-  min-height: 520px;
-  max-height: 520px;
+  height: fit-content;
   text-align: center;
+  min-height: 520px;
 }
 
 .personal-info .profile-pic {
@@ -647,7 +640,6 @@ body {
 
 .personal-info .profile-pic img {
   width: 150px;
-
 }
 
 .personal-info .personal-details {
@@ -657,12 +649,149 @@ body {
 
 .personal-info .personal-details p {
   margin: 15px 10px 0 0;
-  font-size: 90%;
+  font-size: 80%;
 }
 
 .personal-info .personal-details p span {
   font-weight: 600;
   letter-spacing: 0.8px;
 }
+
+/*BIO*/
+.bio-and-spirit-animal {
+  height: fit-content;
+  font-size: 75%;
+}
+
+.bio-and-spirit-animal p {
+  font-size: 90%;
+}
+
+.bio-and-spirit-animal p:first-child {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, .4);
+}
+
+.bio-and-spirit-animal .bio-heading {
+  display: block;
+  font-weight: 600;
+  font-size: 110%;
+  margin-bottom: 5px;
+  letter-spacing: 0.8px;
+}
+
+
+/*HOBBIES*/
+.hobbies-and-interests {
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #d9ecf5;
+}
+
+.hobbies-and-interests h3 {
+  margin-top: 10px;
+}
+
+.hobbies {
+  margin: auto 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hobbies .hobbie-tile {
+  text-align: center;
+  height: 22%;
+  width: 100%;
+
+}
+
+.hobbies .hobbie-tile img {
+  width: 60px;
+}
+
+
+/*BUCKET-LIST*/
+.bucket-list-and-goals {
+  height: 100%;
+  width: 100%;
+}
+
+.bucket-list-and-goals ul {
+  font-size: 80%;
+}
+
+.bucket-list-and-goals ul li {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.bucket-list-and-goals ul li span {
+  font-weight: 700;
+}
+
+.bucket-list-and-goals .bucket-list {
+  margin-bottom: 15px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, .4);
+}
+
+
+/*FRIENDS*/
+.friends {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--lighter-base);
+}
+
+.friends a {
+  text-decoration: none;
+}
+
+.friends .friend-mini-profile {
+  width: 100%;
+  height: 18%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 80%;
+}
+
+.friends .friend-mini-profile img {
+  width: 50px;
+  margin-right: 5%;
+}
+
+.friends a:last-child {
+  color: var(--base-clr);
+  padding-bottom: 3px;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.friends a:last-child:hover {
+  color: var(--btn-hover-one);
+  border-bottom: 1px solid var(--btn-hover-one);
+}
+
+
+
+
 
 /*END PROFILE_MAIN*/
