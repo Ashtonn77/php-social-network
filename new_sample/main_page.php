@@ -10,6 +10,17 @@
     <link rel="stylesheet" href="./css/media_queries.css?v=<?php echo time(); ?>">
 
 </head>
+
+<script>
+
+function show(){
+
+    document.querySelector('.sidebar').classList.toggle('active');   
+    
+}
+
+</script>
+
 <body>
 
         <div class="toggle-btn" onclick="show()">

@@ -1,3 +1,5 @@
+/*HOME*/
+
 @media screen and (max-width: 1171px) {
 
     .right-section h4 {
@@ -117,4 +119,92 @@
     .post-body {
         font-size: 110%;
     }
+}
+
+
+/*PROFILE*/
+
+@media screen and (min-width: 517px) {
+    .hobbies-and-interests h3 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hobbies-and-interests {
+        flex-flow: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        height: 500px;
+    }
+
+    .hobbies-and-interests .hobbie-tile {
+        text-align: center;
+        height: 40%;
+        width: 46%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hobbies-and-interests .hobbie-tile img {
+        width: 90px;
+    }
+
+}
+
+@media screen and (min-width: 650px) {
+
+    .personal-info {
+        flex-flow: row;
+        justify-content: space-evenly;
+        height: 1000px;
+    }
+
+    .personal-info .profile-pic {
+        height: 100%;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .personal-info .profile-pic img {
+        max-width: 250px;
+        width: 60%;
+    }
+
+    .personal-info .personal-details p {
+        font-size: 90%;
+    }
+
+    .personal-info .personal-details p:first-child {
+        margin-top: 58px;
+    }
+
+    .friends {
+        flex-flow: row;
+        flex-wrap: wrap;
+    }
+
+    .friends .friend-mini-profile {
+        width: 48%;
+        height: 36%;
+        justify-content: space-evenly;
+        margin: 0 auto;
+    }
+
+    .friends .friend-mini-profile img {
+        width: 90px;
+    }
+
+    .friends .friend-mini-profile p {
+        font-size: 110%;
+    }
+
+    .friends h3,
+    .friends a:last-child {
+        width: 100%;
+        text-align: center;
+    }
+
 }

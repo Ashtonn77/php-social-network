@@ -9,6 +9,19 @@
     <link rel="stylesheet" href="./css/media_queries.css?v=<?php echo time(); ?>">
 </head>
 
+
+<script>
+
+function show(){
+
+    document.querySelector('.sidebar').classList.toggle('active');   
+    
+}
+
+</script>
+
+
+
 <body>
     <div class="toggle-btn" onclick="show()">
         <span></span>
@@ -60,6 +73,8 @@
 
             <!-- personal info -->
             <div class="personal-info tile profile-first">
+
+                
                 <div class="profile-pic">
                     <img src="./images/lion.png" alt="profile-pic">
                 </div>
@@ -92,7 +107,7 @@
             <!-- hobbies and interests -->
             <div class="hobbies-and-interests tile profile-first">
                     <h3>Hobbies:</h3>
-                <div class="hobbies">
+                
 
                     <div class="hobbie-tile tile"> 
                             <img src="./images/hobbies/coding.png" alt="hobbie-1" class="hobbie-1">
@@ -111,7 +126,7 @@
                     </div>     
                 
 
-                </div>
+                
 
             </div>
 
@@ -173,7 +188,7 @@
                     <p>Christopher Nolan</p>
                 </a>
 
-                <a href="#">See more...</a>
+                <a class="see-more" href="#">See more...</a>
             </div>
 
 
@@ -218,7 +233,7 @@
         </ul>
 
     </div>
-    <script src="./js/script.js"></script>
+   
     <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
 </body>
 
