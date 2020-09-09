@@ -77,8 +77,43 @@
 
 .err-msg {
     color: #bb0000;
+    font-weight: 700;
 }
 
 .success-msg {
     color: #008f00;
+    font-weight: 700;
+}
+
+.already-registered {
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    margin-right: 5px;
+}
+
+.already-registered span {
+    color: #fff;
+    font-size: 65%;
+
+}
+
+.already-registered .sub-reg-log {
+    font-weight: 700;
+    color: var(--btn-base-color);
+    font-size: 70%;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+}
+
+.already-registered .sub-reg-log:hover {
+    color: var(--btn-hover-color);
+}
+
+.sub-con-reg {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

@@ -1,38 +1,39 @@
-<?php
-$connect = mysqli_connect("localhost", "root", "", "expressive_db");
+<?php 
+  
 
-if (mysqli_connect_errno()) {
-    echo "Failed to connect - " . mysqli_connect_errno();
-}
-
+    require 'helpers/config_template.php';
+   
     $error_array = array();
 
-    if(isset($_POST['log_submit'])){
-
-        
+    if(isset($_POST['log_submit'])){        
 
         $email = filter_var($_POST['log_email'], FILTER_SANITIZE_EMAIL);
-        $password = md5($_POST['log_password']);
+        $password = md5($_POST['log_password']);       
 
-       $login_query = mysqli_query($connect, "SELECT * FROM users WHERE email='$email' AND password='$password'");
+        $login_query = mysqli_query($connect, "SELECT * FROM users WHERE email='$email' AND password='$password'");
         $check_query = mysqli_num_rows($login_query);
 
-    if($check_query == 1){
 
-        $row = mysqli_fetch_array($login_query);
-        $username = $row['username'];
+        if($check_query == 1){
 
-        $_SESSION['username'] = $username;
-        header('Location: main_page.php');
-        exit();
+            $row = mysqli_fetch_array($login_query);      
+        
+            $username = $row['username'];
 
-        }
-        else{
-           
-            array_push($error_array, "Login failed...Email or password incorrect");
+            $_SESSION['username'] = $username;        
+            
+            header("Location: main_page.php?username=".$username);
+            exit();
 
-        }
-       
+            
+
+            }
+            else{
+            
+                array_push($error_array, "Login failed...Email or password incorrect");
+
+            }
+        
     }
 
 
@@ -49,7 +50,7 @@ if (mysqli_connect_errno()) {
     <title>Login</title>
     <link href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./css/initial_styles/style.css?v=<?php echo time(); ?>">
-    <link rel="stylesheet" type="text/css" href="../resources/css/queries.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" type="text/css" href="./css/initial_styles/queries.css?v=<?php echo time(); ?>">
 </head>
 
 <body>
@@ -71,7 +72,7 @@ if (mysqli_connect_errno()) {
                 <label for="password">Password:</label>
                 <input type="password" name="log_password" id="log_password" placeholder="Now, your password__" required>
 
-                <span class=""><?php if(in_array("Login failed...Email or password incorrect", $error_array)){echo "Login failed...Email or password incorrect";}?></span>
+                <span class="err-msg"><?php if(in_array("Login failed...Email or password incorrect", $error_array)){echo "Login failed...Email or password incorrect";}?></span>
 
                 <ul class="form-btns-main">
                     <li><input type="submit" name="log_submit" value="login"></li>

@@ -1,10 +1,6 @@
 <?php
-session_start(); //starts a session...keeps values from being removed from text fields every time an action is performed
-$connect = mysqli_connect("localhost", "root", "", "expressive_db");
 
-if (mysqli_connect_errno()) {
-    echo "Failed to connect - " . mysqli_connect_errno();
-}
+require 'helpers/config_template.php';
 
 //variables form form
 $first_name = "";
@@ -146,9 +142,9 @@ if (isset($_POST['reg_submit_btn'])) {
     <title>Register</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./css/initial_styles/style.css">
-    <link rel="stylesheet" type="text/css" href="./css/initial_styles/queries.css">
-    <link rel="stylesheet" type="text/css" href="./css/initial_styles/reg-style.css">
+    <link rel="stylesheet" type="text/css" href="./css/initial_styles/style.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" type="text/css" href="./css/initial_styles/queries.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" type="text/css" href="./css/initial_styles/reg-style.css?v=<?php echo time(); ?>">
 </head>
 
 <body>
@@ -218,7 +214,11 @@ if (isset($_POST['reg_submit_btn'])) {
                 
 
 
-                <input type="submit" name="reg_submit_btn" value="Register">
+               
+                    <div class="sub-con-reg">
+                        <input type="submit" name="reg_submit_btn" value="Register">
+                    <a href="login_2.php" class="already-registered"><span>Already with us?</span> <span class="sub-reg-log">Login here</span></a>  
+                    </div>              
                 <span class="success-msg"><?php if(in_array("You're good to go. Let's do this thing :)", $error_array)){echo "You're good to go. Let's do this thing :)";}?></span>
 
 

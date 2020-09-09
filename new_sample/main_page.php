@@ -1,3 +1,10 @@
+<?php
+
+require 'helpers/config_template.php';
+require 'helpers/check_session.php';
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -48,7 +55,7 @@ function show(){
             <li><a href="#"><ion-icon name="mail-open-outline" style="color:#fff;"></ion-icon></a></li>
             <li><a href="#"><ion-icon name="notifications-outline" style="color:#fff;"></ion-icon></a></li>
             <li><a href="#"><img src="./images/lion.png" alt="profile-pic" width="20px"></a></li>
-            <li><a href="#"><ion-icon name="log-out-outline" style="color:#fff;"></ion-icon></a></li>
+            <li><a href="logout.php"><ion-icon name="log-out-outline" style="color:#fff;"></ion-icon></a></li>
         </ul>
 
     </nav>
@@ -224,7 +231,7 @@ function show(){
             <li><a href="#"><ion-icon name="mail-open-outline" style="color:#fff; --ionicon-stroke-width: 22px;" size="large"></ion-icon><span class="tooltiptext">Messages</span></a></li>
             <li><a href="#"><ion-icon name="notifications-outline" style="color:#fff; --ionicon-stroke-width: 22px;" size="large"></ion-icon><span class="tooltiptext">Notifications</span></a></li>
             <li><a href="#"><img src="./images/lion.png" alt="profile-pic" width="30px" size="large"><span class="tooltiptext">My profile</span></a></li>
-            <li><a href="#"><ion-icon name="log-out-outline" style="color:#fff; --ionicon-stroke-width: 22px;" size="large"></ion-icon><span class="tooltiptext">Logout</span></a></li>
+            <li><a href="logout.php"><ion-icon name="log-out-outline" style="color:#fff; --ionicon-stroke-width: 22px;" size="large"></ion-icon><span class="tooltiptext">Logout</span></a></li>
         </ul>
 
     </div>

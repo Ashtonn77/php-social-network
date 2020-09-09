@@ -1,3 +1,10 @@
+<?php
+
+require 'helpers/config_template.php';
+require 'helpers/check_session.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

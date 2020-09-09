@@ -51,6 +51,19 @@
     }
 }
 
+@media screen and (max-width:549px) {
+    .form-btns-bottom {
+        flex-flow: column;
+    }
+
+}
+
+@media screen and (max-width:490px) {
+    .sub-con-reg {
+        flex-flow: column;
+    }
+}
+
 @media screen and (max-width:400px) {
 
     .login-form label {
@@ -81,6 +94,12 @@
 
     }
 
+}
+
+@media screen and (max-width:179px) {
+    body {
+        display: none;
+    }
 }
 
 
