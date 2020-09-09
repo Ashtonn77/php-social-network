@@ -1,0 +1,179 @@
+/*********************
+/  LOGIN             /
+/********************/
+
+@media screen and (max-width:805px) {
+
+
+    .login-form label {
+        font-size: 90%;
+    }
+
+    .login-form input {
+        font-size: 80%;
+        padding: 3px;
+    }
+
+    .form-btns-main li a:link,
+    .form-btns-main li a:visited {
+        font-size: 80%;
+        padding: 3px 12px;
+
+    }
+
+    .form-btns-bottom {
+        font-size: 90%;
+    }
+
+    footer ul li a {
+        font-size: 70%;
+    }
+
+    footer p {
+        font-size: 50%;
+
+    }
+}
+
+@media screen and (max-width:617px) {
+
+    .form-btns-bottom {
+        display: flex;
+        flex-flow: column;
+    }
+
+    .form-btns-bottom li:first-child {
+        margin-bottom: 1%;
+    }
+
+    .form-btns-main li input {
+        width: 100px;
+    }
+}
+
+@media screen and (max-width:400px) {
+
+    .login-form label {
+        font-size: 80%;
+    }
+
+    .login-form input {
+        font-size: 70%;
+        padding: 1.5px;
+    }
+
+    .form-btns-main li input {
+        font-size: 80%;
+        padding: 1.5px 6px;
+
+    }
+
+    .form-btns-bottom {
+        font-size: 80%;
+    }
+
+    footer ul li a {
+        font-size: 60%;
+    }
+
+    footer p {
+        font-size: 40%;
+
+    }
+
+}
+
+
+/*********************
+/    HOME            /
+/********************/
+
+
+@media screen and (max-width:905px) {
+    h1 {
+        font-size: 150%;
+    }
+
+    h3 {
+        font-size: 80%;
+    }
+
+    .header-container ul li a:link,
+    .header-container ul li a:visited {
+        padding: 3px 15px;
+        font-size: 70%;
+    }
+}
+
+@media screen and (max-width:678px) {
+    h1 {
+        font-size: 120%;
+    }
+
+    h3 {
+        font-size: 60%;
+    }
+
+    header nav ul li a {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+    }
+}
+
+
+/*********************
+/    REGISTER        /
+/********************/
+
+
+@media screen and (max-width:550px) {
+
+    .reg-form input[type='submit'] {
+        padding: 2px 1px;
+        font-size: 60%;
+        width: 100px !important;
+    }
+
+    .reg-form span {
+        font-size: 60% !important;
+    }
+
+    .reg-form label {
+        font-size: 75% !important;
+    }
+
+}
+
+@media screen and (max-width:400px) {
+    .reg-form input {
+        padding: 0;
+        font-size: 45% !important;
+    }
+
+    .reg-form label {
+        font-size: 65% !important;
+    }
+
+    .reg-form input[type='submit'] {
+        padding: 2px 1px;
+        font-size: 60% !important;
+        width: 100px !important;
+    }
+}
+
+
+@media screen and (max-height:750px) {
+
+    .top-nav {
+        margin-bottom: 10%;
+    }
+
+    footer {
+        display: none;
+    }
+
+
+}

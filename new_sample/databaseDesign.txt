@@ -25,7 +25,6 @@ CREATE TABLE Posts(
 'user_id' int(20) NOT NULL,
 'posted_by' VARCHAR(50), //username
 'post_body'  text,
-'type' ENUM('image', 'video'),
 'post_likes', int()//default 0
 'date_created' DATE NOT NULL, //posted on date
 'date_updated' DATE,
@@ -36,9 +35,9 @@ FOREIGN KEY ('user_id') REFERENCES Users('user_id')
 
 /***********************************************************/
 
-CREATE TABLE Followings(
+CREATE TABLE Friends(
 'user_id' INT NOT NULL, 
-'following_id' INT NOT NULL, 
+'friend_id' INT NOT NULL, 
 'date_created' DATE NOT NULL,
 PRIMARY KEY ('user_id', 'following_id'),
 UNIQUE INDEX ('following_id', 'user_id')
