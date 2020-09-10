@@ -11,8 +11,8 @@
 
 <body>
         
-    <h1 class="almost">You're almost there</h1>
-    <form action="final-reg.php" method="POST" class="final-reg-form">
+   
+    <form action="final_reg.php" method="POST" class="final-reg-form">
     
     <div class="left-top">
 
@@ -45,22 +45,22 @@
     <div class="right-bottom">
 
         <label for="reg-user-bio">Bio:</label>
-        <textarea name="reg-user-bio" id="reg-user-bio" placeholder="Tell us about yourself__"></textarea>
+        <textarea class="reg-user-bio"" name="reg-user-bio" id="reg-user-bio" placeholder="Tell us a lil' about yourself__"></textarea>
 
         <div class="reg-hobbies">
             <label for="reg-hobbies">Hobbies:</label>
-            <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="reg-hobbies" value="music">&nbsp; Music<br>
-            <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="reg-hobbies" value="coding">&nbsp; Coding<br>
-            <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="reg-hobbies" value="cooking">&nbsp; Fishing<br>
-            <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="reg-hobbies" value="cooking">&nbsp; Cooking<br>
-            <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="reg-hobbies" value="gaming">&nbsp; Gaming<br>
-            <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="reg-hobbies" value="exercising">&nbsp; Workout<br>
-            <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="reg-hobbies" value="movies">&nbsp; Movies<br>
-            <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="reg-hobbies" value="painting">&nbsp; Painting<br>
-            <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="reg-hobbies" value="reading">&nbsp; Reading<br>
-            <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="reg-hobbies" value="travelling">&nbsp; Travelling<br>
+            <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="reg-hobbies" value="music">&nbsp; <span>Music</span> <br>
+            <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="reg-hobbies" value="coding">&nbsp; <span>Coding</span><br>
+            <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="reg-hobbies" value="cooking">&nbsp; <span>Fishing</span> <br>
+            <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="reg-hobbies" value="cooking">&nbsp; <span>Cooking</span><br>
+            <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="reg-hobbies" value="gaming">&nbsp; <span>Gaming</span><br>
+            <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="reg-hobbies" value="exercising">&nbsp; <span>Workout</span><br>
+            <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="reg-hobbies" value="movies">&nbsp; <span>Movies</span> <br>
+            <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="reg-hobbies" value="painting">&nbsp; <span>Painting</span><br>
+            <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="reg-hobbies" value="reading">&nbsp; <span>Reading</span><br>
+            <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="reg-hobbies" value="travelling">&nbsp; <span>Travelling</span><br>
         </div>
-
+        <div class="space"></div>
         <div class="reg-bucket-list">
 
             <label for="reg-bucket-list">Bucket list:</label>

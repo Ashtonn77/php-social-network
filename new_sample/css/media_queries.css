@@ -208,3 +208,50 @@
     }
 
 }
+
+/*final-reg*/
+@media screen and (max-width:611px) {
+    .final-reg-form {
+        flex-flow: column;
+        min-height: 1500px;
+    }
+
+    .final-reg-form .left-top,
+    .final-reg-form .right-bottom {
+        margin: 20px 0;
+    }
+}
+
+@media screen and (max-width: 300px) {
+
+    .final-reg-form .left-top input[type='text'],
+    .final-reg-form .left-top input[type='date'],
+    .final-reg-form .right-bottom input[type='text'] {
+        padding: 2px 5px;
+        margin-bottom: 9px;
+        width: 100%;
+        font-size: 58%;
+    }
+
+    .final-reg-form .left-top label,
+    .final-reg-form .right-bottom label {
+        font-size: 65%;
+        margin: 4px 0 3px 0;
+
+    }
+
+    .reg-user-bio {
+        font-size: 58%;
+    }
+
+    .reg-hobbies span {
+        font-size: 65%;
+    }
+
+    .final-reg-form .right-bottom input[type='submit'] {
+        padding: 3px 11px;
+        font-size: 60%;
+
+    }
+
+}

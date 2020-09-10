@@ -802,20 +802,105 @@ body {
   max-width: 1140px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-
+  min-height: 840px;
+  overflow: auto;
 }
 
 
 .final-reg-form .left-top,
 .final-reg-form .right-bottom {
-  width: 47%;
+  width: 80%;
+  max-width: 450px;
   border: 2px solid #fff;
   padding: 15px;
+  margin: 0 10px;
+  height: fit-content;
 }
 
 .final-reg-form .left-top {
   display: flex;
   flex-flow: column;
+  max-width: 450px;
+
+}
+
+.final-reg-form .left-top input[type='text'],
+.final-reg-form .left-top input[type='date'],
+.final-reg-form .right-bottom input[type='text'] {
+  padding: 4px 8px;
+  margin-bottom: 11px;
+  width: 100%;
+  font-size: 68%;
+  border: 0;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.final-reg-form .left-top label,
+.final-reg-form .right-bottom label {
+  font-size: 75%;
+  margin: 8px 0 5px 0;
+  display: block;
+  font-weight: 600;
+}
+
+.reg-user-bio {
+  margin-bottom: 12px;
+  padding: 7px;
+  width: 100%;
+  border: 0;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.space {
+  margin: 15px 0;
+}
+
+.reg-hobbies {
+  margin-bottom: 6px;
+}
+
+.reg-hobbies span {
+  font-size: 75%;
+}
+
+.final-reg-form .right-bottom input[type='submit'] {
+  padding: 4px 14px;
+  background-color: var(--base-clr);
+  color: #fff;
+  font-size: 70%;
+  font-weight: 600;
+  border: 0;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.final-reg-form .right-bottom input[type='submit']:hover {
+  cursor: pointer;
+  background-color: var(--btn-hover-one);
+  color: #000;
+}
+
+.almost {
+  font-size: 80%;
+  margin-bottom: -30px;
+  padding: 20px;
 }
