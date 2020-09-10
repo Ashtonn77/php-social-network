@@ -6,6 +6,7 @@
   --btn-hover-one: #03a678;
   --name-clr: #2f3547;
   --lighter-base: #d9ecf5;
+  --err-msg: #bb0000;
 }
 
 * {
@@ -240,6 +241,7 @@ body {
 /*NEWS FEED*/
 
 .news-feed {
+  margin-bottom: 40px;
   background-color: #fff;
   padding: 15px;
   border: 0;
@@ -602,6 +604,14 @@ body {
   pointer-events: all;
 }
 
+
+.modal-body .err-msg {
+  display: block;
+  font-size: 60%;
+  color: var(--err-msg);
+  margin: 5px 0 -10px 5px;
+}
+
 /*END MODALS FOR POST AND ATTACH BTNS*/
 
 /*PROFILE_MAIN*/
@@ -780,3 +790,32 @@ body {
 }
 
 /*END PROFILE_MAIN*/
+
+
+/*SECOND REGISTRATION FORM*/
+
+
+
+.final-reg-form {
+  height: 100vh;
+  width: 90%;
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+
+.final-reg-form .left-top,
+.final-reg-form .right-bottom {
+  width: 47%;
+  border: 2px solid #fff;
+  padding: 15px;
+}
+
+.final-reg-form .left-top {
+  display: flex;
+  flex-flow: column;
+}
