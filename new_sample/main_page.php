@@ -2,6 +2,7 @@
 
 require 'helpers/config_template.php';
 require 'helpers/check_session.php';
+require 'functions/carrier.php';
 
 $error_array = array();
 
@@ -200,25 +201,23 @@ function show(){
 
 <div class="main-container">
 
-
-
  <!-- user logged in info      -->
     <section class="left-section">
         <img src="./images/lion.png" alt="pro-pic">
 
        <div class="top-personals">
-            <p class="full-name">Ashton Naidoo</p>
-            <p class="school">Student at Richfield</p>
-            <p class="tag-line">I love Coding</p>
+            <p class="full-name"><?=$name;?></p>
+            <p class="school"><?=$prof_line;?></p>
+            <p class="tag-line"><?=$tag_line;?></p>
        </div>
 
        <div class="middle-personals">
            <p class="spirit-animal">Ashton's spirit animal is the lion</p>
-           <p class="favorite-movie"><span>Favourite Movie:</span> The Great Gatsby</p>
-           <p class="favorite-book"><span>Favourite Book: </span> Looking for Alaska</p>
-           <p class="favorite-artist"><span>Favourite Artist:</span> Tupac</p>
-           <p class="favorite-song"><span>Favourite Song: </span> As soon as I get home</p>
-           <p class="favorite-food"><span>Favourite Food:</span> Flapjacks</p>
+           <p class="favorite-movie"><span>Favourite Movie:</span><?=$fav_movie;?></p>
+           <p class="favorite-book"><span>Favourite Book: </span><?=$fav_book;?></p>
+           <p class="favorite-artist"><span>Favourite Artist:</span><?=$fav_artist;?></p>
+           <p class="favorite-song"><span>Favourite Song: </span><?=$fav_song;?></p>
+           <p class="favorite-food"><span>Favourite Food:</span><?=$fav_food;?></p>
        </div>
        
        <div class="bottom-personals">

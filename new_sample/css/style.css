@@ -861,8 +861,10 @@ body {
   -o-border-radius: 5px;
 }
 
-.space {
+.chkbox-err {
   margin: 15px 0;
+  font-size: 70%;
+  color: var(--err-msg);
 }
 
 .reg-hobbies {

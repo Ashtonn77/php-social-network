@@ -82,3 +82,53 @@ UNIQUE INDEX ('post_id', 'user_id'),
 FOREIGN KEY ('post_id') REFERENCES Posts('post_id'),
 FOREIGN KEY ('user_id') REFERENCES User('user_id')
 );
+
+
+/*********************************************************/
+
+CREATE TABLE preferences(
+pref_id Primary	int(11)	AUTO_INCREMENT
+user_id	int(11)		
+birthday	date	
+prof_line	varchar(50)	
+tag_line	varchar(50)		
+fav_movie	varchar(50)	
+fav_book	varchar(50)		
+fav_artist	varchar(50)		
+fav_song	varchar(50)		
+fav_food	varchar(50)	
+bio
+)
+
+/*********************************************************/
+
+
+CREATE hobbies(
+hobbies_id Primary	int(11)AUTO_INCREMENT
+user_id	int(11)		
+hobbie_1	varchar(15)		
+hobbie_2	varchar(15)	
+hobbie_3	varchar(15)
+hobbie_4
+
+)
+
+
+/*********************************************************/
+
+
+CREATE aspirations(
+aspirations_id Primary	int(11)	AUTO_INCREMENT
+user_id	int(11)	
+bucket_list_1	text	
+bucket_list_2	text	
+bucket_list_3	text		
+bucket_list_4	text	op	
+More More
+	7	goals_1	text	
+goals_2	text	
+goals_3	text	
+goals_4
+
+
+)

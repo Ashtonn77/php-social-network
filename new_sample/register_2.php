@@ -124,6 +124,8 @@ if (isset($_POST['reg_submit_btn'])) {
     $_SESSION['reg_last_name'] = "";
     $_SESSION['reg_email'] = "";
 
+    $_SESSION['username'] = $username; 
+
     header("Location: login_2.php");
 
     }
