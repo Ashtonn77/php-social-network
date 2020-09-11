@@ -648,6 +648,14 @@ body {
 
 .personal-info .profile-pic {
   height: 40%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.personal-info .profile-pic .change-pro-pic {
+  margin-top: 15px;
 }
 
 .personal-info .profile-pic img {

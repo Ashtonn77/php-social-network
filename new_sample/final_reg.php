@@ -31,7 +31,7 @@ else{
          /*$post_body = strip_tags($post_body); //removes all html tags
          $post_body = mysqli_real_escape_string($connect, $post_body);*/
 
-    //      $last_name = strip_tags($_POST['reg_last_name']);
+    // $last_name = strip_tags($_POST['reg_last_name']);
     // $last_name = str_replace(' ', '', $last_name);
     // $last_name = ucfirst(strtolower($last_name));
 

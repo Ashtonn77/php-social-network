@@ -1,7 +1,7 @@
 <?php
 
-require '/helpers/config_template.php';
-require 'user_functions.php';
+    require 'user_functions.php';
+    require 'check_session.php';
 
     if($currentUserLoggedIn){
 
@@ -25,6 +25,5 @@ require 'user_functions.php';
         $bio = $preferences_res['bio'];
                 
       }
-
 
 ?>

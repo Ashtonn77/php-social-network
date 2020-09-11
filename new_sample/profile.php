@@ -2,6 +2,7 @@
 
 require 'helpers/config_template.php';
 require 'helpers/check_session.php';
+require 'helpers/get_details.php';
 
 ?>
 
@@ -82,8 +83,10 @@ function show(){
             <div class="personal-info tile profile-first">
 
                 
+                
                 <div class="profile-pic">
                     <img src="./images/lion.png" alt="profile-pic">
+                    <div class="change-pro-pic">change pro pic test</div>
                 </div>
 
                 <div class="personal-details">
@@ -93,14 +96,18 @@ function show(){
                     <p><span>Place of study/work:</span><br> Richfield</p>
                 </div>
 
+                
+
             </div>
+
+            
 
              <!-- bio section and spirit animal -->
             <div class="bio-and-spirit-animal tile profile-first">
 
                 <p class="bio">
                     <span class="bio-heading">Bio:</span>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias tempora exercitationem aliquid nulla iure illo itaque dolorem eveniet voluptatibus! Dicta ducimus quaerat exercitationem quae distinctio hic, cupiditate assumenda praesentium eum aut officia qui beatae cum porro rem quam eius! Exercitationem dignissimos asperiores aut ipsum ullam repudiandae neque! Illo exercitationem fuga numquam dignissimos. Sit aperiam inventore esse magni possimus similique voluptas fugit non reiciendis dolorum modi minima cumque provident, dolores ducimus quibusdam sunt accusantium unde quisquam labore! Aperiam nobis vitae recusandae numquam sint perferendis aspernatur, quidem veniam eligendi et quo qui dolores autem. Veritatis corporis labore accusantium voluptatum omnis, ad maxime.
+                    <?=$bio;?>
                 </p>
 
                 <p class="spirit-animal">

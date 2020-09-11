@@ -2,7 +2,7 @@
 
 require 'helpers/config_template.php';
 require 'helpers/check_session.php';
-require 'functions/carrier.php';
+require 'helpers/get_details.php';
 
 $error_array = array();
 
