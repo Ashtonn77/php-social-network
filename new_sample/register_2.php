@@ -199,6 +199,10 @@ if (isset($_POST['reg_submit_btn'])) {
                     }?></span>
 
 
+                    <label for="birthday">Birthday:</label>
+                    <input type="date" id="birthday" name="birthday">       
+
+
                 
                 <label for="reg_password">Password:</label>
                 <input type="password" name="reg_password" id="reg_password">

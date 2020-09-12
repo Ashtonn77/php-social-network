@@ -15,6 +15,8 @@ require 'helpers/get_details.php';
     <title>Profile</title>
     <link rel="stylesheet" href="./css/style.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="./css/media_queries.css?v=<?php echo time(); ?>">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 </head>
 
 
@@ -86,7 +88,15 @@ function show(){
                 
                 <div class="profile-pic">
                     <img src="./images/lion.png" alt="profile-pic">
-                    <div class="change-pro-pic">change pro pic test</div>
+                    <div class="change-pro-pic">
+                        <input type="file" name="file" id="file">
+                        <label for="file">
+                            <span class="material-icons">
+                            add_photo_alternate
+                            </span>&nbsp;
+                            Change profile pic
+                        </label>
+                    </div>
                 </div>
 
                 <div class="personal-details">

@@ -7,6 +7,8 @@
   --name-clr: #2f3547;
   --lighter-base: #d9ecf5;
   --err-msg: #bb0000;
+  --bx-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3),
+    0 4px 6px -2px rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -36,8 +38,7 @@ body {
   border-radius: 5px;
   background-color: #fff;
   color: #000;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3),
-    0 4px 6px -2px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--bx-shadow);
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
@@ -158,8 +159,7 @@ body {
   padding: 10px;
   font-size: 90%;
   text-align: center;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3),
-    0 4px 6px -2px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--bx-shadow);
 }
 
 .left-section img {
@@ -206,8 +206,7 @@ body {
   padding: 5px;
   margin-bottom: 30px;
   width: 200px;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3),
-    0 4px 6px -2px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--bx-shadow);
 }
 
 .post-something ul {
@@ -246,8 +245,7 @@ body {
   padding: 15px;
   border: 0;
   border-radius: 5px;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3),
-    0 4px 6px -2px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--bx-shadow);
 }
 
 .post-author-info {
@@ -305,8 +303,7 @@ body {
   padding: 15px;
   border: 0;
   border-radius: 5px;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3),
-    0 4px 6px -2px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--bx-shadow);
   text-align: center;
 }
 
@@ -655,7 +652,42 @@ body {
 }
 
 .personal-info .profile-pic .change-pro-pic {
-  margin-top: 15px;
+  margin: 25px 0;
+}
+
+.personal-info .profile-pic .change-pro-pic input[type="file"] {
+  display: none;
+}
+
+.personal-info .profile-pic .change-pro-pic label {
+  background-color: rgba(3, 166, 120, 0.6);
+  width: 180px;
+  height: 33px;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 65%;
+  font-weight: 600;
+  box-shadow: var(--bx-shadow);
+  border: 2px solid rgba(3, 166, 120, 0.6);
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.personal-info .profile-pic .change-pro-pic label:hover {
+  cursor: pointer;
+  background-color: var(--base-clr);
+  color: #fff;
+  border: 2px solid var(--base-clr);
 }
 
 .personal-info .profile-pic img {
@@ -676,6 +708,9 @@ body {
   font-weight: 600;
   letter-spacing: 0.8px;
 }
+
+
+
 
 /*BIO*/
 .bio-and-spirit-animal {
