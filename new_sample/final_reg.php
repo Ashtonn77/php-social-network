@@ -66,9 +66,7 @@ else{
             for($i = 0; $i < count($_POST['hobbies']); $i++){
 
              $temp = $_POST['hobbies'][$i];
-             $temp = strip_tags($temp);
-             $temp = str_replace(' ', '', $temp);
-
+         
              $hobbies[$i] = $temp;
 
             }
@@ -156,11 +154,11 @@ else{
             <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="hobbies[]" onclick="return limitSelection()" value="fishing">&nbsp; <span>Fishing</span> <br>
             <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="hobbies[]" onclick="return limitSelection()" value="cooking">&nbsp; <span>Cooking</span><br>
             <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="hobbies[]" onclick="return limitSelection()" value="gaming">&nbsp; <span>Gaming</span><br>
-            <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="hobbies[]" onclick="return limitSelection()" value="exercising">&nbsp; <span>Workout</span><br>
+            <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="hobbies[]" onclick="return limitSelection()" value="gym">&nbsp; <span>Workout</span><br>
             <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="hobbies[]" onclick="return limitSelection()" value="movies">&nbsp; <span>Movies</span> <br>
             <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="hobbies[]" onclick="return limitSelection()" value="painting">&nbsp; <span>Painting</span><br>
             <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="hobbies[]" onclick="return limitSelection()" value="reading">&nbsp; <span>Reading</span><br>
-            <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="hobbies[]" onclick="return limitSelection()" value="travelling">&nbsp; <span>Travelling</span><br>
+            <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="hobbies[]" onclick="return limitSelection()" value="traveling">&nbsp; <span>Travelling</span><br>
         </div>
         <div class="chkbox-err"></div>
 

@@ -150,7 +150,7 @@ function show(){
             ?>
 
         <!-- if this dont work make action empty -->
-        <form action="main_page.ph" method="POST" enctype="multipart/form-data">
+        <form action="main_page.php" method="POST" enctype="multipart/form-data">
 
          <input type="file" name="user-file" class="user-file">
          <input type="submit" value="Upload" name="attach-file-btn" class="attach-file-btn">   
@@ -188,7 +188,7 @@ function show(){
             <li><a href="#"><ion-icon name="people-outline" style="color:#fff;"></ion-icon></a></li>
             <li><a href="#"><ion-icon name="mail-open-outline" style="color:#fff;"></ion-icon></a></li>
             <li><a href="#"><ion-icon name="notifications-outline" style="color:#fff;"></ion-icon></a></li>
-            <li><a href="#"><img src="./images/lion.png" alt="profile-pic" width="20px"></a></li>
+            <li><a href="#"><img src="<?=$user_res['profile_pic'];?>" alt="profile-pic" width="20px"></a></li>
             <li><a href="logout.php"><ion-icon name="log-out-outline" style="color:#fff;"></ion-icon></a></li>
         </ul>
 
@@ -203,16 +203,16 @@ function show(){
 
  <!-- user logged in info      -->
     <section class="left-section">
-        <img src="./images/lion.png" alt="pro-pic">
+        <img src="<?=$profile_pic;?>" alt="pro-pic">
 
        <div class="top-personals">
-            <p class="full-name"><?=$name;?></p>
+            <p class="full-name"><a href="profile.php"><?=$first_name . ' ' . $last_name;?></a></p>
             <p class="school"><?=$prof_line;?></p>
             <p class="tag-line"><?=$tag_line;?></p>
        </div>
 
        <div class="middle-personals">
-           <p class="spirit-animal">Ashton's spirit animal is the lion</p>
+           <p class="spirit-animal"><?=$first_name;?>'s spirit animal is the <?=$spirit_animal_res;?></p>
            <p class="favorite-movie"><span>Favourite Movie:</span><?=$fav_movie;?></p>
            <p class="favorite-book"><span>Favourite Book: </span><?=$fav_book;?></p>
            <p class="favorite-artist"><span>Favourite Artist:</span><?=$fav_artist;?></p>

@@ -31,9 +31,9 @@ function get_birth_month($birthday){
 function get_spirit_animal($birth_month, $spirit_animal){
 
     $spirit_animal_keys = array_keys($spirit_animal);
-    $profile_pic = $spirit_animal_keys[$birth_month];
+    $spirit_animal_key = $spirit_animal_keys[$birth_month];
 
-    return $profile_pic;
+    return $spirit_animal_key;
 
 }
 

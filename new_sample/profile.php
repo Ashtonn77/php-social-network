@@ -4,6 +4,8 @@ require 'helpers/config_template.php';
 require 'helpers/check_session.php';
 require 'helpers/get_details.php';
 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -66,7 +68,7 @@ function show(){
                     <li><a href="#">
                             <ion-icon name="notifications-outline" style="color:#fff;"></ion-icon>
                         </a></li>
-                    <li><a href="#"><img src="./images/lion.png" alt="profile-pic" width="20px"></a></li>
+                    <li><a href="#"><img src="<?=$user_res['profile_pic'];?>" alt="profile-pic" width="20px"></a></li>
                     <li><a href="#">
                             <ion-icon name="log-out-outline" style="color:#fff;"></ion-icon>
                         </a></li>
@@ -84,24 +86,39 @@ function show(){
             <!-- personal info -->
             <div class="personal-info tile profile-first">
 
-                
+                 <?php
+
+                if(isset($_FILES['file'])){
+                    move_uploaded_file($_FILES['file']['tmp_name'], 'images/uploads/'.$_FILES['file']['name']);
+                    $updated_pro_pic_path = 'images/uploads/'.$_FILES['file']['name'];
+                    $update_pro_pic_query = mysqli_query($connect, "UPDATE users SET profile_pic='$updated_pro_pic_path' WHERE username='$currentUserLoggedIn'");  
+                    header('Location: '.$_SERVER['PHP_SELF']);                            
+                }
+            
+                ?>                
                 
                 <div class="profile-pic">
-                    <img src="./images/lion.png" alt="profile-pic">
-                    <div class="change-pro-pic">
-                        <input type="file" name="file" id="file">
+                    <img src="<?=$profile_pic;?>" alt="profile-pic">
+                    <div class="change-pro-pic">                        
+
+                         <form action="profile.php" method="POST" enctype="multipart/form-data">
+
+                         <input type="file" name="file" id="file" onchange="form.submit()">
                         <label for="file">
                             <span class="material-icons">
                             add_photo_alternate
                             </span>&nbsp;
                             Change profile pic
                         </label>
+                                 
+                    </form>
+
                     </div>
                 </div>
 
                 <div class="personal-details">
-                    <p><span>What they call me:</span><br> Ashton Naidoo</p>
-                    <p><span>Date landed on planet Earth:</span><br>05-10-88</p>
+                    <p><span>What they call me:</span><br><?=$first_name . ' ' . $last_name;?></p>
+                    <p><span>Date landed on planet Earth:</span><br><?=$birthday;?></p>
                     <p><span>Ruling lands:</span><br> Seatides, Durban</p>
                     <p><span>Place of study/work:</span><br> Richfield</p>
                 </div>
@@ -122,7 +139,7 @@ function show(){
 
                 <p class="spirit-animal">
                     <span class="bio-heading">Spirit animal:</span>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, debitis quam dignissimos iusto, cupiditate voluptas vero laboriosam eos qui dolores a voluptatum enim, quaerat ipsam odio non quod harum. Quis recusandae, autem soluta error magnam omnis excepturi accusantium suscipit quos dolor, atque neque a! Quas aspernatur velit unde illo praesentium minus consequatur dolore doloribus quaerat magnam, voluptatibus fugiat rerum placeat quam possimus. Velit amet pariatur qui optio hic iste labore. Unde minima excepturi blanditiis. Nisi omnis repellat dolores qui est?
+                    <?=$spirit_animal_bio_res;?>
                 </p>
 
             </div>
@@ -134,19 +151,19 @@ function show(){
                 
 
                     <div class="hobbie-tile tile"> 
-                            <img src="./images/hobbies/coding.png" alt="hobbie-1" class="hobbie-1">
+                            <img src="./images/hobbies/<?=$hobbies_res['hobbie_1'];?>.png" alt="hobbie-1" class="hobbie-1">
                     </div>
 
                     <div class="hobbie-tile tile">
-                        <img src="./images/hobbies/gym.png" alt="hobbie-2" class="hobbie-2">
+                        <img src="./images/hobbies/<?=$hobbies_res['hobbie_2'];?>.png" alt="hobbie-2" class="hobbie-2">
                     </div>
                     
                     <div class="hobbie-tile tile">
-                        <img src="./images/hobbies/movies.png" alt="hobbie-3" class="hobbie-2">
+                        <img src="./images/hobbies/<?=$hobbies_res['hobbie_3'];?>.png" alt="hobbie-3" class="hobbie-2">
                     </div>
 
                     <div class="hobbie-tile tile">
-                        <img src="./images/hobbies/music.png" alt="hobbie-4" class="hobbie-2">
+                        <img src="./images/hobbies/<?=$hobbies_res['hobbie_4'];?>.png" alt="hobbie-4" class="hobbie-2">
                     </div>     
                 
 
@@ -163,10 +180,10 @@ function show(){
                     <div class="bucket-list">
 
                         <ul>
-                            <li><span>1. </span>Visit Iceland in winter.</li>
-                            <li><span>2. </span>Build something that helps people.</li>
-                            <li><span>3. </span>Become fluent in a foreign language.</li>
-                            <li><span>4. </span>Have lunch with Elon Musk.</li>
+                            <li><span>1. </span><?=$aspirations_res['bucket_list_1'];?></li>
+                            <li><span>2. </span><?=$aspirations_res['bucket_list_2'];?></li>
+                            <li><span>3. </span><?=$aspirations_res['bucket_list_3'];?></li>
+                            <li><span>4. </span><?=$aspirations_res['bucket_list_4'];?></li>
                         </ul>
 
                     </div>
@@ -176,10 +193,10 @@ function show(){
                     <div class="goals-and-aspirations">
 
                         <ul>
-                            <li><span>1. </span>Visit Iceland in winter.</li>
-                            <li><span>2. </span>Build something that helps people.</li>
-                            <li><span>3. </span>Become fluent in a foreign language.</li>
-                            <li><span>4. </span>Have lunch with Elon Musk.</li>
+                            <li><span>1. </span><?=$aspirations_res['goals_1'];?></li>
+                            <li><span>2. </span><?=$aspirations_res['goals_2'];?></li>
+                            <li><span>3. </span><?=$aspirations_res['goals_3'];?></li>
+                            <li><span>4. </span><?=$aspirations_res['goals_4'];?></li>
                         </ul>
 
                     </div>

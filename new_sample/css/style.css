@@ -829,7 +829,6 @@ body {
 
 .friends a:last-child:hover {
   color: var(--btn-hover-one);
-  border-bottom: 1px solid var(--btn-hover-one);
 }
 
 /*END PROFILE_MAIN*/
