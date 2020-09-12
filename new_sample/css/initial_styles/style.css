@@ -69,7 +69,7 @@ html {
     font-size: 80%;
     display: flex;
     flex-flow: column;
-    border: 1px solid #fff;
+    border: 2px solid #555;
     border-radius: 5px;
     padding: 10px;
     width: 80%;
@@ -77,6 +77,7 @@ html {
 }
 
 .login-form label {
+    font-size: 90%;
     margin-bottom: 3px;
     font-weight: 400;
     letter-spacing: 0.5px;
@@ -85,12 +86,20 @@ html {
 .login-form input {
     margin-bottom: 10px;
     width: 100%;
-    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.4);
+    color: #fff;
+    letter-spacing: 0.5px;
+    border: 1px solid #e6e5e5;
+    padding: 3px 3px 3px 6px;
     border: 1px solid #555;
     border-radius: 5px;
     font-size: 90%;
     font-family: 'Red Rose',
         cursive;
+}
+
+.login-form input::placeholder {
+    color: #0a0a0a;
 }
 
 .form-btns-main {
@@ -114,11 +123,13 @@ footer ul li {
     background-color: var(--btn-base-color);
     border: 1px solid var(--btn-base-color);
     width: 20%;
-    padding: 3px 10px;
+
     color: #fff;
     border-radius: 20px;
-    font-size: 90%;
+
     transition: background-color 0.4s ease;
+    font-size: 80%;
+    padding: 1.5px 6px;
 }
 
 .form-btns-main li input:hover {

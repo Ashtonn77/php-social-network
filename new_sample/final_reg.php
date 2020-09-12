@@ -25,49 +25,89 @@ else{
 <body>
 
     <?php
-    
+
+        $error_array = array();
+        $user_id = -1;
+
         if(isset($_POST['final-reg-submit-btn'])){
-
-         /*$post_body = strip_tags($post_body); //removes all html tags
-         $post_body = mysqli_real_escape_string($connect, $post_body);*/
-
-    // $last_name = strip_tags($_POST['reg_last_name']);
-    // $last_name = str_replace(' ', '', $last_name);
-    // $last_name = ucfirst(strtolower($last_name));
 
          $user_id_query = mysqli_query($connect, "SELECT user_id FROM users WHERE username='$currentUserLoggedIn'");
          $row = mysqli_fetch_array($user_id_query);
-         $user_id = $row['user_id'];   
-
-         $birthday = $_POST['birthday'];
-         $prof_line = $_POST['prof-line'];
-         $tag_line = $_POST['tag-line'];
-         $fav_movie = $_POST['fav-movie'];
-         $fav_book = $_POST['fav-book'];
-         $fav_artist = $_POST['fav-artist'];
-         $fav_song = $_POST['fav-song'];
-         $fav_food = $_POST['fav-food'];
-
-         $bio = $_POST['reg-user-bio'];
-         $hobbies = $_POST['hobbies'];
-
-         $bckt_list1 = $_POST['reg-bucket-list-1'];
-         $bckt_list2 = $_POST['reg-bucket-list-2'];
-         $bckt_list3 = $_POST['reg-bucket-list-3'];
-         $bckt_list4 = $_POST['reg-bucket-list-4'];
-
-         $goal1 = $_POST['reg-goals-1'];
-         $goal2 = $_POST['reg-goals-2'];
-         $goal3 = $_POST['reg-goals-3'];
-         $goal4 = $_POST['reg-goals-4'];
-
-
-         $preferences_query = mysqli_query($connect, "INSERT INTO preferences VALUES(NULL, '$user_id', '$birthday', '$prof_line', '$tag_line', '$fav_movie', '$fav_book', '$fav_artist', '$fav_song','$fav_food', '$bio')");
-
-         $hobbies_query = mysqli_query($connect, "INSERT INTO hobbies VALUES(NULL, '$user_id', '$hobbies[0]', '$hobbies[1]', '$hobbies[2]', '$hobbies[3]')");
-
-         $aspirations_query = mysqli_query($connect, "INSERT INTO aspirations VALUES(NULL, '$user_id', '$bckt_list1', '$bckt_list2', '$bckt_list3', '$bckt_list4', '$goal1', '$goal2', '$goal3', '$goal4')");
+         $user_id = $row['user_id'];
+        
+         $prof_line = ucfirst($_POST['prof-line']);   
          
+
+         $tag_line = ucfirst($_POST['tag-line']);
+         
+
+         $fav_movie = ucwords($_POST['fav-movie']); 
+         
+
+         $fav_book = ucwords($_POST['fav-book']);   
+         
+
+         $fav_artist = ucwords($_POST['fav-artist']);  
+        
+
+         $fav_song = ucwords($_POST['fav-song']);  
+         
+         
+         $fav_food = ucwords($_POST['fav-food']);    
+      
+
+         $bio = ucfirst($_POST['reg-user-bio']);   
+         
+
+         $hobbies = array("default", "default", "default", "default");
+         
+         if(!empty($_POST['hobbies'])){
+
+            for($i = 0; $i < count($_POST['hobbies']); $i++){
+
+             $temp = $_POST['hobbies'][$i];
+             $temp = strip_tags($temp);
+             $temp = str_replace(' ', '', $temp);
+
+             $hobbies[$i] = $temp;
+
+            }
+
+         }      
+
+         $bckt_list1 = ucfirst($_POST['reg-bucket-list-1']); 
+        
+
+         $bckt_list2 = ucfirst($_POST['reg-bucket-list-2']);      
+        
+
+         $bckt_list3 = ucfirst($_POST['reg-bucket-list-3']);
+         
+
+         $bckt_list4 = ucfirst($_POST['reg-bucket-list-4']);   
+         
+
+         $goal1 = ucfirst($_POST['reg-goals-1']);    
+         
+
+         $goal2 = ucfirst($_POST['reg-goals-2']);    
+        
+
+         $goal3 = ucfirst($_POST['reg-goals-3']);   
+        
+
+         $goal4 = ucfirst($_POST['reg-goals-4']);          
+        
+
+         
+
+            $preferences_query = mysqli_query($connect, "INSERT INTO preferences VALUES(NULL, '$user_id', '$prof_line', '$tag_line', '$fav_movie', '$fav_book', '$fav_artist', '$fav_song','$fav_food', '$bio')");
+
+            $hobbies_query = mysqli_query($connect, "INSERT INTO hobbies VALUES(NULL, '$user_id', '$hobbies[0]', '$hobbies[1]', '$hobbies[2]', '$hobbies[3]')");
+
+            $aspirations_query = mysqli_query($connect, "INSERT INTO aspirations VALUES(NULL, '$user_id', '$bckt_list1', '$bckt_list2', '$bckt_list3', '$bckt_list4', '$goal1', '$goal2', '$goal3', '$goal4')");
+            
+            header("Location: login_2.php");   
 
      }
      //end if isset
@@ -79,36 +119,35 @@ else{
     
     <div class="left-top">
 
-        <label for="birthday">Birthday:</label>
-        <input type="date" id="birthday" name="birthday">
-
         <label for="tag-line">Profession line:</label>
-        <input type="text" name="prof-line" class="prof-line" placeholder="eg: Student at Richfield" autocomplete="off">
+        <input type="text" name="prof-line" class="prof-line" placeholder="eg: Student at Richfield" autocomplete="off" required>
+       
 
         <label for="tag-line">Tag line:</label>
-        <input type="text" name="tag-line" class="tag-line" placeholder="eg: I love coding" autocomplete="off">
-
+        <input type="text" name="tag-line" class="tag-line" placeholder="eg: I love coding" autocomplete="off" required>
+        
         <label for="fav-movie">Favorite movie:</label>
-        <input type="text" name="fav-movie" class="fav-movie" placeholder="Enter movie__" autocomplete="off">
-
+        <input type="text" name="fav-movie" class="fav-movie" placeholder="Enter movie__" autocomplete="off" required>
+       
         <label for="fav-book">Favorite book:</label>
-        <input type="text" name="fav-book" class="fav-book" placeholder="Enter book__" autocomplete="off">
-
+        <input type="text" name="fav-book" class="fav-book" placeholder="Enter book__" autocomplete="off" required>
+       
         <label for="fav-artist">Favorite artist:</label>
-        <input type="text" name="fav-artist" class="fav-artist" placeholder="Enter artist__" autocomplete="off">
-
+        <input type="text" name="fav-artist" class="fav-artist" placeholder="Enter artist__" autocomplete="off" required>
+       
         <label for="fav-song">Favorite song:</label>
-        <input type="text" name="fav-song" class="fav-song" placeholder="Enter song__" autocomplete="off">
-
+        <input type="text" name="fav-song" class="fav-song" placeholder="Enter song__" autocomplete="off" required>
+       
         <label for="fav-food">Favorite food:</label>
-        <input type="text" name="fav-food" class="fav-food" placeholder="Enter food__" autocomplete="off">        
-
+        <input type="text" name="fav-food" class="fav-food" placeholder="Enter food__" autocomplete="off" required>
+        
     </div>
 
     <div class="right-bottom">
 
         <label for="reg-user-bio">Bio:</label>
         <textarea class="reg-user-bio"" name="reg-user-bio" id="reg-user-bio" placeholder="Tell us a lil' about yourself__"></textarea>
+         <span class="final-reg-err"><?php if(in_array("**Bio must be at least five characters long**", $error_array)){ echo "**Bio must be at least five characters long**"; } ?></span>
 
         <div class="reg-hobbies">
             <label for="reg-hobbies">Hobbies:</label>
@@ -160,21 +199,31 @@ else{
         <div class="reg-bucket-list">
 
             <label for="reg-bucket-list">Bucket list:</label>
-            <input type="text" name="reg-bucket-list-1" id="reg-bucket-list" class="reg-bucket-list" placeholder="Enter first item" autocomplete="off">
-            <input type="text" name="reg-bucket-list-2" id="reg-bucket-list" class="reg-bucket-list" placeholder="Enter second item" autocomplete="off">
-            <input type="text" name="reg-bucket-list-3" id="reg-bucket-list" class="reg-bucket-list" placeholder="Enter third item" autocomplete="off">
-            <input type="text" name="reg-bucket-list-4" id="reg-bucket-list" class="reg-bucket-list" placeholder="Enter fourth item" autocomplete="off">
+            <input type="text" name="reg-bucket-list-1" id="reg-bucket-list" class="reg-bucket-list" placeholder="Enter first item" autocomplete="off" required>
+         
+
+            <input type="text" name="reg-bucket-list-2" id="reg-bucket-list" class="reg-bucket-list" placeholder="Enter second item" autocomplete="off" required>
+          
+
+            <input type="text" name="reg-bucket-list-3" id="reg-bucket-list" class="reg-bucket-list" placeholder="Enter third item" autocomplete="off" required>
+        
+
+            <input type="text" name="reg-bucket-list-4" id="reg-bucket-list" class="reg-bucket-list" placeholder="Enter fourth item" autocomplete="off" required>
+            
 
         </div>
 
         <div class="reg-goals">
             
             <label for="reg-bucket-list">Future goals:</label>
-            <input type="text" name="reg-goals-1" id="reg-goals" class="reg-goals" placeholder="Enter first goal" autocomplete="off">
-            <input type="text" name="reg-goals-2" id="reg-goals" class="reg-goals" placeholder="Enter second goal" autocomplete="off">
-            <input type="text" name="reg-goals-3" id="reg-goals" class="reg-goals" placeholder="Enter third goal" autocomplete="off">
-            <input type="text" name="reg-goals-4" id="reg-goals" class="reg-goals" placeholder="Enter fourth goal" autocomplete="off">
-
+            <input type="text" name="reg-goals-1" id="reg-goals" class="reg-goals" placeholder="Enter first goal" autocomplete="off" required>
+           
+            <input type="text" name="reg-goals-2" id="reg-goals" class="reg-goals" placeholder="Enter second goal" autocomplete="off" required>
+            
+            <input type="text" name="reg-goals-3" id="reg-goals" class="reg-goals" placeholder="Enter third goal" autocomplete="off" required>
+           
+            <input type="text" name="reg-goals-4" id="reg-goals" class="reg-goals" placeholder="Enter fourth goal" autocomplete="off" required>
+            
         </div>
 
 

@@ -1,6 +1,8 @@
 <?php
 
 require 'helpers/config_template.php';
+require 'helpers/spirit_animal.php';
+require 'helpers/user_functions.php';
 
 //variables form form
 $first_name = "";
@@ -11,6 +13,7 @@ $password_two = "";
 $date = "";
 $error_array = array();
 $username = "";
+$birthday = "";
 
 if (isset($_POST['reg_submit_btn'])) {
 
@@ -83,6 +86,9 @@ if (isset($_POST['reg_submit_btn'])) {
     }
 
 
+    $birthday = $_POST['birthday'];
+
+
     //check if passwords match
     if($password != $password_two){
        
@@ -96,40 +102,35 @@ if (isset($_POST['reg_submit_btn'])) {
         array_push($error_array, "Invalid entry...your password must be between 2 and 25 characters long");
     }
 
+    
 
     if(empty($error_array)){
 
-        $password = md5($password);//encryps password before inserting into db
-         
-    $rand = rand(1, 2);
-    if($rand == 1){
+        $password = md5($password);//encryps password before inserting into db       
+        
+        $birth_month = get_birth_month($birthday);
 
-        $profile_pic = "./images/dolphin.png";
+        $profile_pic = get_spirit_animal($birth_month, $spirit_animal) . '.png';
 
-    }
-    else{
+        $profile_pic = 'images/'.$profile_pic;     
+        
+           
+        //inserting into db
+        $sql_query = "INSERT INTO users VALUES(NULL, '$first_name', '$last_name', '$email', '$username', '$birthday', '$password', '$profile_pic', 'no', '$date')";
+        $query_insert = mysqli_query($connect, $sql_query);
 
-        $profile_pic = "./images/dolphin.png";
+        array_push($error_array, "You're good to go. Let's do this thing :)");
 
-    }
+        //clear session variables
+        $_SESSION['reg_first_name'] = "";
+        $_SESSION['reg_last_name'] = "";
+        $_SESSION['reg_email'] = "";
 
-    //inserting into db
-    $sql_query = "INSERT INTO users VALUES(NULL, '$first_name', '$last_name', '$email', '$username', '$password', '$profile_pic', 'no', '$date')";
-    $query_insert = mysqli_query($connect, $sql_query);
+        $_SESSION['username'] = $username; 
 
-    array_push($error_array, "You're good to go. Let's do this thing :)");
-
-    //clear session variables
-    $_SESSION['reg_first_name'] = "";
-    $_SESSION['reg_last_name'] = "";
-    $_SESSION['reg_email'] = "";
-
-    $_SESSION['username'] = $username; 
-
-    header("Location: login_2.php");
+        header("Location: final_reg.php");
 
     }
-
 
 }
 
@@ -166,7 +167,7 @@ if (isset($_POST['reg_submit_btn'])) {
             <form action="register_2.php" method="POST" class="reg-form">
 
                 <label for="reg_first_name">First Name:</label>
-                <input type="text" name="reg_first_name" id="reg_first_name" 5value="<?php if(isset($_SESSION['reg_first_name'])){ echo $_SESSION['reg_first_name'];}?>" 
+                <input type="text" name="reg_first_name" id="reg_first_name" value="<?php if(isset($_SESSION['reg_first_name'])){ echo $_SESSION['reg_first_name'];}?>" 
         required>
                 <span class="err-msg"><?php if(in_array("Invalid entry...your first name must at least 2 characters long", $error_array)){echo "Invalid entry...your first name must at least 2 characters long";}?></span>
 

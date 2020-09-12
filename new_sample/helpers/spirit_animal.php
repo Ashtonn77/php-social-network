@@ -21,8 +21,8 @@ $spirit_animal = array("dog"=>"The dog spirit animal represents love, protection
 //     $cnt++;
 // }
 
-$keys = array_keys($spirit_animal);
-echo $spirit_animal[$keys[1]];
+/*$keys = array_keys($spirit_animal);
+echo $spirit_animal[$keys[1]];*/    
 
 ?>
 

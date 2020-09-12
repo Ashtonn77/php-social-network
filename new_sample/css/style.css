@@ -29,7 +29,7 @@ body {
   background-color: var(--body-back);
   width: 100vw;
   height: 100%;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .tile {
@@ -847,8 +847,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 840px;
-  overflow: auto;
+  min-height: 1100px;
 }
 
 
@@ -910,6 +909,18 @@ body {
   color: var(--err-msg);
 }
 
+.final-reg-err {
+  margin: 0 0 5px 0;
+  font-size: 58%;
+  color: var(--err-msg);
+}
+
+.final-reg-err2 {
+  margin-bottom: -50px;
+  font-size: 58%;
+  color: var(--err-msg);
+}
+
 .reg-hobbies {
   margin-bottom: 6px;
 }
@@ -944,8 +955,9 @@ body {
   color: #000;
 }
 
+/* 
 .almost {
   font-size: 80%;
   margin-bottom: -30px;
   padding: 20px;
-}
+} */
