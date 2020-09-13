@@ -128,7 +128,7 @@ if (isset($_POST['reg_submit_btn'])) {
 
         $_SESSION['username'] = $username; 
 
-        header("Location: final_reg.php");
+        header("Location: final_reg.php?id=".$res['user_id']);
 
     }
 

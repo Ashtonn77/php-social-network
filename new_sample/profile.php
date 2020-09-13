@@ -4,8 +4,6 @@ require 'helpers/config_template.php';
 require 'helpers/check_session.php';
 require 'helpers/get_details.php';
 
-
-
 ?>
 
 <!DOCTYPE html>
@@ -68,8 +66,8 @@ function show(){
                     <li><a href="#">
                             <ion-icon name="notifications-outline" style="color:#fff;"></ion-icon>
                         </a></li>
-                    <li><a href="#"><img src="<?=$user_res['profile_pic'];?>" alt="profile-pic" width="20px"></a></li>
-                    <li><a href="#">
+                    <li><a href="profile.php?id=<?=$user_res['user_id'];?>"><img src="<?=$user_res['profile_pic'];?>" alt="profile-pic" width="20px"></a></li>
+                    <li><a href="logout.php">
                             <ion-icon name="log-out-outline" style="color:#fff;"></ion-icon>
                         </a></li>
                 </ul>

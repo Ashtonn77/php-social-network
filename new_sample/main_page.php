@@ -187,8 +187,8 @@ function show(){
             <li><a href="#"><ion-icon name="home-outline" style="color:#fff;"></ion-icon></a></li>
             <li><a href="#"><ion-icon name="people-outline" style="color:#fff;"></ion-icon></a></li>
             <li><a href="#"><ion-icon name="mail-open-outline" style="color:#fff;"></ion-icon></a></li>
-            <li><a href="#"><ion-icon name="notifications-outline" style="color:#fff;"></ion-icon></a></li>
-            <li><a href="#"><img src="<?=$user_res['profile_pic'];?>" alt="profile-pic" width="20px"></a></li>
+            <li><a href="notifications.php"><ion-icon name="notifications-outline" style="color:#fff;"></ion-icon></a></li>
+            <li><a href="profile.php?id=<?=$user_res['user_id'];?>"><img src="<?=$user_res['profile_pic'];?>" alt="profile-pic" width="20px"></a></li>
             <li><a href="logout.php"><ion-icon name="log-out-outline" style="color:#fff;"></ion-icon></a></li>
         </ul>
 
@@ -198,7 +198,6 @@ function show(){
 
 </div>
 
-
 <div class="main-container">
 
  <!-- user logged in info      -->
@@ -206,7 +205,7 @@ function show(){
         <img src="<?=$profile_pic;?>" alt="pro-pic">
 
        <div class="top-personals">
-            <p class="full-name"><a href="profile.php"><?=$first_name . ' ' . $last_name;?></a></p>
+            <p class="full-name"><a href="profile.php?id=<?=$user_id;?>"><?=$first_name . ' ' . $last_name;?></a></p>
             <p class="school"><?=$prof_line;?></p>
             <p class="tag-line"><?=$tag_line;?></p>
        </div>
@@ -326,42 +325,34 @@ function show(){
     </section>
 
 
+            
 
 
      <!-- ppl to invite and adverts -->
     <section class="right-section">
-    <h4>People you may know</h4>   
+    <h4>People you may know</h4>
+
+    <?php
+    
+    while( $res = mysqli_fetch_array($users_to_invite_query) ){
+
+        ?>
+
     <div class="possible-friends">
-        <div class="name-pic">
-            <img src="./images/koala.png" alt="koala">
-        <a href="#">Mark Smith</a>
-        </div>
+            <div class="name-pic">
+                <img src="<?=$res['profile_pic'];?>" alt="koala">
+            <a href="profile.php?id=<?=$res['user_id'];?>"><?=$res['first_name'] . ' ' . $res['last_name'];?></a>
+            </div>
         <img src="./images/icons_logos/add_friend.png" alt="add-friend">
     </div>
 
-     <div class="possible-friends">
-        <div class="name-pic">
-            <img src="./images/koala.png" alt="koala">
-        <a href="#">Jane Doe</a>
-        </div>
-        <img src="./images/icons_logos/add_friend.png" alt="add-friend">
-    </div>
 
-     <div class="possible-friends">
-        <div class="name-pic">
-            <img src="./images/koala.png" alt="koala">
-        <a href="#">Samuel Quentin</a>
-        </div>
-        <img src="./images/icons_logos/add_friend.png" alt="add-friend">
-    </div>
+    <?php
 
-     <div class="possible-friends">
-        <div class="name-pic">
-            <img src="./images/koala.png" alt="koala">
-        <a href="#">Leo Summers</a>
-        </div>
-        <img src="./images/icons_logos/add_friend.png" alt="add-friend">
-    </div>
+    }
+    
+    
+    ?>  
 
     </section>
 

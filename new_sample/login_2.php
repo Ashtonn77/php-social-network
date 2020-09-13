@@ -16,16 +16,14 @@
 
         if($check_query == 1){
 
-            $row = mysqli_fetch_array($login_query);      
+            $res = mysqli_fetch_array($login_query);      
         
-            $username = $row['username'];
+            $username = $res['username'];
 
             $_SESSION['username'] = $username;        
             
-            header("Location: main_page.php?username=".$username);
-            exit();
-
-            
+            header("Location: main_page.php?id=".$res['user_id']);
+            exit();            
 
             }
             else{
