@@ -20,6 +20,9 @@
 
         $users_to_invite_query = mysqli_query($connect, "SELECT * FROM users WHERE NOT username='$currentUserLoggedIn'"); 
 
+        $current_user_id = get_user_id($connect, $currentUserLoggedIn);
+        $current_user_res = mysqli_query($connect, "SELECT * FROM users WHERE user_id='$current_user_id'");
+
 
         //resulting arrays
         $user_res = mysqli_fetch_array($user_query);
@@ -52,14 +55,14 @@
       }else{
 
          //queries
-        $user_id = get_user_id($connect, $currentUserLoggedIn);
+        /*$user_id = get_user_id($connect, $currentUserLoggedIn);
         $user_query = mysqli_query($connect, "SELECT * FROM users WHERE user_id='$user_id'");
         $preferences_query = mysqli_query($connect, "SELECT * FROM preferences WHERE user_id='$user_id'");
         $aspirations_query = mysqli_query($connect, "SELECT * FROM aspirations WHERE user_id='$user_id'");
         $hobbies_query = mysqli_query($connect, "SELECT * FROM hobbies WHERE user_id='$user_id'");
 
         $users_to_invite_query = mysqli_query($connect, "SELECT * FROM users WHERE NOT username='$currentUserLoggedIn'"); 
-
+        $current_user_res = mysqli_query($connect, "SELECT * FROM users WHERE username='$currentUserLoggedIn'");
 
 
         //resulting arrays
@@ -88,7 +91,9 @@
         $fav_song = $preferences_res['fav_song'];
         $fav_food = $preferences_res['fav_food'];
 
-        $bio = $preferences_res['bio'];
+        $bio = $preferences_res['bio'];*/
+
+        header("Location: error.php");
 
 
 

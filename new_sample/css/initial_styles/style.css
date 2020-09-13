@@ -98,6 +98,22 @@ html {
         cursive;
 }
 
+.login-form input::-webkit-input-placeholder {
+    color: #0a0a0a;
+}
+
+.login-form input::-moz-placeholder {
+    color: #0a0a0a;
+}
+
+.login-form input:-ms-input-placeholder {
+    color: #0a0a0a;
+}
+
+.login-form input::-ms-input-placeholder {
+    color: #0a0a0a;
+}
+
 .login-form input::placeholder {
     color: #0a0a0a;
 }

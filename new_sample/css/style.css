@@ -340,15 +340,34 @@ body {
   margin-top: 20px;
 }
 
-.possible-friends img:last-child {
+.possible-friends input[type='submit']:last-child {
   width: 20px;
   height: 20px;
+  border: 0;
+  color: var(--btn-hover-one);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
   transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
 }
 
-.possible-friends img:last-child:hover {
+.possible-friends input[type='submit']:last-child:hover {
   cursor: pointer;
   transform: scale(0.9);
+  -webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  -o-transform: scale(0.9);
 }
 
 /**END MAIN PAGE**/
@@ -714,6 +733,8 @@ body {
 
 /*BIO*/
 .bio-and-spirit-animal {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   font-size: 75%;
 }
@@ -857,6 +878,8 @@ body {
   border: 2px solid #fff;
   padding: 15px;
   margin: 0 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
 }
 
@@ -954,9 +977,45 @@ body {
   color: #000;
 }
 
-/* 
-.almost {
-  font-size: 80%;
-  margin-bottom: -30px;
-  padding: 20px;
-} */
+
+
+/*NOTIFICATIONS*/
+.notification-wrapper {
+  max-width: 900px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 30px;
+
+}
+
+.notification {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 90%;
+  font-size: 90%;
+}
+
+.notification-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.notification-info li {
+  list-style: none;
+}
+
+.notification-info .left-notification {
+  width: 60%;
+}
+
+.notification-info .right-notification {
+  width: 35%;
+}

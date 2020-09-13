@@ -12,7 +12,7 @@ require 'helpers/get_details.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My Notifications</title>
     <link rel="stylesheet" href="./css/style.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="./css/media_queries.css?v=<?php echo time(); ?>">
 </head>
@@ -64,10 +64,55 @@ require 'helpers/get_details.php';
 
         </div>
 
+            <?php
+
+             $notification_to_query = mysqli_query($connect, "SELECT * FROM notifications WHERE notification_to='$user_id'");                
+
+             $count_rows = mysqli_num_rows($notification_to_query);
+                         
+            ?>
+
 
         <div class="notification-wrapper">
 
+            <div class="notification tile">
 
+                <ul class="notification-info">
+
+                    <?php
+                    
+                    if($count_rows != 0){
+                     
+                     $notification_to_res = mysqli_fetch_array($notification_to_query);   
+                     $user_from_id = $notification_to_res['notification_from'];
+                     $notification_from_query = mysqli_query($connect, "SELECT first_name, last_name FROM users WHERE user_id='$user_from_id'");
+                     $notification_from_res = mysqli_fetch_array($notification_from_query);   
+                     $name_user_from = $notification_from_res['first_name'] . ' ' . $notification_from_res['last_name'];   
+
+                    ?>    
+
+                    <li class="left-notification"><a href="#"><?=$name_user_from;?></a> has requested your friendship </li>
+
+                    <li class="class="right-notification">
+                        <a href="#">Accept</a>
+                        <a href="#">Decline</a>
+                    </li>
+
+                    <?php    
+                    }
+                    else{
+                        ?>
+
+                    <li class="left-notification" style="width:100%; text-align:center;">Sorry, <?=$user_res['first_name'];?>,  you have zero pending notifications &#10071;</li>
+                   
+                    <?php
+                    }
+                    
+                    ?>
+
+                </ul>
+
+            </div>
 
 
 
