@@ -331,34 +331,35 @@ function show(){
     
     
     
-    <?php
+    <?php            
+
     
-    while( $res = mysqli_fetch_array($users_to_invite_query) ){
+    while( $res = mysqli_fetch_assoc($users_to_invite_query) ){       
 
         ?>
             
 
-          <div class="possible-friends">
+         
+                <form class="possible-friends" action="friend_request.php?id=<?=$res['user_id'];?>" method="POST">
 
-              <div class="name-pic">
+                <div class="name-pic">
 
-                <img src="<?=$res['profile_pic'];?>" alt="koala">
+                <img src="<?=$res['profile_pic'];?>" alt="pro-pic">
                 <a href="profile.php?id=<?=$res['user_id'];?>"><?=$res['first_name'] . ' ' . $res['last_name'];?></a>
 
-            </div>
+            </div>        
         
-        <input type="submit" value="&#10010;" name="add-friend-btn" class="add-friend-btn">
+            <button name="add-friend-btn" class="add-friend-btn"><img src="images/icons_logos/add_friend.png" alt="add-friend"></button>
 
-         </div>
-  
-
-
+                </form>
+                
     <?php
 
     }
     
     
     ?>  
+    
     
     </section>
 

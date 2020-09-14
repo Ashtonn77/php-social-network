@@ -154,7 +154,7 @@ require 'helpers/get_details.php';
         </ul>
 
     </div>
-    <script src="./js/script.js"></script>
+   
     <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
 </body>
 

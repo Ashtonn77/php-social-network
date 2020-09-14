@@ -340,35 +340,38 @@ body {
   margin-top: 20px;
 }
 
-.possible-friends input[type='submit']:last-child {
-  width: 20px;
-  height: 20px;
+.possible-friends button {
   border: 0;
-  color: var(--btn-hover-one);
-  border-radius: 20px;
+  background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: transparent;
+
+}
+
+.possible-friends button img {
+  width: 18px;
   transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
 }
 
-.possible-friends input[type='submit']:last-child:hover {
+.possible-friends button img:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+
+.possible-friends button img:active {
   cursor: pointer;
   transform: scale(0.9);
-  -webkit-transform: scale(0.9);
-  -moz-transform: scale(0.9);
-  -ms-transform: scale(0.9);
-  -o-transform: scale(0.9);
 }
+
 
 /**END MAIN PAGE**/
 
@@ -1018,4 +1021,46 @@ body {
 
 .notification-info .right-notification {
   width: 35%;
+}
+
+
+/*FRIEND REQUEST*/
+
+.friend-request-wrapper {
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+
+.friend-request-wrapper .friend-request-msg h1 {
+  font-size: 110%;
+  margin: 15px 0;
+}
+
+.friend-request-wrapper .friend-request-msg .click-to-redirect {
+  font-size: 90%;
+  margin-bottom: 15px;
+}
+
+.friend-request-wrapper .friend-request-msg .click-to-redirect a {
+  text-decoration: none;
+  color: var(--base-clr);
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.friend-request-wrapper .friend-request-msg .click-to-redirect a:hover {
+  border-bottom: 1px solid var(--btn-hover-one);
+  color: var(--btn-hover-one);
+}
+
+.friend-request-wrapper .friend-request-msg .timer {
+  display: inline-block;
 }

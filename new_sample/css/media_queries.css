@@ -255,3 +255,14 @@
     }
 
 }
+
+/*friend-request*/
+@media screen and (max-width:666px) {
+    .friend-request-wrapper .friend-request-msg h1 {
+        font-size: 90%;
+    }
+
+    .friend-request-wrapper .friend-request-msg .click-to-redirect {
+        font-size: 80%;
+    }
+}
