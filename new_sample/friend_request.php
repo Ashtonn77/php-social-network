@@ -5,12 +5,12 @@ require 'helpers/get_details.php';
 
 if(isset($_GET['id'])){
 
-    // $user_to_id = $_GET['id'];
-    // $user_from_id = $current_user_id;
+    $user_to_id = $_GET['id'];
+    $user_from_id = $current_user_id;
 
-    // $insert_into_notifications_query = mysqli_query($connect, "INSERT INTO notifications VALUES(NULL, '$user_to_id', '$user_from_id', 'yes')");
-    // $user_to_query = mysqli_query($connect, "SELECT first_name, last_name FROM users WHERE user_id='$user_to_id'");
-    // $user_to_res = mysqli_fetch_array($user_to_query);
+    $insert_into_notifications_query = mysqli_query($connect, "INSERT INTO notifications VALUES(NULL, '$user_to_id', '$user_from_id')");
+    $user_to_query = mysqli_query($connect, "SELECT first_name, last_name FROM users WHERE user_id='$user_to_id'");
+    $user_to_res = mysqli_fetch_array($user_to_query);
 
 }
 
@@ -33,8 +33,8 @@ if(isset($_GET['id'])){
     <div class="friend-request-wrapper">
 
         <div class="friend-request-msg tile">
-        <h1>You've sent Ashton a friend request. Now we wait</h1>
-        <div class="click-to-redirect"><span>If you're not redirected in </span><div class="timer">6</div> seconds...&nbsp; <a href="main_page.php?id=12">Click here</a></div>
+        <h1>You've sent <?=$user_to_res['first_name'] . ' ' . $user_to_res['last_name']; ?> a friend request. Now we wait</h1>
+        <div class="click-to-redirect"><span>If you're not redirected in </span><div class="timer">6</div> seconds...&nbsp; <a href="main_page.php?id=<?=$current_user_id;?>">Click here</a></div>
 
         </div>
 

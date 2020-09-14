@@ -66,7 +66,7 @@ function show(){
                     <li><a href="notifications.php?id=<?=$current_user_id;?>">
                             <ion-icon name="notifications-outline" style="color:#fff;"></ion-icon>
                         </a></li>
-                    <li><a href="profile.php?id=<?=$user_res['user_id'];?>"><img src="<?=$user_res['profile_pic'];?>" alt="profile-pic" width="20px"></a></li>
+                    <li><a href="profile.php?id=<?=$user_res['user_id'];?>"><img src="<?=$current_user_res['profile_pic'];?>" alt="profile-pic" width="20px"></a></li>
                     <li><a href="logout.php">
                             <ion-icon name="log-out-outline" style="color:#fff;"></ion-icon>
                         </a></li>

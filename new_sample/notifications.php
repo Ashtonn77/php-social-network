@@ -83,19 +83,38 @@ require 'helpers/get_details.php';
                     
                     if($count_rows != 0){
                      
-                     $notification_to_res = mysqli_fetch_array($notification_to_query);   
+                     $notification_to_res = mysqli_fetch_array($notification_to_query); 
+                     $user_to_id = $notification_to_res['notification_to'];  
                      $user_from_id = $notification_to_res['notification_from'];
-                     $notification_from_query = mysqli_query($connect, "SELECT first_name, last_name FROM users WHERE user_id='$user_from_id'");
+                     $notification_from_query = mysqli_query($connect, "SELECT * FROM users WHERE user_id='$user_from_id'");
                      $notification_from_res = mysqli_fetch_array($notification_from_query);   
-                     $name_user_from = $notification_from_res['first_name'] . ' ' . $notification_from_res['last_name'];   
+                     $name_user_from = $notification_from_res['first_name'] . ' ' . $notification_from_res['last_name']; 
+                     
+                        if(isset($_POST['accept-friend'])){
+
+                            $delete_notification_query = mysqli_query($connect, "DELETE FROM notifications WHERE notification_to='$user_to_id' AND notification_from='$user_from_id'");
+
+                            $add_to_friend_list_query = mysqli_query();
+
+
+                        }
+                        else if(isset($_POST[''])){
+
+
+
+                        }
 
                     ?>    
 
-                    <li class="left-notification"><a href="#"><?=$name_user_from;?></a> has requested your friendship </li>
+                    <li class="left-notification"><a href="profile.php?id=<?=$user_from_id;?>"><?=$name_user_from;?></a> has requested your friendship </li>
 
                     <li class="class="right-notification">
-                        <a href="#">Accept</a>
-                        <a href="#">Decline</a>
+                        <form action="notifications.php?=<?=$current_user_id;?>">
+                        
+                            <button name="accept-friend" class="accept-friend"><img src="images/icons_logos/accept_request.png" alt="accept-btn" class="test"></button>
+                            <button name="reject-friend" class="reject-friend"><img src="images/icons_logos/reject_request.png" alt="reject-btn"></button>
+
+                        </form>
                     </li>
 
                     <?php    
