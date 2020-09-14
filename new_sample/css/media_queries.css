@@ -266,3 +266,44 @@
         font-size: 80%;
     }
 }
+
+
+/*notifications*/
+@media screen and (max-width:720px) {
+    .notification-info .left-notification {
+        font-size: 90%;
+        width: 80%;
+    }
+
+    .notification-info .right-notification {
+        width: 19%;
+    }
+
+    .notification-info button img {
+        width: 22px;
+    }
+}
+
+@media screen and (max-width:580px) {
+    .notification-info {
+        flex-flow: column;
+
+    }
+
+    .notification-info .left-notification {
+        font-size: 95%;
+        width: 100%;
+        text-align: center;
+    }
+
+    .notification-info .right-notification {
+        margin-top: 15px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .notification-info button img {
+        width: 30px;
+    }
+
+}

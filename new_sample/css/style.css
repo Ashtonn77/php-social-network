@@ -1016,7 +1016,7 @@ body {
 }
 
 .notification-info .left-notification {
-  width: 60%;
+  width: 70%;
 }
 
 .notification-info .left-notification a {
@@ -1038,7 +1038,8 @@ body {
 }
 
 .notification-info .right-notification {
-  width: 35%;
+  width: 25%;
+  text-align: right;
 }
 
 .notification-info button {

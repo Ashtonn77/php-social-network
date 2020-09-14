@@ -4,6 +4,8 @@
     require 'check_session.php';
     require 'spirit_animal.php';
 
+    $date = date('Y-m-d'); //gets current date
+
     if(isset($_GET['id'])){
 
 
