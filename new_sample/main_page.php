@@ -18,6 +18,8 @@ $error_array = array();
 
     <link rel="stylesheet" href="./css/style.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="./css/media_queries.css?v=<?php echo time(); ?>">
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 
 </head>
 
@@ -43,9 +45,16 @@ function show(){
             $post_body = '';
             $date = '';
             $post_success = false;
-          
+            $post_image = "";
+
+              if(isset($_FILES['file'])){
+                    move_uploaded_file($_FILES['file']['tmp_name'], 'images/uploads/'.$_FILES['file']['name']);
+                    $post_image = 'images/uploads/'.$_FILES['file']['name'];             
+                }
+              
             
-            if(isset($_POST['post-modal-btn'])){
+            if(isset($_POST['post-modal-btn'])){               
+          
 
                 $date = date('Y-m-d');
                 $user_id_query = mysqli_query($connect, "SELECT user_id FROM users WHERE username='$currentUserLoggedIn'");
@@ -62,7 +71,11 @@ function show(){
 
                     if($check_empty != ''){
 
-                        $insert_post_query = mysqli_query($connect, "INSERT INTO posts VALUES(NULL, '$user_id', '$posted_by', '$post_body', '$date')");
+                        if($post_image == 'images/uploads/'){
+                            $post_image = '';
+                        }
+
+                        $insert_post_query = mysqli_query($connect, "INSERT INTO posts VALUES(NULL, '$user_id', '$posted_by', '$post_body', '$post_image', '$date')");
 
                     }
                    
@@ -90,81 +103,38 @@ function show(){
             }
         </script>
 
-        <div class="title">If you got somthing to say, say it...</div>
+        <div class="title">Express yourself...</div>
         <button class="close-button" onclick="closeModal()">&times;</button>
     </div>
 
     <div class="modal-body">
-        <form action="main_page.php" method="POST">
+        <form action="main_page.php?id=<?=$current_user_id;?>" method="POST" enctype="multipart/form-data">
             <textarea name="post-body" id=""class="post-modal" placeholder="Speak your truth..."></textarea>
             <span class="err-msg"></span>
-        <input type="submit" name="post-modal-btn" class="post-modal-btn" value="Post">
+
+        <div class="post-modal-btns-wrapper">
+            <input type="submit" name="post-modal-btn" class="post-modal-btn" value="Post">
+
+         <input type="file" name="file" id="file">
+
+                        <label for="file">
+                            <span class="material-icons">
+                            collections
+                            </span>
+                           
+                        </label>
+        </div>
+
         </form>
     </div>
 
     </div>
-
-            <!-- ATTACH MODAL -->
-        <div class="modal modal-two" id="modal">
-
-    <div class="modal-header">
-
-            <script type="text/javascript">
-        
-            function closeModal() {
-
-                const modal = document.querySelector('.modal');
-                const overlay = document.getElementById('overlay');
-
-                if (modal == null) return;
-                modal.classList.remove('active');
-                overlay.classList.remove('active');
-            }
-
-             function closeModalTwo() {
-
-                const modal = document.querySelector('.modal-two');
-                const overlay = document.getElementById('overlay');
-
-                if (modal == null) return;
-                modal.classList.remove('active');
-                overlay.classList.remove('active');
-            }
-        </script>
-
-        <div class="title">Sometimes words aren't enough</div>
-        <button class="close-button" onclick="closeModalTwo()">&times;</button>
-    </div>
-
-    <div class="modal-body">
-
-            <!-- php file upload test -->
-            <?php
-                if(isset($_FILES['user-file'])){
-                    move_uploaded_file($_FILES['user-file']['tmp_name'], './images/uploads/'.$_FILES['user-file']['name']);
-                    echo "Success";
-                }else{
-                    echo "Fail";
-                }
-            
-            ?>
-
-        <!-- if this dont work make action empty -->
-        <form action="main_page.php" method="POST" enctype="multipart/form-data">
-
-         <input type="file" name="user-file" class="user-file">
-         <input type="submit" value="Upload" name="attach-file-btn" class="attach-file-btn">   
-          
-        </form>
-    </div>
-
-    </div>       
 
 
     <div class="" id="overlay"></div>
 
 
-        <div class="toggle-btn" onclick="show()">
+        <div class="toggle-btn" id="toggle-btn"" onclick="show()">
             <span></span>
             <span></span>
             <span></span>
@@ -184,11 +154,11 @@ function show(){
         </div>
 
         <ul>
-            <li><a href="#"><ion-icon name="home-outline" style="color:#fff;"></ion-icon></a></li>
+            <li><a href="main_page.php?id=<?=$current_user_id;?>"><ion-icon name="home-outline" style="color:#fff;"></ion-icon></a></li>
             <li><a href="#"><ion-icon name="people-outline" style="color:#fff;"></ion-icon></a></li>
             <li><a href="#"><ion-icon name="mail-open-outline" style="color:#fff;"></ion-icon></a></li>
             <li><a href="notifications.php?id=<?=$current_user_id;?>"><ion-icon name="notifications-outline" style="color:#fff;"></ion-icon></a></li>
-            <li><a href="profile.php?id=<?=$user_res['user_id'];?>"><img src="<?=$user_res['profile_pic'];?>" alt="profile-pic" width="20px"></a></li>
+            <li><a href="profile.php?id=<?=$current_user_id;?>"><img src="<?=$current_user_res['profile_pic'];?>" alt="profile-pic" width="20px"></a></li>
             <li><a href="logout.php"><ion-icon name="log-out-outline" style="color:#fff;"></ion-icon></a></li>
         </ul>
 
@@ -248,20 +218,10 @@ function show(){
                 overlay.classList.add('active');
             }
 
-            function openModalTwo() {
-
-                const modal = document.querySelector('.modal-two');
-                const overlay = document.getElementById('overlay');            
-                if (modal == null) return;
-                modal.classList.add('active');            
-                overlay.classList.add('active');
-            }
-
     </script>
 
         <ul>
-            <li><a class="open-post-modal" href="#"><img onclick="openModal()" src="./images/icons_logos/post_something2.png" alt="post_something"></a></li>
-            <li><a href="#"><img onclick="openModalTwo()" src="./images/icons_logos/add_file2.png" alt="attach_file"></a></li>            
+            <li><a class="open-post-modal" href="#"><img onclick="openModal()" src="./images/icons_logos/post_something2.png" alt="post_something"></a></li>            
         </ul>
     </div>
 
@@ -269,11 +229,16 @@ function show(){
             
             $load_post_query = mysqli_query($connect, "SELECT * FROM posts ORDER BY post_id DESC");
             
-            while($row = mysqli_fetch_array($load_post_query)){
+            while($res = mysqli_fetch_array($load_post_query)){
 
-                $post_author = $row['posted_by'];
-                $post_content = $row['post_body'];
-                $post_date = $row['date_created'];
+                $post_author = $res['posted_by'];
+                $post_content = $res['post_body'];
+                $post_image_2 = $res['post_image'];
+                $post_date = $res['date_created'];
+
+                $profile_pic_query = mysqli_query($connect, "SELECT profile_pic FROM users WHERE username='$post_author'");
+                $profile_pic_res = mysqli_fetch_array($profile_pic_query);
+                $profile_pic = $profile_pic_res['profile_pic'];
 
                 ?>
 
@@ -282,7 +247,7 @@ function show(){
                 <div class="post-author-info">
 
                     <div class="post-author-pro-pic">
-                        <img src="./images/lion.png" alt="pro-pic" width="40px">
+                        <img src="<?=$profile_pic;?>" alt="pro-pic" width="40px">
                     </div>
 
                             
@@ -296,7 +261,10 @@ function show(){
 
                 </div>
 
-                <div class="post-body"><?=$post_content;?></div>
+                <div class="post-body">
+                    <div class="user-post-text"><?=$post_content;?></div>
+                    <div class="user-post-image"><img src="<?=$post_image_2;?>" alt=""></div>                              
+                </div>
 
                     <div class="post-reactions">
 
@@ -373,11 +341,11 @@ function show(){
         <input type="submit" value="&raquo;" name="search-btn" class="search-btn" id="search-btn"></div>
 
         <ul>            
-            <li><a href="#"><ion-icon name="home-outline" style="color:#fff; --ionicon-stroke-width: 22px;" size="large"></ion-icon><span class="tooltiptext">Home</span></a></li>
+            <li><a href="main_page.php?id=<?=$current_user_id;?>"><ion-icon name="home-outline" style="color:#fff; --ionicon-stroke-width: 22px;" size="large"></ion-icon><span class="tooltiptext">Home</span></a></li>
             <li><a href="#"><ion-icon name="people-outline" style="color:#fff; --ionicon-stroke-width: 22px;" size="large"></ion-icon><span class="tooltiptext">My Network</span></a></li>
             <li><a href="#"><ion-icon name="mail-open-outline" style="color:#fff; --ionicon-stroke-width: 22px;" size="large"></ion-icon><span class="tooltiptext">Messages</span></a></li>
-            <li><a href="#"><ion-icon name="notifications-outline" style="color:#fff; --ionicon-stroke-width: 22px;" size="large"></ion-icon><span class="tooltiptext">Notifications</span></a></li>
-            <li><a href="#"><img src="./images/lion.png" alt="profile-pic" width="30px" size="large"><span class="tooltiptext">My profile</span></a></li>
+            <li><a href="notifications.php?id=<?=$current_user_id;?>"><ion-icon name="notifications-outline" style="color:#fff; --ionicon-stroke-width: 22px;" size="large"></ion-icon><span class="tooltiptext">Notifications</span></a></li>
+            <li><a href="profile.php?id=<?=$current_user_id;?>"><img src="<?=$current_user_res['profile_pic'];?>" alt="profile-pic" width="20px"></a></li>
             <li><a href="logout.php"><ion-icon name="log-out-outline" style="color:#fff; --ionicon-stroke-width: 22px;" size="large"></ion-icon><span class="tooltiptext">Logout</span></a></li>
         </ul>
 

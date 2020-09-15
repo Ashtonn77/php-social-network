@@ -40,7 +40,7 @@ require 'helpers/get_details.php';
                 </div>
 
                 <ul>
-                    <li><a href="#">
+                    <li><a href="main_page.php?id=<?=$current_user_id;?>">
                             <ion-icon name="home-outline" style="color:#fff;"></ion-icon>
                         </a></li>
                     <li><a href="#">
@@ -49,10 +49,10 @@ require 'helpers/get_details.php';
                     <li><a href="#">
                             <ion-icon name="mail-open-outline" style="color:#fff;"></ion-icon>
                         </a></li>
-                    <li><a href="#">
+                    <li><a href="notifications.php?id=<?=$current_user_id;?>">
                             <ion-icon name="notifications-outline" style="color:#fff;"></ion-icon>
                         </a></li>
-                    <li><a href="profile.php?id=<?=$user_res['user_id'];?>"><img src="<?=$user_res['profile_pic'];?>" alt="profile-pic" width="20px"></a></li>
+                    <li><a href="profile.php?id=<?=$current_user_id;?>"><img src="<?=$current_user_res['profile_pic'];?>" alt="profile-pic" width="20px"></a></li>
                     <li><a href="logout.php">
                             <ion-icon name="log-out-outline" style="color:#fff;"></ion-icon>
                         </a></li>
@@ -152,7 +152,7 @@ require 'helpers/get_details.php';
             <input type="submit" value="&raquo;" name="search-btn" class="search-btn" id="search-btn"></div>
 
         <ul>
-            <li><a href="#">
+            <li><a href="main_page.php?id=<?=$current_user_id;?>">
                     <ion-icon name="home-outline" style="color:#fff; --ionicon-stroke-width: 22px;" size="large">
                     </ion-icon>
                     <span class="tooltiptext">Home</span>
@@ -165,14 +165,13 @@ require 'helpers/get_details.php';
                     <ion-icon name="mail-open-outline" style="color:#fff; --ionicon-stroke-width: 22px;" size="large">
                     </ion-icon><span class="tooltiptext">Messages</span>
                 </a></li>
-            <li><a href="#">
+            <li><a href="notifications.php?id=<?=$current_user_id;?>">
                     <ion-icon name="notifications-outline" style="color:#fff; --ionicon-stroke-width: 22px;"
                         size="large">
                     </ion-icon><span class="tooltiptext">Notifications</span>
                 </a></li>
-            <li><a href="#"><img src="./images/lion.png" alt="profile-pic" width="30px" size="large"><span
-                        class="tooltiptext">My profile</span></a></li>
-            <li><a href="#">
+            <li><a href="profile.php?id=<?=$current_user_id;?>"><img src="<?=$current_user_res['profile_pic'];?>" alt="profile-pic" width="20px"></a></li>
+            <li><a href="logout.php">
                     <ion-icon name="log-out-outline" style="color:#fff; --ionicon-stroke-width: 22px;" size="large">
                     </ion-icon><span class="tooltiptext">Logout</span>
                 </a></li>

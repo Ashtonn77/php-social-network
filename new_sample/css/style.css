@@ -51,7 +51,7 @@ body {
   display: flex;
   flex-flow: column;
   justify-content: space-between;
-  overflow: scroll;
+  overflow: auto;
 }
 
 /**TOP NAV**/
@@ -205,7 +205,7 @@ body {
   border-radius: 5px;
   padding: 5px;
   margin-bottom: 30px;
-  width: 200px;
+  width: 110px;
   box-shadow: var(--bx-shadow);
 }
 
@@ -213,7 +213,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px;
+  height: 80px;
 }
 
 .post-something ul li {
@@ -271,6 +271,13 @@ body {
   text-align: center;
   line-height: 20px;
 }
+
+.post-body img {
+  width: 50%;
+  max-width: 160px;
+  margin-top: 25px;
+}
+
 
 .post-reactions {
   display: flex;
@@ -561,7 +568,7 @@ body {
   display: block;
   width: 100%;
   height: 150px;
-  font-size: 85%;
+  font-size: 75%;
   border: 1px solid #b3b3b3;
   padding: 8px;
   border-radius: 5px;
@@ -583,7 +590,7 @@ body {
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
-  margin-top: 15px;
+
   transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -630,6 +637,52 @@ body {
   color: var(--err-msg);
   margin: 5px 0 -10px 5px;
 }
+
+/*attach btn styles*/
+
+
+.modal-body form input[type="file"] {
+  display: none;
+}
+
+.modal-body form label {
+  background-color: var(--base-clr);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 12px 3px 12px;
+  border: 2px solid var(--base-clr);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  margin-left: 10px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.modal-body .material-icons {
+  font-size: 88%;
+}
+
+.modal-body form label:hover {
+  cursor: pointer;
+  color: #000;
+  background-color: var(--btn-hover-one);
+  border: 2px solid var(--btn-hover-one);
+}
+
+.modal-body .post-modal-btns-wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
 
 /*END MODALS FOR POST AND ATTACH BTNS*/
 
