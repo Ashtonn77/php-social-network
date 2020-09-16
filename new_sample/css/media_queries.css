@@ -106,11 +106,6 @@
         margin-bottom: 18px;
     }
 
-    .post-reactions .post-likes .like-count,
-    .post-reactions .post-dislikes .dislike-count {
-        font-size: 85%;
-    }
-
 
     .post-reactions .post-likes .like-count {
         position: absolute;

@@ -308,10 +308,28 @@ body {
   align-items: center;
 }
 
+.post-reactions .post-likes .like-count,
+.post-reactions .post-dislikes .dislike-count {
+  font-size: 85%;
+}
+
+.post-reactions .post-likes button,
+.post-reactions .post-dislikes button {
+  border: 0;
+  background-color: transparent;
+}
+
 .post-reactions .post-likes .like-count {
   margin-left: -8px;
   margin-right: 5px;
+  margin-bottom: 3px;
 }
+
+.post-reactions .post-dislikes .dislike-count {
+  margin-left: -8px;
+  margin-bottom: 3px;
+}
+
 
 .post-reactions .post-dislikes {
   display: flex;
@@ -320,9 +338,6 @@ body {
   margin-left: 15px;
 }
 
-.post-reactions .post-dislikes .dislike-count {
-  margin-left: -8px;
-}
 
 /*RIGHT*/
 .right-section {
