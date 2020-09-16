@@ -75,10 +75,9 @@ function show(){
                             $post_image = '';
                         }
 
-                        $insert_post_query = mysqli_query($connect, "INSERT INTO posts VALUES(NULL, '$user_id', '$posted_by', '$post_body', '$post_image', '$date')");
+                        $insert_post_query = mysqli_query($connect, "INSERT INTO posts VALUES(NULL, '$user_id', '$posted_by', '$post_body', '$post_image', '0', '0', '$date')");
 
-                    }
-                   
+                    }                   
                 
                 }
      
@@ -236,11 +235,26 @@ function show(){
                 $post_image_2 = $res['post_image'];
                 $post_date = $res['date_created'];
 
+                $post_likes = $res['post_likes'];
+                $post_dislikes = $res['post_dislikes'];
+
                 $profile_pic_query = mysqli_query($connect, "SELECT profile_pic FROM users WHERE username='$post_author'");
                 $profile_pic_res = mysqli_fetch_array($profile_pic_query);
                 $profile_pic = $profile_pic_res['profile_pic'];
 
                 ?>
+
+                <script>
+
+                    function test(){
+
+                        let cnt = document.querySelector('.like-count').innerText;
+                        document.querySelector('.like-count').innerHTML = parseInt(cnt) + 1;                      
+
+                    }
+
+                </script>
+
 
             <div class="news-feed">
 
@@ -269,11 +283,11 @@ function show(){
                     <div class="post-reactions">
 
                         <div class="post-likes">
-                            <img src="./images/icons_logos/like.png" alt="like" width="17px">
+                            <img src="./images/icons_logos/like.png" alt="like" width="17px" onclick="test()"><div class="like-count"><?=$post_likes;?></div>
                         </div>
 
                         <div class="post-dislikes">
-                            <img src="./images/icons_logos/dislike.png" alt="dislike" width="17px">
+                            <img src="./images/icons_logos/dislike.png" alt="dislike" width="17px"><div class="dislike-count"><?=$post_dislikes;?></div>
                         </div>
 
                         <div class="post-comments">

@@ -85,6 +85,58 @@
     }
 }
 
+/*post likes/dislikes/comments*/
+@media screen and (max-width: 348px) {
+
+    .post-reactions {
+        display: block;
+        padding-bottom: 10px;
+    }
+
+    .post-reactions img {
+        position: absolute;
+        left: 0;
+    }
+
+    .post-reactions .post-dislikes img {
+        margin-top: 15px;
+    }
+
+    .post-reactions .post-likes {
+        margin-bottom: 18px;
+    }
+
+    .post-reactions .post-likes .like-count,
+    .post-reactions .post-dislikes .dislike-count {
+        font-size: 85%;
+    }
+
+
+    .post-reactions .post-likes .like-count {
+        position: absolute;
+        left: 35px;
+        margin-bottom: 2px;
+
+    }
+
+    .post-reactions .post-dislikes .dislike-count {
+        position: absolute;
+        left: 35px;
+        margin-top: 13px;
+    }
+
+    .post-reactions .post-comments {
+        margin-top: 25px;
+    }
+
+    .post-reactions .post-comments a {
+        position: absolute;
+        left: 0;
+    }
+}
+
+/*end post likes/dislikes/comments*/
+
 @media screen and (max-width: 242px) {
 
     .sidebar-search input[type="search"] {

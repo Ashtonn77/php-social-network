@@ -302,6 +302,28 @@ body {
   cursor: pointer;
 }
 
+.post-reactions .post-likes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-reactions .post-likes .like-count {
+  margin-left: -8px;
+  margin-right: 5px;
+}
+
+.post-reactions .post-dislikes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 15px;
+}
+
+.post-reactions .post-dislikes .dislike-count {
+  margin-left: -8px;
+}
+
 /*RIGHT*/
 .right-section {
   margin-top: 2%;
