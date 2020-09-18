@@ -288,7 +288,7 @@ body {
   margin-right: 15px;
 }
 
-.post-reactions a {
+.post-reactions .post-comments {
   position: absolute;
   right: 10px;
   font-size: 85%;
@@ -297,7 +297,7 @@ body {
   color: #000;
 }
 
-.post-reactions a,
+.post-reactions .post-comments,
 .post-reactions img {
   cursor: pointer;
 }

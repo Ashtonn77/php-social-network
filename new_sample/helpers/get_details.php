@@ -26,9 +26,7 @@
         $current_user_query = mysqli_query($connect, "SELECT * FROM users WHERE user_id='$current_user_id'");
         $current_user_res = mysqli_fetch_array($current_user_query);
 
-        $users_to_invite_query = mysqli_query($connect, "SELECT * FROM users WHERE NOT username='$currentUserLoggedIn'"); 
-
-
+        
         //resulting arrays
         $user_res = mysqli_fetch_array($user_query);
         $preferences_res = mysqli_fetch_array($preferences_query);
@@ -60,6 +58,7 @@
       }else{
 
        
+
         header("Location: error.php");
 
 

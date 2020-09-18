@@ -226,13 +226,10 @@ function show(){
 
             <?php
             
-            $load_post_query = mysqli_query($connect, "SELECT * FROM posts ORDER BY post_id DESC");            
+            $load_post_query = mysqli_query($connect, "SELECT * FROM posts ORDER BY post_id DESC");          
             
             
             while($res = mysqli_fetch_array($load_post_query)){
-
-                $like_temp = "";
-                $dislike_temp = "";
 
                 $post_id = $res['post_id'];
                 $post_user_id = $res['user_id'];
@@ -274,51 +271,30 @@ function show(){
                     <div class="user-post-image"><img src="<?=$post_image_2;?>" alt=""></div>                              
                 </div>
 
-                  
 
+                    <div class="post-reactions">
 
-                    <form class="post-reactions" id="post-reactions"  method="POST">
-
-                        <div class="post-likes">
-                            <button name="post-like-btn" onclick="goToLikes()"><img src="./images/icons_logos/like.png" alt="like" width="17px"></button><div class="like-count"><?=$post_likes;?></div>
-                        </div>
+                        <form class="post-likes" action="likes.php?post_likes=<?=$post_likes;?>&post_id=<?=$post_id;?>" method="POST">
+                            <button id="post-like-btn" name="post-like-btn"><img src="./images/icons_logos/like.png" alt="like" width="17px"></button><div id="like-count" class="like-count"><?=$post_likes;?></div>
+                        </form>
 
                         <div class="post-dislikes">
-                            <button name="post-dislike-btn" onclick="goToDislikes()"><img src="./images/icons_logos/dislike.png" alt="dislike" width="17px"></button><div class="dislike-count"><?=$post_dislikes;?></div>
+                            <button name="post-dislike-btn"><img src="./images/icons_logos/dislike.png" alt="dislike" width="17px"></button><div class="dislike-count"><?=$post_dislikes;?></div>
                         </div>
 
                         <div class="post-comments">
                             <a href="#">30 comments</a>
                         </div>
 
-                    </form>
-
-                          <script>
-
-                            function goToDislikes()
-                            {
-                                form = document.getElementById('post-reactions');
-                                form.submit();
-                                form.action='dislikes.php?id=<?=$current_user_id;?>&post_id=<?=$post_id;?>';                         
-                                form.target='';
-                            }
-
-                             function goToLikes()
-                            {
-                                form = document.getElementById('post-reactions');
-                                form.submit();
-                                form.action='likes.php?id=<?=$current_user_id;?>&post_id=<?=$post_id;?>';                         
-                                form.target='';
-                            }
-
-                        </script>
+                    </div>
 
             </div>
 
                 <?php
 
             }
-                  
+
+            
             
             ?>
     
@@ -384,8 +360,8 @@ function show(){
     </div>
     
   
-
-<script src="./js/script.js"></script>
-<script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>    
 </body>
 </html>

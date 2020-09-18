@@ -1,26 +1,25 @@
+<?php
 
-   <?php
+require 'helpers/config_template.php';
 
-        require 'helpers/config_template.php';
-        require 'helpers/check_session.php';
-        require 'helpers/get_details.php';
+if(isset($_GET['post_likes'], $_GET['post_id'])){
 
-        if(isset($_GET['post_id'])){
+   $post_id = $_GET['post_id'];
+   $post_likes = $_GET['post_likes'];
+   $post_likes = $post_likes + 1;
 
-            $post_id = $_GET['post_id'];
-            $user_post_id_query = mysqli_query($connect, "SELECT * FROM posts WHERE post_id='$post_id'");
-            $user_post_res = mysqli_fetch_array($user_post_id_query); 
+   $query = mysqli_query($connect, "UPDATE posts SET post_likes='$post_likes' WHERE post_id='$post_id'"); 
+   
+   echo $post_likes;
 
-            $post_likes_temp = $user_post_res['post_likes'];
-            $post_likes_temp++;
+}else{
 
-            $post_likes_query = mysqli_query($connect, "UPDATE posts SET post_likes='$post_likes_temp' WHERE post_id='$post_id'");   
+echo "";
 
-           header("Location: main_page.php?id=".$current_user_id);
-       
-           exit();          
+}
 
-        }
 
-                       
-    ?>
+
+
+?>
+
