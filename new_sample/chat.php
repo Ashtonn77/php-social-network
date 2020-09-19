@@ -88,30 +88,65 @@ require 'helpers/get_details.php';
 
         </div>
 
-            <script>
-
-                $('.message').keyup(function(e){
-
-                   if(e.which == 13){
-                       $('form').submit();
-                   }
-
-                });
-
-                $('form').submit(function(){
-
-                    var message = $('.message').val();
-                    $.post('helpers/chat_helper.php?id=<?=$current_user_id;?>&action=sendMessage&message=' + message, function(response){
-
-                            if(response == 1){
-                                alert("test")
-                            }
+    <script>
 
 
-                    });
+    loadChat();
 
-                    return false;
-                })
+    setInterval(() => {
+        loadChat();
+    }, 800);
+
+    function loadChat(){       
+
+        $.post('helpers/chat_helper.php?id=<?=$current_user_id;?>&action=getMessages', function(response){
+            
+            var scrollpos = $('#chat-main').scrollTop();
+            var scrollpos = parseInt(scrollpos) + 520;//220 = height of chat div + 10 padding on top and bottom
+            var scrollHeight = $('#chat-main').prop('scrollHeight');
+
+            $('#chat-main').html(response);
+
+            if(scrollpos < scrollHeight){
+
+            }
+            else{
+            
+            $('#chat-main').scrollTop($('#chat-main').prop('scrollHeight'));
+
+            }
+
+        })
+
+    }
+
+
+
+        $('.message').keyup(function(e){
+        
+        if(e.which == 13){
+            $('form').submit();
+           
+        }
+
+    });
+
+    $('form').submit(function(){
+        
+        var message = $('.message').val();
+        $.post('helpers/chat_helper.php?id=<?=$current_user_id;?>&action=sendMessage&message=' + message, function(response){
+            
+            if(response == 1){
+                loadChat();
+                document.querySelector('.chat-form').reset();
+
+            }
+
+          
+        })
+
+        return false;
+    })
 
 
 
