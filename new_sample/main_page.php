@@ -155,7 +155,7 @@ function show(){
         <ul>
             <li><a href="main_page.php?id=<?=$current_user_id;?>"><ion-icon name="home-outline" style="color:#fff;"></ion-icon></a></li>
             <li><a href="#"><ion-icon name="people-outline" style="color:#fff;"></ion-icon></a></li>
-            <li><a href="#"><ion-icon name="mail-open-outline" style="color:#fff;"></ion-icon></a></li>
+            <li><a href="chat.php?id=<?=$current_user_id;?>"><ion-icon name="mail-open-outline" style="color:#fff;"></ion-icon></a></li>
             <li><a href="notifications.php?id=<?=$current_user_id;?>"><ion-icon name="notifications-outline" style="color:#fff;"></ion-icon></a></li>
             <li><a href="profile.php?id=<?=$current_user_id;?>"><img src="<?=$current_user_res['profile_pic'];?>" alt="profile-pic" width="20px"></a></li>
             <li><a href="logout.php"><ion-icon name="log-out-outline" style="color:#fff;"></ion-icon></a></li>
@@ -271,11 +271,15 @@ function show(){
                     <div class="user-post-image"><img src="<?=$post_image_2;?>" alt=""></div>                              
                 </div>
 
-
+                    <!-- fix likes and dislikes -->
                     <div class="post-reactions">
 
-                        <form class="post-likes" action="likes.php?post_likes=<?=$post_likes;?>&post_id=<?=$post_id;?>" method="POST">
-                            <button id="post-like-btn" name="post-like-btn"><img src="./images/icons_logos/like.png" alt="like" width="17px"></button><div id="like-count" class="like-count"><?=$post_likes;?></div>
+                        <form class="post-likes">
+
+
+                            <button class="post-like-btn" name="post-like-btn"><img src="./images/icons_logos/like.png" alt="like" width="17px"></button><div class="like-count"><?=$post_likes;?></div>          
+
+
                         </form>
 
                         <div class="post-dislikes">
@@ -287,6 +291,7 @@ function show(){
                         </div>
 
                     </div>
+                     <!-- fix likes and dislikes -->
 
             </div>
 
@@ -351,7 +356,7 @@ function show(){
         <ul>            
             <li><a href="main_page.php?id=<?=$current_user_id;?>"><ion-icon name="home-outline" style="color:#fff; --ionicon-stroke-width: 22px;" size="large"></ion-icon><span class="tooltiptext">Home</span></a></li>
             <li><a href="#"><ion-icon name="people-outline" style="color:#fff; --ionicon-stroke-width: 22px;" size="large"></ion-icon><span class="tooltiptext">My Network</span></a></li>
-            <li><a href="#"><ion-icon name="mail-open-outline" style="color:#fff; --ionicon-stroke-width: 22px;" size="large"></ion-icon><span class="tooltiptext">Messages</span></a></li>
+            <li><a href="?id=<?=$current_user_id;?>"><ion-icon name="mail-open-outline" style="color:#fff; --ionicon-stroke-width: 22px;" size="large"></ion-icon><span class="tooltiptext">Messages</span></a></li>
             <li><a href="notifications.php?id=<?=$current_user_id;?>"><ion-icon name="notifications-outline" style="color:#fff; --ionicon-stroke-width: 22px;" size="large"></ion-icon><span class="tooltiptext">Notifications</span></a></li>
             <li><a href="profile.php?id=<?=$current_user_id;?>"><img src="<?=$current_user_res['profile_pic'];?>" alt="profile-pic" width="20px"></a></li>
             <li><a href="logout.php"><ion-icon name="log-out-outline" style="color:#fff; --ionicon-stroke-width: 22px;" size="large"></ion-icon><span class="tooltiptext">Logout</span></a></li>

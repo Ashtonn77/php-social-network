@@ -17,9 +17,25 @@ $("form.post-likes").on("submit", function () {
     type: type,
     data: data,
     success: function (response) {
-      $("#like-count").html(response);
+      $(".like-count").each(function (index, item) {
+        $(item).html(response);
+      });
     },
   });
 
   return false;
 });
+
+// $(function () {
+//   // don't cache ajax or content won't be fresh
+//   $.ajaxSetup({
+//     cache: false,
+//   });
+
+//   var loadUrl = "likes.php";
+//   $("#post-like-btn").click(function () {
+//     $("#like-count").load(loadUrl);
+//   });
+
+//   // end
+// });

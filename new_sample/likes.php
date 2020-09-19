@@ -14,7 +14,7 @@ if(isset($_GET['post_likes'], $_GET['post_id'])){
 
 }else{
 
-echo "";
+echo "60";
 
 }
 
