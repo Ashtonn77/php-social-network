@@ -1242,9 +1242,10 @@ body {
 }
 
 
-/*FRIENDS LIST SECTION*/
+/*FRIENDS LIST SECTION & MESSAGE LIST SECTION*/
 
-.friend-wrapper {
+.friend-wrapper,
+.msg-container {
   margin: 5% auto;
   width: 90%;
   max-width: 400px;
@@ -1253,7 +1254,10 @@ body {
   overflow: auto;
 }
 
-.friend {
+
+
+.friend,
+.msg-container .msg-list-main .msg-cards {
   margin-bottom: 20px;
   display: flex;
   flex-flow: column;
@@ -1269,7 +1273,8 @@ body {
   -o-border-radius: 5px;
 }
 
-.friend .friend-pro-pic {
+.friend .friend-pro-pic,
+.msg-container .msg-list-main .msg-cards .msg-user-pro-pic {
   width: 80px;
   height: 80px;
   background-color: #fff;
@@ -1285,7 +1290,8 @@ body {
   padding: 6px;
 }
 
-.friend a {
+.friend a,
+.msg-container .msg-list-main a {
   text-decoration: none;
   color: #000;
   border-bottom: 1px solid transparent;
@@ -1297,14 +1303,17 @@ body {
   -o-transition: all 0.3s ease;
 }
 
-.friend .friend-pro-pic img {
+.friend .friend-pro-pic img,
+.msg-container .msg-list-main .msg-cards .msg-user-pro-pic img {
   width: 90%;
 }
 
-.friend .friend-name {
+.friend .friend-name,
+.msg-container .msg-list-main .msg-cards .msg-user-name {
   margin: 10px 0;
   font-weight: 600;
   font-size: 120%;
+  letter-spacing: 0.4px;
 
 }
 
@@ -1319,7 +1328,13 @@ body {
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  color: #026873;
+  color: var(--base-clr);
+}
+
+.msg-container .msg-list-main .msg-cards .msg-user-action a {
+  font-size: 90%;
+  font-weight: 600;
+  color: var(--base-clr);
 }
 
 .friend .friend-action a {
@@ -1327,7 +1342,19 @@ body {
   font-weight: 600;
 }
 
-.friend a:hover {
+.friend a:hover,
+.msg-container .msg-list-main a:hover,
+.msg-container .msg-list-main .msg-cards .msg-user-action a:hover {
   color: var(--btn-hover-one);
   border-bottom: 1px solid var(--btn-hover-one);
+}
+
+.msg-container .msg-list-heading {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.msg-container .msg-list-heading h1 {
+  font-weight: 300;
+  font-size: 190%;
 }

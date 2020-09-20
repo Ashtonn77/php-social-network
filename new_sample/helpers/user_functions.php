@@ -10,6 +10,35 @@ function get_user_id($connect, $currentUser){
 }
 
 
+function get_user_full_name($connect, $user_id){
+
+    $query = mysqli_query($connect, "SELECT first_name, last_name FROM users WHERE user_id='$user_id'");
+    $res = mysqli_fetch_array($query);
+
+    return $res['first_name'] . ' ' . $res['last_name'];
+
+}
+
+function get_username($connect, $user_id){
+
+   $query = mysqli_query($connect, "SELECT username FROM users WHERE user_id='$user_id'");
+    $res = mysqli_fetch_array($query);
+
+    return $res['username'];
+
+}
+
+function get_profile_pic($connect, $user_id){
+
+   $query = mysqli_query($connect, "SELECT profile_pic FROM users WHERE user_id='$user_id'");
+    $res = mysqli_fetch_array($query);
+
+    return $res['profile_pic'];
+
+
+}
+
+
 function get_birth_month($birthday){
 
      $birth_month = explode("-", $birthday);

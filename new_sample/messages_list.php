@@ -18,7 +18,7 @@ $friends_list_query = mysqli_query($connect, "SELECT friend_id, friend_name FROM
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My friends</title>
+    <title>My messages</title>
     <link rel="stylesheet" href="./css/style.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="./css/media_queries.css?v=<?php echo time(); ?>">
 </head>
@@ -72,43 +72,69 @@ $friends_list_query = mysqli_query($connect, "SELECT friend_id, friend_name FROM
 
         <div class="main-container">
 
-            <div class="friend-wrapper tile">
 
+            <div class="msg-container">
 
-                    <?php
-                    
-                    while($friends_list_res = mysqli_fetch_array($friends_list_query)){
+                <?php
+                        
+                $msg_list_query = mysqli_query($connect, "SELECT user_id_to FROM messages WHERE user_id_from='$current_user_id'");
+                $msg_list_count = mysqli_num_rows($msg_list_query);
 
-                        $friend_id = $friends_list_res['friend_id'];
-                        $friend_name = $friends_list_res['friend_name'];
+                $msg_list_count = $msg_list_count ? $msg_list_count : 0;
 
-                        $user_list_query = mysqli_query($connect, "SELECT first_name, profile_pic FROM users WHERE user_id='$friend_id'");
-                        $user_list_res = mysqli_fetch_array($user_list_query); 
-
-                        $friend_first_name = $user_list_res['first_name'];
-                        $friend_profile_pic = $user_list_res['profile_pic'];
+                    if($msg_list_count == 1){
 
                         ?>
 
-                         <div class="friend">
+                        <div class="msg-list-heading"><h1>You have <?=$msg_list_count;?> active chat</h1></div>   
 
-                            <div class="friend-pro-pic"><img src="<?=$friend_profile_pic;?>" alt=""></div>
-                            <div class="friend-name"><a href="profile.php?id=<?=$friend_id;?>"><?=$friend_name;?></a></div>
-                            <div class="friend-action">
-                            <a href="#">Send <?=$friend_first_name;?> a hug</a>    
-                            <a href="chat.php?id=<?=$current_user_id;?>&friend_id=<?=$friend_id;?>">Send <?=$friend_first_name;?> a message</a>
-                            </div>
-
-                        </div>                        
-                       
-
-                    <?php
-
+                        <?php
                     }
+                    else{
+
+                        ?>
+                        
+                        <div class="msg-list-heading"><h1>You have <?=$msg_list_count;?> active chats</h1></div>   
+
+                        <?php
+                    }
+
+
+                ?>                            
+
+                    <div class="msg-list-main tile">
+
+
+                        <?php
+
+                            while($res = mysqli_fetch_array($msg_list_query)){
+
+                                $msg_user_id = $res['user_id_to'];
+                                $msg_user_profile_pic = get_profile_pic($connect, $msg_user_id);
+                                $msg_username= get_username($connect, $msg_user_id);
+
+                                ?>
+
+                            <div class="msg-cards tile">
+
+                                <div class="msg-user-pro-pic"><img src="<?=$msg_user_profile_pic;?>" alt=""></div>
+                                    <div class="msg-user-name"><a href="profile.php?id=<?=$msg_user_id;?>">@<?=$msg_username;?></a></div>
+                                    <div class="msg-user-action">
+                                    <a href="chat.php?id=<?=$current_user_id;?>&friend_id=<?=$msg_user_id;?>">Go to chat</a>                               
+                                </div>
+
                     
-                    
-                    ?>               
-                    
+                            </div>   
+
+
+
+                                <?php
+                            }
+                        
+                        ?> 
+
+                   </div>          
+
 
             </div>
 
