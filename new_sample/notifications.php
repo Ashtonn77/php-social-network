@@ -89,6 +89,11 @@ require 'helpers/get_details.php';
                      $notification_from_query = mysqli_query($connect, "SELECT * FROM users WHERE user_id='$user_from_id'");
                      $notification_from_res = mysqli_fetch_array($notification_from_query);   
                      $name_user_from = $notification_from_res['first_name'] . ' ' . $notification_from_res['last_name'];
+
+                     $friend_user_to_query = mysqli_query($connect, "SELECT * FROM users WHERE user_id='$user_to_id'");
+                     $friend_user_to_res = mysqli_fetch_array($friend_user_to_query);
+
+                     $name_user_to = $friend_user_to_res['first_name'] . ' ' . $friend_user_to_res['last_name'];
                      
                      $notification_id_query = mysqli_query($connect, "SELECT notification_id FROM notifications WHERE notification_to='$user_to_id' AND notification_from='$user_from_id'");
                      $notification_id_res = mysqli_fetch_array($notification_id_query);
@@ -97,7 +102,7 @@ require 'helpers/get_details.php';
                         if(isset($_POST['accept-friend'])){
 
                             //this has to come first
-                           $add_to_friend_list_query = mysqli_query($connect, "INSERT INTO friends VALUES(NULL, '$user_to_id', '$user_from_id', '$date')"); 
+                           $add_to_friend_list_query = mysqli_query($connect, "INSERT INTO friends VALUES(NULL, '$user_from_id', '$user_to_id', '$name_user_to', '$date')"); 
 
                            $delete_notification_query = mysqli_query($connect, "DELETE FROM notifications WHERE notification_id='$notification_id'");    
                            

@@ -6,6 +6,9 @@ require 'helpers/get_details.php';
 
 $error_array = array();
 
+
+$friends_list_query = mysqli_query($connect, "SELECT friend_id, friend_name FROM friends WHERE user_id='$current_user_id'");
+
 ?>
 
 
@@ -15,7 +18,7 @@ $error_array = array();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My friends</title>
     <link rel="stylesheet" href="./css/style.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="./css/media_queries.css?v=<?php echo time(); ?>">
 </head>
@@ -45,7 +48,7 @@ $error_array = array();
                     <li><a href="main_page.php?id=<?=$current_user_id;?>">
                             <ion-icon name="home-outline" style="color:#fff;"></ion-icon>
                         </a></li>
-                    <li><a href="friends_list.php?id=<?=$current_user_id;?>">
+                    <li><a href="#">
                             <ion-icon name="people-outline" style="color:#fff;"></ion-icon>
                         </a></li>
                     <li><a href="chat.php?id=<?=$current_user_id;?>">
@@ -69,6 +72,47 @@ $error_array = array();
 
         <div class="main-container">
 
+            <div class="friend-wrapper tile">
+
+
+                    <?php
+                    
+                    while($friends_list_res = mysqli_fetch_array($friends_list_query)){
+
+                        $friend_id = $friends_list_res['friend_id'];
+                        $friend_name = $friends_list_res['friend_name'];
+
+                        $user_list_query = mysqli_query($connect, "SELECT first_name, profile_pic FROM users WHERE user_id='$friend_id'");
+                        $user_list_res = mysqli_fetch_array($user_list_query); 
+
+                        $friend_first_name = $user_list_res['first_name'];
+                        $friend_profile_pic = $user_list_res['profile_pic'];
+
+                        ?>
+
+                         <div class="friend">
+
+                            <div class="friend-pro-pic"><img src="<?=$friend_profile_pic;?>" alt=""></div>
+                            <div class="friend-name"><a href="profile.php?id=<?=$friend_id;?>"><?=$friend_name;?></a></a></div>
+                            <div class="friend-action">
+                            <a href="#">Send <?=$friend_first_name;?> a hug</a>    
+                            <a href="chat.php?id=<?=$current_user_id;?>&friend_id=<?=$friend_id;?>">Send <?=$friend_first_name;?> a message</a>
+                            </div>
+
+                        </div>                        
+                       
+
+                    <?php
+
+                    }
+                    
+                    
+                    ?>               
+                    
+
+            </div>
+
+
         </div>
 
     </div>
@@ -85,7 +129,7 @@ $error_array = array();
                     </ion-icon>
                     <span class="tooltiptext">Home</span>
                 </a></li>
-            <li><a href="friends_list.php?id=<?=$current_user_id;?>">
+            <li><a href="#">
                     <ion-icon name="people-outline" style="color:#fff; --ionicon-stroke-width: 22px;" size="large">
                     </ion-icon><span class="tooltiptext">My Network</span>
                 </a></li>

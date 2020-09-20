@@ -4,6 +4,15 @@ require 'helpers/config_template.php';
 require 'helpers/check_session.php';
 require 'helpers/get_details.php';
 
+$friend_id = '';
+
+if(isset($_GET['friend_id'])){
+
+    $friend_id = $_GET['friend_id'];
+
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -99,7 +108,7 @@ require 'helpers/get_details.php';
 
     function loadChat(){       
 
-        $.post('helpers/chat_helper.php?id=<?=$current_user_id;?>&action=getMessages', function(response){
+        $.post('helpers/chat_helper.php?id=<?=$current_user_id;?>&friend_id=<?=$friend_id;?>&action=getMessages', function(response){
             
             var scrollpos = $('#chat-main').scrollTop();
             var scrollpos = parseInt(scrollpos) + 520;//220 = height of chat div + 10 padding on top and bottom
@@ -134,7 +143,7 @@ require 'helpers/get_details.php';
     $('form').submit(function(){
         
         var message = $('.message').val();
-        $.post('helpers/chat_helper.php?id=<?=$current_user_id;?>&action=sendMessage&message=' + message, function(response){
+        $.post('helpers/chat_helper.php?id=<?=$current_user_id;?>&friend_id=<?=$friend_id;?>&action=sendMessage&message=' + message, function(response){
             
             if(response == 1){
                 loadChat();
