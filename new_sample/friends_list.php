@@ -8,6 +8,7 @@ $error_array = array();
 
 
 $friends_list_query = mysqli_query($connect, "SELECT friend_id, friend_name FROM friends WHERE user_id='$current_user_id'");
+$friends_count = mysqli_num_rows($friends_list_query);
 
 ?>
 
@@ -72,8 +73,32 @@ $friends_list_query = mysqli_query($connect, "SELECT friend_id, friend_name FROM
 
         <div class="main-container">
 
-            <div class="friend-wrapper tile">
+            <?php
+            
+            if($friends_count < 1){
 
+                ?>
+
+                <div class="no-friends-heading tile">
+
+                <h1>You need to invite some folks</h1>
+                 <h2>Make friends</h2>
+                  <h3>Talk about stuff no one understands</h3>
+                  <h3>Express yourself, Be ridiculous</h3>
+                  <h2>Be odd, Be weird, Be an absolute nut</h2>
+                  <h1>Be You</h1>
+                 
+                </div>
+
+            <?php
+
+
+            }else{
+
+                ?>
+
+                       <div class="friend-wrapper tile">
+               
 
                     <?php
                     
@@ -111,6 +136,14 @@ $friends_list_query = mysqli_query($connect, "SELECT friend_id, friend_name FROM
                     
 
             </div>
+
+
+                <?php
+
+            }
+            
+            
+            ?>
 
 
         </div>

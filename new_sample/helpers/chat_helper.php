@@ -11,11 +11,16 @@ switch ($_REQUEST['action']) {
         $user_from_id = $_REQUEST['id'];
         $user_to_id = $_REQUEST['friend_id'];
         $message = $_REQUEST['message'];
-        $chat_query = mysqli_query($connect, "INSERT INTO messages VALUES(NULL, '$user_from_id', '$user_to_id', '$message', NULL)");
+        
+        if(strlen($message) > 0){
+
+          $chat_query = mysqli_query($connect, "INSERT INTO messages VALUES(NULL, '$user_from_id', '$user_to_id', '$message', NULL)");
 
         if($chat_query){
             echo 1;
             exit();
+        }
+
         }
 
         break;
@@ -30,12 +35,16 @@ switch ($_REQUEST['action']) {
 
         foreach($res as $message){
 
-                if($user_from_id == $current_user_id){
+                if($message['user_id_from']  == $current_user_id){
 
-                  $chat .= '<div class="main-user">
-                    <strong>' . $message['user_id_from'] . ': </strong>
+                  $chat .= '<div class="owner">
+                  
+                    <div class="main-chat-user chat-msg">
+                    <strong>' . get_username($connect, $message['user_id_from']) . ': </strong>
                     ' . $message['message_content'] . '
-                    <span>' . date('H:i', strtotime($message['date'])) . '</span>
+                    <span> sent @ ' . date('H:i', strtotime($message['date'])) . '</span>
+                  
+                  </div>
                   
                   </div>';  
 
@@ -43,10 +52,14 @@ switch ($_REQUEST['action']) {
                 }
                 else{
 
-                  $chat .= '<div class="secondary-user">
-                    <strong>' . $message['user_id_from'] . ': </strong>
+                  $chat .= '<div class="visitor">
+
+                  <div class="secondary-chat-user chat-msg">
+                    <strong>' . get_username($connect, $message['user_id_from']) . ': </strong>
                     ' . $message['message_content'] . '
-                    <span>' . date('H:i', strtotime($message['date'])) . '</span>
+                    <span> sent @ ' . date('H:i', strtotime($message['date'])) . '</span>
+                  
+                  </div>
                   
                   </div>';   
 

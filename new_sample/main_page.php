@@ -287,7 +287,7 @@ function show(){
                         </div>
 
                         <div class="post-comments">
-                            <a href="#">30 comments</a>
+                            <a href="#">30 comments</a>                            
                         </div>
 
                     </div>

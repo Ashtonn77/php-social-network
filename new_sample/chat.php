@@ -83,8 +83,8 @@ if(isset($_GET['friend_id'])){
 
                         <div class="chat-sub">
 
-                        <textarea name="message" class="message"></textarea>
-                        <button name="message-btn" class="message-btn"><img src="images/icons_logos/send.png" alt="send"></button>
+                        <textarea name="message" class="message" placeholder="Write something..."></textarea>
+                        <button name="message-btn" class="message-btn">Send</button>
 
                         </div>
 

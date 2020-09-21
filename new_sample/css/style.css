@@ -9,6 +9,10 @@
   --err-msg: #bb0000;
   --bx-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3),
     0 4px 6px -2px rgba(0, 0, 0, 0.1);
+  --bx-shadow-clk: 0 12px 20px -3px rgba(0, 0, 0, 0.3),
+    0 6px 20px -4px rgba(0, 0, 0, 0.1);
+  --speech-bbl-owner: #00cec9;
+  --speech-bbl-visitor: #0984e3;
 }
 
 * {
@@ -292,6 +296,11 @@ body {
   right: 10px;
   font-size: 85%;
   font-weight: 600;
+  text-decoration: none;
+  color: #000;
+}
+
+.post-reactions .post-comments a {
   text-decoration: none;
   color: #000;
 }
@@ -1191,13 +1200,12 @@ body {
 .main-chat-wrapper {
   margin: 8% auto;
   width: 90%;
-  max-width: 1140px;
-  max-height: 700px;
-  min-height: 650px;
+  max-width: 800px;
+  max-height: 600px;
+  min-height: 600px;
 }
 
-.chat-main,
-.chat-form {
+.chat-main {
   padding: 10px;
 }
 
@@ -1205,28 +1213,19 @@ body {
   width: 100%;
   min-height: 500px;
   height: 500px;
-  border: 1px solid #000;
   overflow: auto;
   color: #000;
 }
 
 .chat-form {
   width: 100%;
-  height: 15%;
-  background-color: red;
 }
 
-.chat-sub {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .chat-sub .message {
-  width: 90%;
-  height: 70%;
+  resize: none;
+  width: 100%;
+  height: 40px;
   border: 0;
   padding: 10px;
   border-radius: 5px;
@@ -1235,14 +1234,119 @@ body {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   margin-right: 1%;
+  border: 1px solid #555;
 }
 
-.chat-sub .message-btn img {
-  width: 40px;
+.chat-sub .message-btn {
+  color: #fff;
+  margin-top: 4px;
+  padding: 6px 10px;
+  font-size: 101%;
+  font-weight: 600;
+  letter-spacing: 1px;
+  background-color: #3dc1d3;
+  border: 0;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  cursor: pointer;
+  box-shadow: var(--bx-shadow);
 }
 
+.chat-sub .message-btn:active {
+  box-shadow: var(--bx-shadow-clk);
+}
+
+.owner,
+.visitor {
+  width: 100%;
+  display: flex;
+
+}
+
+.owner {
+
+  justify-content: flex-start;
+}
+
+.visitor {
+
+  justify-content: flex-end;
+}
+
+.chat-msg {
+  width: 200px;
+  margin: 0 15px 10px 15px;
+  padding: 15px;
+  position: relative;
+  border: 0;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  box-shadow: var(--bx-shadow);
+  word-wrap: break-word;
+}
+
+
+.chat-msg::before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+}
+
+.main-chat-user {
+  background-color: var(--speech-bbl-owner);
+}
+
+.main-chat-user::before {
+  border-left: 10px solid transparent;
+  border-right: 10px solid var(--speech-bbl-owner);
+  border-top: 10px solid var(--speech-bbl-owner);
+  border-bottom: 10px solid transparent;
+  top: 6px;
+  left: -20px;
+}
+
+.secondary-chat-user {
+  background-color: var(--speech-bbl-visitor);
+}
+
+.secondary-chat-user::before {
+  border-left: 10px solid var(--speech-bbl-visitor);
+  border-right: 10px solid transparent;
+  border-top: 10px solid var(--speech-bbl-visitor);
+  border-bottom: 10px solid transparent;
+  top: 6px;
+  right: -20px;
+}
+
+.chat-msg span {
+  margin-top: 8px;
+  display: block;
+  font-size: 80%;
+  color: #f0f0f0;
+  font-weight: 600;
+}
 
 /*FRIENDS LIST SECTION & MESSAGE LIST SECTION*/
+
+.no-friends-heading {
+  margin: 0 auto;
+  height: fit-content;
+  padding: 15px 30px;
+  text-align: center;
+  line-height: 50px;
+  background-color: var(--lighter-base);
+}
+
+.no-friends-heading h1 {
+  font-weight: 300;
+}
 
 .friend-wrapper,
 .msg-container {

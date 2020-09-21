@@ -7,7 +7,7 @@ require 'helpers/get_details.php';
 $error_array = array();
 
 
-$friends_list_query = mysqli_query($connect, "SELECT friend_id, friend_name FROM friends WHERE user_id='$current_user_id'");
+$friends_list_query = mysqli_query($connect, "SELECT DISTINCT friend_id, friend_name FROM friends WHERE user_id='$current_user_id'");
 
 ?>
 
@@ -77,7 +77,7 @@ $friends_list_query = mysqli_query($connect, "SELECT friend_id, friend_name FROM
 
                 <?php
                         
-                $msg_list_query = mysqli_query($connect, "SELECT user_id_to FROM messages WHERE user_id_from='$current_user_id'");
+                $msg_list_query = mysqli_query($connect, "SELECT DISTINCT user_id_to FROM messages WHERE user_id_from='$current_user_id'");
                 $msg_list_count = mysqli_num_rows($msg_list_query);
 
                 $msg_list_count = $msg_list_count ? $msg_list_count : 0;
