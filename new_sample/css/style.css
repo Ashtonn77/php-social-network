@@ -13,6 +13,8 @@
     0 6px 20px -4px rgba(0, 0, 0, 0.1);
   --speech-bbl-owner: #00cec9;
   --speech-bbl-visitor: #0984e3;
+  --comment-main-bkgrnd: #f3f3f3;
+  --date-time: #8a8a8a;
 }
 
 * {
@@ -344,6 +346,148 @@ body {
   align-items: center;
   margin-left: 15px;
 }
+
+/*COMMENTS*/
+
+.comments-wrapper {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1140px;
+  padding: 10px;
+}
+
+.comment-form .comment-text {
+  width: 100%;
+  margin: 0 auto;
+  resize: none;
+  padding: 5px;
+  border: 1px solid #b1b1b1;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.comment-form .comment-post-btn {
+  border: 0;
+  padding: 3px 11px;
+  font-weight: 600;
+  font-size: 60%;
+  margin-bottom: 20px;
+  color: #fff;
+  background-color: var(--base-clr);
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.comment-form .comment-post-btn:hover {
+  cursor: pointer;
+  background-color: var(--btn-hover-one);
+  color: #000;
+}
+
+.comments-main {
+  box-shadow: none;
+  background-color: var(--comment-main-bkgrnd);
+
+}
+
+.comments-main .comment-user {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.comments-main .comment-user .comment-user-pro-pic {
+  width: 30px;
+  height: 30px;
+}
+
+.comments-main .comment-user .comment-user-pro-pic img {
+  width: 100%;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.comments-main .comment-user .comment-user-name {
+  font-size: 65%;
+  font-weight: 600;
+}
+
+.comments-main .comment-user .comment-date-time {
+  font-size: 60%;
+  color: var(--date-time);
+}
+
+.comments-main .comment-body {
+  text-align: center;
+  font-size: 70%;
+  margin-bottom: 10px;
+}
+
+.comments-main .comment-reactions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.comments-main .comment-reactions button {
+  background-color: transparent;
+  border: 0;
+
+}
+
+
+.comments-main .comment-reactions button img:first-child {
+  margin-right: 10px;
+}
+
+.comments-main .comment-reactions button img {
+  width: 20px;
+  margin: auto;
+}
+
+.comments-main .comment-reactions button img:hover {
+  cursor: pointer;
+}
+
+.comments-main .comment-reactions button .comment-like-count,
+.comments-main .comment-reactions button .comment-dislike-count {
+  display: inline;
+  font-size: 80%;
+}
+
+
+.comment-frame {
+  margin-top: 10px;
+  width: 100%;
+
+}
+
+.comment-frame iframe {
+  width: 100%;
+  border: 0;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+
+}
+
+/*END COMMENTS*/
 
 /*RIGHT*/
 .right-section {
@@ -1221,7 +1365,6 @@ body {
   width: 100%;
 }
 
-
 .chat-sub .message {
   resize: none;
   width: 100%;
@@ -1263,16 +1406,13 @@ body {
 .visitor {
   width: 100%;
   display: flex;
-
 }
 
 .owner {
-
   justify-content: flex-start;
 }
 
 .visitor {
-
   justify-content: flex-end;
 }
 
@@ -1290,7 +1430,6 @@ body {
   box-shadow: var(--bx-shadow);
   word-wrap: break-word;
 }
-
 
 .chat-msg::before {
   content: "";
@@ -1358,8 +1497,6 @@ body {
   overflow: auto;
 }
 
-
-
 .friend,
 .msg-container .msg-list-main .msg-cards {
   margin-bottom: 20px;
@@ -1418,7 +1555,6 @@ body {
   font-weight: 600;
   font-size: 120%;
   letter-spacing: 0.4px;
-
 }
 
 .friend .friend-action a:first-child {

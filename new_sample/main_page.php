@@ -20,7 +20,7 @@ $error_array = array();
     <link rel="stylesheet" href="./css/media_queries.css?v=<?php echo time(); ?>">
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <script>
@@ -224,11 +224,12 @@ function show(){
         </ul>
     </div>
 
+
             <?php
             
             $load_post_query = mysqli_query($connect, "SELECT * FROM posts ORDER BY post_id DESC");          
             
-            
+            $cnt = 0;
             while($res = mysqli_fetch_array($load_post_query)){
 
                 $post_id = $res['post_id'];
@@ -247,7 +248,8 @@ function show(){
 
                 ?>
 
-            <div class="news-feed">
+            <div class="news-feed">               
+                
 
                 <div class="post-author-info">
 
@@ -287,21 +289,43 @@ function show(){
                         </div>
 
                         <div class="post-comments">
-                            <a href="#">30 comments</a>                            
+                            <a id="post-comments-btn<?=$cnt;?>" class="post-comments-btn" href="#">30 comments</a>                            
                         </div>
 
                     </div>
                      <!-- fix likes and dislikes -->
 
+                     <div class="comment-frame" id="comment-frame<?=$cnt;?>" style="display:none;">
+                        <iframe src="comments.php" frameborder="0" style="overflow-y:hidden;"></iframe>
+                     </div>
+
             </div>
 
                 <?php
+
+                $cnt++;
 
             }
 
             
             
             ?>
+
+
+
+             <script>
+
+                 let btns = document.querySelectorAll('.post-comments-btn');
+
+                 btns.forEach(btn => {
+                    btn.addEventListener('click', function(e){
+                        
+                        $('#comment-frame' + e.target.id.substr(17)).toggle();
+                    })
+                 })   
+                    
+
+                </script>
     
     </section>
 
@@ -365,7 +389,7 @@ function show(){
     </div>
     
   
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   
     <script src="js/main.js"></script>
     <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>    
 </body>
