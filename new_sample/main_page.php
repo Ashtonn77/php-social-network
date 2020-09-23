@@ -289,14 +289,14 @@ function show(){
                         </div>
 
                         <div class="post-comments">
-                            <a id="post-comments-btn<?=$cnt;?>" class="post-comments-btn" href="#">30 comments</a>                            
+                            <a id="post-comments-btn<?=$post_id;?>" class="post-comments-btn" href="#">30 comments</a>                            
                         </div>
 
                     </div>
                      <!-- fix likes and dislikes -->
 
-                     <div class="comment-frame" id="comment-frame<?=$cnt;?>" style="display:none;">
-                        <iframe src="comments.php" frameborder="0" style="overflow-y:hidden;"></iframe>
+                     <div class="comment-frame" id="comment-frame<?=$post_id;?>">
+                        <iframe src="comments.php?id=<?=$post_id;?>" frameborder="0" style="overflow-y:hidden;"></iframe>
                      </div>
 
             </div>
@@ -305,9 +305,7 @@ function show(){
 
                 $cnt++;
 
-            }
-
-            
+            }            
             
             ?>
 
@@ -316,16 +314,27 @@ function show(){
              <script>
 
                  let btns = document.querySelectorAll('.post-comments-btn');
+                 let post_id = '';
 
                  btns.forEach(btn => {
+
                     btn.addEventListener('click', function(e){
+
+                        post_id = e.target.id.substr(17);
+
+                        $('#comment-frame' + post_id).slideToggle( "slow" );
                         
-                        $('#comment-frame' + e.target.id.substr(17)).toggle();
+                        $.post('comments.php?id=' + post_id, function(response){
+
+                            // console.log(response);
+
+                        });
                     })
                  })   
                     
 
                 </script>
+
     
     </section>
 
