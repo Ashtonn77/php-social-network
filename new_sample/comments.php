@@ -2,15 +2,42 @@
 
 
 require 'helpers/config_template.php';
+require 'helpers/check_session.php';
+require 'helpers/user_functions.php';
 
 if(isset($_GET['id'])){
 
+        $date = date('Y-m-d'); //gets current date
         $post_id = $_GET['id'];
         $comment_query = mysqli_query($connect, "SELECT * FROM comments WHERE post_id='$post_id'");
         $comment_res = mysqli_fetch_array($comment_query);
-        $comment_count = mysqli_num_rows($comment_query);       
+        $comment_count = mysqli_num_rows($comment_query);
+
+        
+        $user_id = get_user_id($connect, $_SESSION['username']);
+        $username = get_username($connect, $user_id);
+        $profile_pic = get_profile_pic($connect, $user_id);
+
+        if(isset($_POST['comment-post-btn'])){
+
+           $comment_body = $_POST['comment-text'];
+
+            if(!empty($comment_body)){
+
+                $comment_insert_query = mysqli_query($connect, "INSERT INTO comments VALUES(NULL, '$user_id', '$post_id', '$comment_body','0', '0', '$date')");
+                header("Location: comments.php?id=".$post_id);
+
+            }          
+
+        }
+
+        $comment_get_query = mysqli_query($connect, "SELECT * FROM comments WHERE post_id='$post_id'");       
+        
 
 }
+
+
+
 
 ?>
 
@@ -37,7 +64,7 @@ if(isset($_GET['id'])){
 
             ?>
 
-            <form class="comment-form" action="comments.php" method="POST">
+            <form class="comment-form" action="comments.php?id=<?=$post_id;?>" method="POST">
 
                 <textarea name="comment-text" class="comment-text" placeholder="Let's hear it..."></textarea>
                 
@@ -64,7 +91,7 @@ if(isset($_GET['id'])){
             ?>
 
 
-            <form class="comment-form" action="comments.php" method="POST">
+            <form class="comment-form" action="comments.php?id=<?=$post_id;?>" method="POST">
 
                 <textarea name="comment-text" class="comment-text" placeholder="Let's hear it..."></textarea>
                 
@@ -74,26 +101,33 @@ if(isset($_GET['id'])){
 
             </form>
 
+            <?php
+            
+                while($comment_get_res = mysqli_fetch_array($comment_get_query)){
+
+                  ?>  
+
+
             <div class="comments-main tile">
             
                 <div class="comment-user">
 
                     <div class="comment-user-pro-pic">
-                        <img src="images/bear.png" alt="">
+                        <img src="<?=$profile_pic;?>" alt="pro_pic">
                     </div>
 
                     <div class="comment-user-name">
-                        Ashton Naidoo <?=$name;?>
+                        <?=$username;?>
                     </div>
 
                     <div class="comment-date-time">
-                        12-12-12 05:30
+                        <?=$comment_get_res['date_created'];?>
                     </div>
 
-            </div>
+                </div>
 
                 <div class="comment-body">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, dolorum.
+                    <?=$comment_get_res['comment_content'];?>   
                 </div>
 
                 <form class="comment-reactions">
@@ -103,16 +137,18 @@ if(isset($_GET['id'])){
 
                 </form>
             
-            </div>
+            </div>    
 
-            <?php
+
+                 <?php   
+
+                }           
+           
 
         }  
     
     
-    ?>
-    
-    
+    ?> 
     
     
     </div>

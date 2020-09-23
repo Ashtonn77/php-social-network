@@ -398,6 +398,7 @@ body {
 .comments-main {
   box-shadow: none;
   background-color: var(--comment-main-bkgrnd);
+  margin-bottom: 15px;
 }
 
 .comments-main .comment-user {
