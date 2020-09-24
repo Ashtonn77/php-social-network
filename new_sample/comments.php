@@ -105,6 +105,8 @@ if(isset($_GET['id'])){
             
                 while($comment_get_res = mysqli_fetch_array($comment_get_query)){
 
+                    $comment_id = $comment_get_res['comment_id'];
+
                   ?>  
 
 
@@ -130,26 +132,73 @@ if(isset($_GET['id'])){
                     <?=$comment_get_res['comment_content'];?>   
                 </div>
 
-                <form class="comment-reactions">
+                <div class="comment-reactions">
                 
-                <button class="comment-btn-like" name="comment-btn-like"><img src="images/icons_logos/thumbUp.png" alt="like"><div class="comment-like-count">0</div></button>
-                <button class="comment-btn-dislike" name="comment-btn-dislike"><img src="images/icons_logos/thumbDown.png" alt="dislike"><div class="comment-dislike-count">0</div></button>
+                <button class="comment-btn-like" name="comment-btn-like"><img id="comment-btn-like<?=$comment_id;?>" src="images/icons_logos/thumbUp.png" alt="like"><div id="cnt-comment" class="comment-like-count<?=$comment_id;?>"><?=$comment_get_res['comment_likes'];?></div></button>
+                <button class="comment-btn-dislike" name="comment-btn-dislike"><img id="comment-btn-dislike<?=$comment_id;?>" src="images/icons_logos/thumbDown.png" alt="dislike"><div id="cnt-comment" class="comment-dislike-count<?=$comment_id;?>"><?=$comment_get_res['comment_dislikes'];?></div></button>
 
-                </form>
+                </div>
             
             </div>    
 
-
                  <?php   
 
-                }           
+                }          
            
-
         }  
-    
-    
+        
     ?> 
     
+        <script>
+
+          let like_com_btns = document.querySelectorAll('.comment-btn-like');
+          let comment_id = '';  
+
+          like_com_btns.forEach( btn => {
+
+            btn.addEventListener('click', function(e){
+
+                comment_id = e.target.id.substr(16);
+
+                $.post('helpers/comment_likes_helper.php?action=incrementCommentLikes&id=' + comment_id, function(response){
+
+                        $('.comment-like-count' + comment_id).html(response);
+                       
+
+                })
+                
+            })
+
+          })  
+
+
+         let dislike_com_btns = document.querySelectorAll('.comment-btn-dislike');
+         
+
+          dislike_com_btns.forEach( btn => {
+
+            btn.addEventListener('click', function(e){
+
+                comment_id = e.target.id.substr(19);
+
+                
+                $.post('helpers/comment_likes_helper.php?action=incrementCommentDislikes&id=' + comment_id, function(response){
+
+                        $('.comment-dislike-count' + comment_id).html(response);
+                       
+
+                })
+                
+            })
+
+          })  
+
+
+          
+
+        </script>
+
+
     
     </div>
 

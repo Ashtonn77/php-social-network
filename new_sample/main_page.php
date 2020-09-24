@@ -246,6 +246,11 @@ function show(){
                 $profile_pic_res = mysqli_fetch_array($profile_pic_query);
                 $profile_pic = $profile_pic_res['profile_pic'];
 
+                $comment_count_query = mysqli_query($connect, "SELECT * FROM comments WHERE post_id='$post_id'");
+                $comment_count = mysqli_num_rows($comment_count_query);
+
+                $comments = $comment_count == 1 ? "comment" : "comments";
+
                 ?>
 
             <div class="news-feed">               
@@ -293,7 +298,7 @@ function show(){
                         </div>
 
                         <div class="post-comments">
-                            <a id="post-comments-btn<?=$post_id;?>" class="post-comments-btn" href="#">30 comments</a>                            
+                            <a id="post-comments-btn<?=$post_id;?>" class="post-comments-btn" href="#"><?=$comment_count . ' ' . $comments;?></a>                            
                         </div>
 
                     </div>

@@ -305,6 +305,15 @@ body {
 .post-reactions .post-comments a {
   text-decoration: none;
   color: #000;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.post-reactions .post-comments a:hover {
+  color: var(--btn-hover-one);
 }
 
 .post-reactions .post-comments,
@@ -444,8 +453,7 @@ body {
   cursor: pointer;
 }
 
-.comments-main .comment-reactions button .comment-like-count,
-.comments-main .comment-reactions button .comment-dislike-count {
+.comments-main .comment-reactions button #cnt-comment {
   display: inline;
   font-size: 80%;
 }
