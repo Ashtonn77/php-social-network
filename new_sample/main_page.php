@@ -228,8 +228,8 @@ function show(){
             <?php
             
             $load_post_query = mysqli_query($connect, "SELECT * FROM posts ORDER BY post_id DESC");          
-            
-            $cnt = 0;
+           
+         
             while($res = mysqli_fetch_array($load_post_query)){
 
                 $post_id = $res['post_id'];
@@ -276,16 +276,20 @@ function show(){
                     <!-- fix likes and dislikes -->
                     <div class="post-reactions">
 
-                        <form class="post-likes">
+                        <div class="post-likes">
 
 
-                            <button class="post-like-btn" name="post-like-btn"><img src="./images/icons_logos/like.png" alt="like" width="17px"></button><div class="like-count"><?=$post_likes;?></div>          
+                            <button class="post-like-btn" name="post-like-btn"><img id="post-like-btn<?=$post_id;?>" src="./images/icons_logos/like.png" alt="like" width="17px"><div id='cnt' class="like-count<?=$post_id;?>"><?=$post_likes;?></div> </button>         
 
 
-                        </form>
+                        </div>
 
                         <div class="post-dislikes">
-                            <button name="post-dislike-btn"><img src="./images/icons_logos/dislike.png" alt="dislike" width="17px"></button><div class="dislike-count"><?=$post_dislikes;?></div>
+
+
+                            <button class="post-dislike-btn" name="post-dislike-btn"><img id="post-dislike-btn<?=$post_id;?>" src="./images/icons_logos/dislike.png" alt="dislike" width="17px"><div id='cnt' class="dislike-count<?=$post_id;?>"><?=$post_dislikes;?></div></button>
+
+                            
                         </div>
 
                         <div class="post-comments">
@@ -303,8 +307,7 @@ function show(){
 
                 <?php
 
-                $cnt++;
-
+                
             }            
             
             ?>
@@ -313,6 +316,7 @@ function show(){
 
              <script>
 
+                 //comments
                  let btns = document.querySelectorAll('.post-comments-btn');
                  let post_id = '';
 
@@ -331,7 +335,46 @@ function show(){
                         });
                     })
                  })   
-                    
+
+
+                 //likes and dislikes
+                 let like_btns = document.querySelectorAll('.post-like-btn');                    
+
+                 like_btns.forEach(btn => {
+
+                     btn.addEventListener('click', function(e){
+
+                        post_id = e.target.id.substr(13);
+
+                        $.post('helpers/likes_helper.php?action=incrementLikes&id=' + post_id, function(response){
+
+                             $('.like-count' + post_id).html(response);
+
+                        });
+                         
+
+                     })
+                 })
+
+
+                let dislike_btns = document.querySelectorAll('.post-dislike-btn');                    
+
+                 dislike_btns.forEach(btn => {
+
+                     btn.addEventListener('click', function(e){
+
+                        post_id = e.target.id.substr(16);
+
+                        $.post('helpers/likes_helper.php?action=incrementDisikes&id=' + post_id, function(response){
+
+                             $('.dislike-count' + post_id).html(response);
+
+                        });
+ 
+
+                     })
+                 })
+
 
                 </script>
 
