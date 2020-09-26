@@ -1,0 +1,180 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+/* background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../images/backgrounds/landing-page-bg.jpg');*/
+html {
+    font-size: 12px;
+    box-sizing: border-box;
+    font-family: 'Red Rose', cursive;
+}
+
+nav {
+    height: 5vh;
+    width: 100%;
+    background-color: #283042;
+    min-height: 40px;
+    position: relative;
+}
+
+nav .back {
+    color: #fff;
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transition: all 850ms;
+    -webkit-transition: all 850ms;
+    -moz-transition: all 850ms;
+    -ms-transition: all 850ms;
+    -o-transition: all 850ms;
+}
+
+nav .back:hover {
+    cursor: pointer;
+    color: #ec4808;
+}
+
+section {
+    width: 100%;
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 900px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url('../../images/backgrounds/profile.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+
+.container {
+    width: 90%;
+    max-width: 80rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+}
+
+
+.profile-picture {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-picture img {
+    width: 90%;
+    max-width: 180px;
+}
+
+.accordion {
+    width: 65%;
+}
+
+.accordion-item {
+    background-color: #283042;
+    border-radius: .4rem;
+    -webkit-border-radius: .4rem;
+    -moz-border-radius: .4rem;
+    -ms-border-radius: .4rem;
+    -o-border-radius: .4rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    box-shadow: .5rem 2px .5rem rgba(0, 0, 0, .8);
+}
+
+.accordion-link {
+    font-size: 1.2rem;
+    color: #fff;
+    text-decoration: none;
+    background-color: #283042;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .6rem 0;
+}
+
+.accordion-link .icon-ion {
+    color: #f8bfc8;
+    padding: .3rem;
+}
+
+.accordion-link .up-icon {
+    display: none;
+}
+
+.accordion-details {
+    max-height: 0;
+    overflow: hidden;
+    position: relative;
+    background-color: #212838;
+    transition: all 650ms;
+    -webkit-transition: all 650ms;
+    -moz-transition: all 650ms;
+    -ms-transition: all 650ms;
+    -o-transition: all 650ms;
+}
+
+.accordion-details::before {
+    content: "";
+    position: absolute;
+    width: .4rem;
+    height: 90%;
+    background-color: #8fc460;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+.accordion-details p {
+    color: #fff;
+    font-size: 1rem;
+    padding: 1rem;
+}
+
+.accordion-item:target .accordion-details {
+    max-height: 20rem;
+}
+
+.accordion-item:target .accordion-link .down-icon {
+    display: none;
+}
+
+.accordion-item:target .accordion-link .up-icon {
+    display: block;
+}
+
+@media screen and (max-width:800px) {
+    .container {
+        flex-flow: column;
+        min-height: 700px;
+        max-height: 700px;
+    }
+
+    .profile-picture {
+        margin-bottom: 30px;
+        width: 100%;
+    }
+
+    .accordion {
+        width: 100%;
+    }
+}

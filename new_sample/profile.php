@@ -109,7 +109,7 @@ function show(){
                             Change profile pic
                         </label>
                                  
-                    </form>
+                        </form>
 
                     </div>
                 </div>
