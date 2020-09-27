@@ -23,7 +23,7 @@ $error_array = array();
 
 <body>    
 
-    <nav><ion-icon class="back" name="arrow-back-outline"></ion-icon></nav>
+    <a href="#" class="back-link"><ion-icon class="back" name="arrow-back-outline"></ion-icon></a>
 
     <section>        
 
