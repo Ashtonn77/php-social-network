@@ -15,6 +15,7 @@
     --date-time: #8a8a8a;
     --hover-orange: #dd5901;
     --btn-text: #ffe2e7;
+    --darker-base: #005058;
 }
 
 *,
@@ -23,6 +24,7 @@
     margin: 0;
     padding: 0;
     box-sizing: inherit;
+    outline: none;
 }
 
 html {
@@ -60,7 +62,7 @@ html {
 
 section {
     width: 100%;
-    height: 100vh;
+    height: 95vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -77,15 +79,17 @@ section {
     padding: 0 1.5rem;
 }
 
+.pic-wrapper {
+    width: 30%;
+}
 
 .profile-picture {
-    width: 30%;
+    width: 100%;
     max-width: 220px;
     height: 220px;
     display: flex;
     justify-content: center;
     align-items: center;
-
     border: 6px solid var(--base-clr);
     border-radius: 50%;
     -webkit-border-radius: 50%;
@@ -103,6 +107,30 @@ section {
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
 }
+
+.pic-wrapper .change-pro-pic {
+    margin: 5px 0;
+}
+
+.pic-wrapper .change-pro-pic input[type="file"] {
+    display: none;
+}
+
+.material-icons {
+    color: var(--darker-base);
+    transition: all 850ms ease;
+    -webkit-transition: all 850ms ease;
+    -moz-transition: all 850ms ease;
+    -ms-transition: all 850ms ease;
+    -o-transition: all 850ms ease;
+}
+
+.material-icons:hover {
+    cursor: pointer;
+    color: var(--hover-orange);
+}
+
+
 
 .accordion {
     width: 65%;
@@ -145,7 +173,7 @@ section {
     max-height: 0;
     overflow: hidden;
     position: relative;
-    background-color: #005058;
+    background-color: var(--darker-base);
     transition: all 650ms;
     -webkit-transition: all 650ms;
     -moz-transition: all 650ms;
@@ -196,6 +224,23 @@ section {
     display: block;
 }
 
+
+footer {
+    z-index: 10;
+    width: 100%;
+    text-align: right;
+    height: 5vh;
+}
+
+footer p {
+    letter-spacing: 1px;
+    color: rgba(2, 104, 115, 0.6);
+    margin-right: 30px;
+    font-weight: 600;
+
+}
+
+
 @media screen and (max-width:800px) {
     .container {
         flex-flow: column;
@@ -203,9 +248,9 @@ section {
         max-height: 700px;
     }
 
-    .profile-picture {
-        margin-bottom: 30px;
+    .pic-wrapper {
         width: 100%;
+        margin-bottom: 30px;
     }
 
     .accordion {

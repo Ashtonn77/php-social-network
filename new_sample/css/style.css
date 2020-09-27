@@ -867,7 +867,7 @@ body {
 
 /*PROFILE_MAIN*/
 
-.wrapper {
+/* .wrapper {
   height: 94vh;
   width: 90%;
   max-width: 1140px;
@@ -887,7 +887,7 @@ body {
   margin: 20px 0;
 }
 
-/*PERSONAL INFO*/
+
 .personal-info {
   display: flex;
   flex-flow: column;
@@ -963,7 +963,7 @@ body {
   letter-spacing: 0.8px;
 }
 
-/*BIO*/
+
 .bio-and-spirit-animal {
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -989,7 +989,7 @@ body {
   letter-spacing: 0.8px;
 }
 
-/*HOBBIES*/
+
 .hobbies-and-interests {
   height: 100%;
   width: 100%;
@@ -1015,7 +1015,7 @@ body {
   width: 60px;
 }
 
-/*BUCKET-LIST*/
+
 .bucket-list-and-goals {
   height: 100%;
   width: 100%;
@@ -1038,7 +1038,7 @@ body {
   margin-bottom: 15px;
   padding-bottom: 20px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-}
+} */
 
 /*FRIENDS*/
 .friends {

@@ -8,7 +8,6 @@
 
     if(isset($_GET['id'])){
 
-
        //queries
         $id = $_GET['id'];
         $id_query = mysqli_query($connect, "SELECT * FROM users WHERE user_id='$id'");
@@ -53,7 +52,11 @@
         $fav_song = $preferences_res['fav_song'];
         $fav_food = $preferences_res['fav_food'];
 
-        $bio = $preferences_res['bio'];        
+        $bio = $preferences_res['bio'];
+        
+        $bucket_list_array = array($aspirations_res['bucket_list_1'], $aspirations_res['bucket_list_2'], $aspirations_res['bucket_list_3'], $aspirations_res['bucket_list_4']);
+        $goals_list_array = array($aspirations_res['goals_1'], $aspirations_res['goals_2'], $aspirations_res['goals_3'], $aspirations_res['goals_4']);
+        $hobbies_list_array = array($hobbies_res['hobbie_1'], $hobbies_res['hobbie_2'], $hobbies_res['hobbie_3'], $hobbies_res['hobbie_4']);
                 
       }else{
 

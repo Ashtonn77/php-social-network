@@ -13,16 +13,7 @@ $spirit_animal = array("dog"=>"The dog spirit animal represents love, protection
 "tiger"=>"In the kingdom of spirit animal, the tiger puts a special emphasis on raw feelings and emotions. The tiger spirit animal symbolizes primal instincts, unpredictability, and ability to trust yourself. By affinity with this spirit animal, you may enjoy dealing with life matters spontaneously, trusting your intuition and acting fast when needed", 
 "horse"=>"The horse spirit animal symbolizes personal drive, passion and appetite for freedom. Among all the spirit animals, it is one that shows a strong motivation that carries one through life. The meaning of the horse varies depending on whether this animal spirit guide is represented as wild, tamed, moving freely or constrained.");
 
-// $cnt = 1;
-// foreach($spirit_animal as $x=>$x_value){
-//     if($cnt == 9){
-//         echo $x . " = " . $x_value;
-//     }
-//     $cnt++;
-// }
 
-/*$keys = array_keys($spirit_animal);
-echo $spirit_animal[$keys[1]];*/    
 
 ?>
 
