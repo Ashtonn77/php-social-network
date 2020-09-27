@@ -35,7 +35,7 @@ if(isset($_FILES['file'])){
 
 <body>    
 
-    <a href="javascript:history.go(-1)" class="back-link"><ion-icon class="back" name="arrow-back-outline"></ion-icon></a>
+    <a href="main_page.php?id=<?=$current_user_id;?>" class="back-link"><ion-icon class="back" name="arrow-back-outline"></ion-icon></a>
 
     <section>        
 

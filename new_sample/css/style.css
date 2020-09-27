@@ -15,6 +15,9 @@
   --speech-bbl-visitor: #0984e3;
   --comment-main-bkgrnd: #f3f3f3;
   --date-time: #8a8a8a;
+  --hover-orange: #dd5901;
+  --btn-text: #ffe2e7;
+  --darker-base: #005058;
 }
 
 * {
@@ -184,6 +187,20 @@ body {
   padding: 10px 0 10px 0;
 }
 
+.top-personals a {
+  text-decoration: none;
+  color: #000;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.top-personals a:hover {
+  color: var(--hover-orange);
+}
+
 .left-section div:last-child {
   border: 0;
 }
@@ -269,6 +286,20 @@ body {
   font-size: 75%;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.4);
+}
+
+.post-author-details a {
+  text-decoration: none;
+  color: #000;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.post-author-details a:hover {
+  color: var(--hover-orange);
 }
 
 .post-body {

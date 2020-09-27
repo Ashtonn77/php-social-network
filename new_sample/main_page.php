@@ -264,7 +264,7 @@ function show(){
 
                             
                     <div class="post-author-details">
-                        <p>@<?=$post_author;?></p>
+                        <a href="profile.php?id=<?=$res['user_id'];?>"><p>@<?=$post_author;?></p></a>
                     </div>
 
                     <div class="post-time-stamp">
