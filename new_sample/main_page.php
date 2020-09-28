@@ -167,6 +167,22 @@ function show(){
 
 </div>
 
+
+    <?php
+
+        $posts_query = mysqli_query($connect, "SELECT * FROM posts WHERE user_id='$current_user_id'");
+        $posts_count = mysqli_num_rows($posts_query);
+
+        $likes_query = mysqli_query($connect, "SELECT * FROM likes WHERE user_id='$current_user_id'");
+        $likes_count = mysqli_num_rows($likes_query);
+
+        $dislikes_query = mysqli_query($connect, "SELECT * FROM dislikes WHERE user_id='$current_user_id'");
+        $dislikes_count = mysqli_num_rows($dislikes_query);
+       
+
+    ?>
+
+
 <div class="main-container">
 
  <!-- user logged in info      -->
@@ -174,30 +190,18 @@ function show(){
         <img src="<?=$profile_pic;?>" alt="pro-pic">
 
        <div class="top-personals">
-            <p class="full-name"><a href="profile.php?id=<?=$user_id;?>"><?=$first_name . ' ' . $last_name;?></a></p>
-            <p class="school"><?=$prof_line;?></p>
-            <p class="tag-line"><?=$tag_line;?></p>
-       </div>
+            <p class="full-name">Hi, <a href="profile.php?id=<?=$user_id;?>"><?=$first_name . ' ' . $last_name;?></a>!</p>           
+             <p class="spirit-animal">Never forget, you have the spirit of the <?=$spirit_animal_res;?> in you!</p>
 
-       <div class="middle-personals">
-           <p class="spirit-animal"><?=$first_name;?>'s spirit animal is the <?=$spirit_animal_res;?></p>
-           <p class="favorite-movie"><span>Favourite Movie:</span><?=$fav_movie;?></p>
-           <p class="favorite-book"><span>Favourite Book: </span><?=$fav_book;?></p>
-           <p class="favorite-artist"><span>Favourite Artist:</span><?=$fav_artist;?></p>
-           <p class="favorite-song"><span>Favourite Song: </span><?=$fav_song;?></p>
-           <p class="favorite-food"><span>Favourite Food:</span><?=$fav_food;?></p>
        </div>
        
        <div class="bottom-personals">
-           <p class="total-posts-posted"><span>Total Posts Posted:</span> 50</p>
-           <p class="total-posts-liked"><span>Total Posts Liked:</span> 50</p>
-           <p class="total-posts-disliked"><span>Total Posts Disliked:</span> 50</p>
+           <p class="total-posts-posted"><span>Total Posts Posted:</span> <?=$posts_count;?></p>
+           <p class="total-posts-liked"><span>Total Posts Liked:</span> <?=$likes_count;?> </p>
+           <p class="total-posts-disliked"><span>Total Posts Disliked:</span> <?=$dislikes_count;?></p>
        </div>
        
     </section>
-
-
-
 
 
     <!-- news feed and post something -->
@@ -396,10 +400,17 @@ function show(){
     <?php            
 
     
-    while( $res = mysqli_fetch_assoc($users_to_invite_query) ){       
+    while($res = mysqli_fetch_assoc($users_to_invite_query) ){       
 
-        ?>
-            
+            $id = $res['user_id'];
+            $test = mysqli_query($connect, "SELECT * FROM friends WHERE friend_id='$id' AND user_id='$current_user_id'");
+
+            $count = mysqli_num_rows($test);
+            if($count > 0){
+                continue;
+            }
+
+        ?>     
 
          
                 <form class="possible-friends" action="friend_request.php?id=<?=$res['user_id'];?>" method="POST">

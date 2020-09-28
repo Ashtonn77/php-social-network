@@ -103,6 +103,7 @@ require 'helpers/get_details.php';
 
                             //this has to come first
                            $add_to_friend_list_query = mysqli_query($connect, "INSERT INTO friends VALUES(NULL, '$user_from_id', '$user_to_id', '$name_user_to', '$date')"); 
+                           $add_to_friend_list_query = mysqli_query($connect, "INSERT INTO friends VALUES(NULL, '$user_to_id', '$user_from_id', '$name_user_from', '$date')"); 
 
                            $delete_notification_query = mysqli_query($connect, "DELETE FROM notifications WHERE notification_id='$notification_id'");    
                            

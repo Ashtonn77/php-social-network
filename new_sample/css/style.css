@@ -181,10 +181,13 @@ body {
 }
 
 .top-personals,
-.middle-personals,
 .bottom-personals {
   border-bottom: 1px solid rgba(153, 153, 153, 0.3);
   padding: 10px 0 10px 0;
+}
+
+.top-personals p {
+  margin-bottom: 8px;
 }
 
 .top-personals a {

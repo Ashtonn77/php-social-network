@@ -186,6 +186,10 @@ section {
     -o-border-radius: 5px;
 }
 
+.accordion-details p {
+    line-height: 20px;
+}
+
 .accordion-details::before {
     content: "";
     position: absolute;

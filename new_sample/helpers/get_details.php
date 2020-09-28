@@ -19,12 +19,15 @@
         $aspirations_query = mysqli_query($connect, "SELECT * FROM aspirations WHERE user_id='$user_id'");
         $hobbies_query = mysqli_query($connect, "SELECT * FROM hobbies WHERE user_id='$user_id'");
 
-        $users_to_invite_query = mysqli_query($connect, "SELECT * FROM users WHERE NOT username='$currentUserLoggedIn'"); 
+       
 
         $current_user_id = get_user_id($connect, $currentUserLoggedIn);
         $current_user_query = mysqli_query($connect, "SELECT * FROM users WHERE user_id='$current_user_id'");
         $current_user_res = mysqli_fetch_array($current_user_query);
 
+
+         $users_to_invite_query = mysqli_query($connect, "SELECT * FROM users WHERE NOT username='$currentUserLoggedIn'");        
+       
         
         //resulting arrays
         $user_res = mysqli_fetch_array($user_query);
@@ -43,8 +46,8 @@
          $spirit_animal_bio_res = get_spirit_animal_bio($spirit_animal_res, $spirit_animal);
 
 
-        $prof_line = $preferences_res['prof_line'];
-        $tag_line = $preferences_res['tag_line'];
+        // $prof_line = $preferences_res['prof_line'];
+        // $tag_line = $preferences_res['tag_line'];
 
         $fav_movie= $preferences_res['fav_movie'];
         $fav_book = $preferences_res['fav_book'];

@@ -13,7 +13,7 @@ if (mysqli_connect_errno()) {
 
 ?>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -31,4 +31,4 @@ if (mysqli_connect_errno()) {
     </script>
     
 </body>
-</html>
+</html> -->

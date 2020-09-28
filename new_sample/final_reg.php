@@ -35,10 +35,10 @@ else{
          $row = mysqli_fetch_array($user_id_query);
          $user_id = $row['user_id'];
         
-         $prof_line = ucfirst($_POST['prof-line']);   
+        //  $prof_line = ucfirst($_POST['prof-line']);   
          
 
-         $tag_line = ucfirst($_POST['tag-line']);
+        //  $tag_line = ucfirst($_POST['tag-line']);
          
 
          $fav_movie = ucwords($_POST['fav-movie']); 
@@ -99,7 +99,7 @@ else{
 
          
 
-            $preferences_query = mysqli_query($connect, "INSERT INTO preferences VALUES(NULL, '$user_id', '$prof_line', '$tag_line', '$fav_movie', '$fav_book', '$fav_artist', '$fav_song','$fav_food', '$bio')");
+            $preferences_query = mysqli_query($connect, "INSERT INTO preferences VALUES(NULL, '$user_id', '$fav_movie', '$fav_book', '$fav_artist', '$fav_song','$fav_food', '$bio')");
 
             $hobbies_query = mysqli_query($connect, "INSERT INTO hobbies VALUES(NULL, '$user_id', '$hobbies[0]', '$hobbies[1]', '$hobbies[2]', '$hobbies[3]')");
 
@@ -117,12 +117,12 @@ else{
     
     <div class="left-top">
 
-        <label for="tag-line">Profession line:</label>
+        <!-- <label for="tag-line">Profession line:</label>
         <input type="text" name="prof-line" class="prof-line" placeholder="eg: Student at Richfield" autocomplete="off" required>
        
 
         <label for="tag-line">Tag line:</label>
-        <input type="text" name="tag-line" class="tag-line" placeholder="eg: I love coding" autocomplete="off" required>
+        <input type="text" name="tag-line" class="tag-line" placeholder="eg: I love coding" autocomplete="off" required> -->
         
         <label for="fav-movie">Favorite movie:</label>
         <input type="text" name="fav-movie" class="fav-movie" placeholder="Enter movie__" autocomplete="off" required>
