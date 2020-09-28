@@ -224,6 +224,29 @@ if(isset($_FILES['file'])){
                     </div>
                       <!-- end accordion item -->
 
+                       <!-- start accordion item -->
+                    <div class="accordion-item" id="item7">
+
+                        <a href="#item7" class="accordion-link">
+                            <span>Favorites:</span>
+                            <ion-icon class="down-icon icon-ion" name="add-outline"></ion-icon>
+                            <ion-icon class="up-icon icon-ion" name="remove-outline"></ion-icon>
+
+                        </a>
+
+                        <div class="accordion-details">
+
+                                <p>Movie: <?=ucfirst($fav_movie);?></p>
+                                <p>Book: <?=ucfirst($fav_book);?></p>
+                                <p>Artist: <?=ucfirst($fav_artist);?></p>
+                                <p>Song: <?=ucfirst($fav_song);?></p>
+                                <p>Food: <?=ucfirst($fav_food);?></p>
+
+                        </div>
+
+                    </div>
+                      <!-- end accordion item -->
+
 
 
                 </div>
