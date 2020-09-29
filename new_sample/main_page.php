@@ -270,7 +270,24 @@ function show(){
 
                             
                     <div class="post-author-details">
-                        <a href="profile.php?id=<?=$res['user_id'];?>"><p>@<?=$post_author;?></p></a>
+                        
+                    <?php
+                        if($res['user_id'] != $current_user_id){
+
+                            echo '<a href="profile_alt.php?id=' . $post_user_id . '"><p>@' . $post_author . '</p></a>';
+
+                        }
+
+                        else{
+                            
+                            echo '<a href="profile.php?id=' . $post_user_id . '"><p>@' . $post_author . '</p></a>';
+
+                        }
+                    
+                    
+                    ?>
+
+
                     </div>
 
                     <div class="post-time-stamp">
@@ -420,7 +437,8 @@ function show(){
                 <div class="name-pic">
 
                 <img src="<?=$res['profile_pic'];?>" alt="pro-pic">
-                <a href="profile.php?id=<?=$res['user_id'];?>"><?=$res['first_name'] . ' ' . $res['last_name'];?></a>
+                
+                <a href="profile_alt.php?id=<?=$res['user_id'];?>"><?=$res['first_name'] . ' ' . $res['last_name'];?></a>
 
             </div>        
         

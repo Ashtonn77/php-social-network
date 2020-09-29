@@ -108,7 +108,7 @@ $friends_list_query = mysqli_query($connect, "SELECT DISTINCT friend_id, friend_
                             <div class="msg-cards tile">
 
                                 <div class="msg-user-pro-pic"><img src="<?=$msg_user_profile_pic;?>" alt=""></div>
-                                    <div class="msg-user-name"><a href="profile.php?id=<?=$msg_user_id;?>">@<?=$msg_username;?></a></div>
+                                    <div class="msg-user-name"><a href="profile_alt.php?id=<?=$msg_user_id;?>">@<?=$msg_username;?></a></div>
                                     <div class="msg-user-action">
                                     <a href="chat.php?id=<?=$current_user_id;?>&friend_id=<?=$msg_user_id;?>">Go to chat</a>                               
                                 </div>

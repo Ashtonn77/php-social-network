@@ -561,6 +561,15 @@ body {
   text-decoration: none;
   color: var(--name-clr);
   font-weight: 600;
+  transition: all 1150ms;
+  -webkit-transition: all 1150ms;
+  -moz-transition: all 1150ms;
+  -ms-transition: all 1150ms;
+  -o-transition: all 1150ms;
+}
+
+.name-pic a:hover {
+  color: var(--hover-orange);
 }
 
 .possible-friends {
@@ -1446,8 +1455,8 @@ body {
 .friend a:hover,
 .msg-container .msg-list-main a:hover,
 .msg-container .msg-list-main .msg-cards .msg-user-action a:hover {
-  color: var(--btn-hover-one);
-  border-bottom: 1px solid var(--btn-hover-one);
+  color: var(--hover-orange);
+  border-bottom: 1px solid var(--hover-orange);
 }
 
 .msg-container .msg-list-heading {

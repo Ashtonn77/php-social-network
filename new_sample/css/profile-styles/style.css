@@ -244,6 +244,51 @@ footer p {
 }
 
 
+
+/*ALTERNATE PROFILE*/
+
+.invite {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.invite .invite-profile-alt {
+    padding: 4px 12px;
+    font-size: 110%;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    border: 0;
+    background-color: transparent;
+    border: 2px solid var(--base-clr);
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    transition: all 1150ms;
+    -webkit-transition: all 1150ms;
+    -moz-transition: all 1150ms;
+    -ms-transition: all 1150ms;
+    -o-transition: all 1150ms;
+}
+
+.invite .invite-profile-alt:hover {
+    cursor: pointer;
+    background-color: var(--btn-hover-one);
+    border: 2px solid var(--btn-hover-one);
+    color: #fff;
+}
+
+.invite .invite-pending {
+    font-size: 130%;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    margin-left: 8px;
+}
+
+
+/*MEDIA QUERIES*/
+
 @media screen and (max-width:800px) {
     .container {
         flex-flow: column;
@@ -261,6 +306,12 @@ footer p {
     }
 
     footer {
+        display: none;
+    }
+}
+
+@media screen and (max-width:230px) {
+    body {
         display: none;
     }
 }

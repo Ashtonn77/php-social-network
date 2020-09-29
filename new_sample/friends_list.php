@@ -109,7 +109,7 @@ $friends_count = mysqli_num_rows($friends_list_query);
                          <div class="friend">
 
                             <div class="friend-pro-pic"><img src="<?=$friend_profile_pic;?>" alt=""></div>
-                            <div class="friend-name"><a href="profile.php?id=<?=$friend_id;?>"><?=$friend_name;?></a></div>
+                            <div class="friend-name"><a href="profile_alt.php?id=<?=$friend_id;?>"><?=$friend_name;?></a></div>
                             <div class="friend-action">
                             <a href="#">Send <?=$friend_first_name;?> a hug</a>    
                             <a href="chat.php?id=<?=$current_user_id;?>&friend_id=<?=$friend_id;?>">Send <?=$friend_first_name;?> a message</a>

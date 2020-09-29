@@ -46,9 +46,6 @@
          $spirit_animal_bio_res = get_spirit_animal_bio($spirit_animal_res, $spirit_animal);
 
 
-        // $prof_line = $preferences_res['prof_line'];
-        // $tag_line = $preferences_res['tag_line'];
-
         $fav_movie= $preferences_res['fav_movie'];
         $fav_book = $preferences_res['fav_book'];
         $fav_artist = $preferences_res['fav_artist'];
