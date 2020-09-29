@@ -88,47 +88,30 @@
 /*post likes/dislikes/comments*/
 @media screen and (max-width: 348px) {
 
-    /* .post-reactions {
-        display: block;
-        padding-bottom: 10px;
-    }
-
-    .post-reactions button img {
-        position: absolute;
-        left: 0;
-    }
-
-    .post-reactions .post-dislikes img {
-        margin-top: 15px;
-    }
-
-    .post-reactions .post-likes {
-        margin-bottom: 18px;
-    }
-
-
-    .post-reactions .post-likes .like-count {
-        position: absolute;
-        left: 35px;
-        margin-bottom: 2px;
+    .post-reactions {
+        flex-wrap: wrap;
 
     }
 
-    .post-reactions .post-dislikes .dislike-count {
-        position: absolute;
-        left: 35px;
-        margin-top: 13px;
+    .post-reactions .post-likes,
+    .post-reactions .post-dislikes {
+        width: 45%;
+        margin-right: 0;
     }
+
+    .post-reactions .post-dislikes {
+        display: flex;
+        justify-content: flex-end;
+    }
+
 
     .post-reactions .post-comments {
-        margin-top: 25px;
+        position: relative;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
     }
-
-    .post-reactions .post-comments a {
-        position: absolute;
-        left: 0;
-    } */
-
 
 }
 
@@ -152,7 +135,7 @@
     }
 }
 
-@media screen and (max-width: 214px) {
+@media screen and (max-width: 150px) {
 
     body {
         display: none;
@@ -169,6 +152,23 @@
         font-size: 110%;
     }
 }
+
+
+/*COMMENTS*/
+
+@media screen and (max-width:370px) {
+
+    .comments-main .comment-user {
+        flex-flow: column;
+    }
+
+    .comments-main .comment-user .comment-user-pro-pic,
+    .comments-main .comment-user .comment-user-name {
+        margin-bottom: 5px;
+    }
+
+}
+
 
 
 /*PROFILE*/

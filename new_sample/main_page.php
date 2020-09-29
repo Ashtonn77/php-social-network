@@ -133,15 +133,17 @@ function show(){
     <div class="" id="overlay"></div>
 
 
-        <div class="toggle-btn" id="toggle-btn"" onclick="show()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+    
 
 <div class="sub-body">
 
 <div class="top-nav">
+
+    <div class="toggle-btn" id="toggle-btn"" onclick="show()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
 
     <nav>          
    
@@ -450,15 +452,13 @@ function show(){
             <li><a href="friends_list.php?id=<?=$current_user_id;?>"><ion-icon name="people-outline" style="color:#fff; --ionicon-stroke-width: 22px;" size="large"></ion-icon><span class="tooltiptext">My Network</span></a></li>
             <li><a href="messages_list.php?id=<?=$current_user_id;?>"><ion-icon name="mail-open-outline" style="color:#fff; --ionicon-stroke-width: 22px;" size="large"></ion-icon><span class="tooltiptext">Messages</span></a></li>
             <li><a href="notifications.php?id=<?=$current_user_id;?>"><ion-icon name="notifications-outline" style="color:#fff; --ionicon-stroke-width: 22px;" size="large"></ion-icon><span class="tooltiptext">Notifications</span></a></li>
-            <li><a href="profile.php?id=<?=$current_user_id;?>"><img src="<?=$current_user_res['profile_pic'];?>" alt="profile-pic" width="20px"></a></li>
+            <li><a href="profile.php?id=<?=$current_user_id;?>"><img src="<?=$current_user_res['profile_pic'];?>" alt="profile-pic" width="30px"><span class="tooltiptext">My Profile</span></a></li>
             <li><a href="logout.php"><ion-icon name="log-out-outline" style="color:#fff; --ionicon-stroke-width: 22px;" size="large"></ion-icon><span class="tooltiptext">Logout</span></a></li>
         </ul>
 
-    </div>
-    
-  
+    </div> 
    
-    <script src="js/main.js"></script>
+   
     <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>    
 </body>
 </html>

@@ -66,6 +66,7 @@ body {
 /**TOP NAV**/
 
 .top-nav {
+  position: relative;
   height: 6vh;
   width: 100vw;
   background-color: var(--base-clr);
@@ -462,6 +463,7 @@ body {
   text-align: center;
   font-size: 70%;
   margin-bottom: 10px;
+  word-wrap: break-word;
 }
 
 .comments-main .comment-reactions {
@@ -650,6 +652,7 @@ body {
 .sidebar ul li a span {
   margin-top: 15px;
   font-size: 80%;
+  letter-spacing: 0.8px;
 }
 
 .sidebar ul li:hover {
@@ -899,180 +902,7 @@ body {
 
 /*END MODALS FOR POST AND ATTACH BTNS*/
 
-/*PROFILE_MAIN*/
 
-/* .wrapper {
-  height: 94vh;
-  width: 90%;
-  max-width: 1140px;
-  display: flex;
-  flex-flow: column;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 auto;
-}
-
-.wrapper div:first-child {
-  margin-top: 20px;
-}
-
-.profile-first {
-  width: 100%;
-  margin: 20px 0;
-}
-
-
-.personal-info {
-  display: flex;
-  flex-flow: column;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  min-height: 520px;
-}
-
-.personal-info .profile-pic {
-  height: 40%;
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.personal-info .profile-pic .change-pro-pic {
-  margin: 25px 0;
-}
-
-.personal-info .profile-pic .change-pro-pic input[type="file"] {
-  display: none;
-}
-
-.personal-info .profile-pic .change-pro-pic label {
-  background-color: rgba(3, 166, 120, 0.6);
-  width: 180px;
-  height: 33px;
-  color: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 65%;
-  font-weight: 600;
-  box-shadow: var(--bx-shadow);
-  border: 2px solid rgba(3, 166, 120, 0.6);
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
-  transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-}
-
-.personal-info .profile-pic .change-pro-pic label:hover {
-  cursor: pointer;
-  background-color: var(--base-clr);
-  color: #fff;
-  border: 2px solid var(--base-clr);
-}
-
-.personal-info .profile-pic img {
-  width: 150px;
-}
-
-.personal-info .personal-details {
-  height: 60%;
-  max-height: 550px;
-}
-
-.personal-info .personal-details p {
-  margin: 15px 10px 0 0;
-  font-size: 80%;
-}
-
-.personal-info .personal-details p span {
-  font-weight: 600;
-  letter-spacing: 0.8px;
-}
-
-
-.bio-and-spirit-animal {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  font-size: 75%;
-}
-
-.bio-and-spirit-animal p {
-  font-size: 90%;
-}
-
-.bio-and-spirit-animal p:first-child {
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-}
-
-.bio-and-spirit-animal .bio-heading {
-  display: block;
-  font-weight: 600;
-  font-size: 110%;
-  margin-bottom: 5px;
-  letter-spacing: 0.8px;
-}
-
-
-.hobbies-and-interests {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-flow: column;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #d9ecf5;
-}
-
-.hobbies-and-interests h3 {
-  margin-top: 10px;
-}
-
-.hobbies-and-interests .hobbie-tile {
-  text-align: center;
-  height: 22%;
-  width: 90%;
-  margin: 12px 0;
-}
-
-.hobbies-and-interests .hobbie-tile img {
-  width: 60px;
-}
-
-
-.bucket-list-and-goals {
-  height: 100%;
-  width: 100%;
-}
-
-.bucket-list-and-goals ul {
-  font-size: 80%;
-}
-
-.bucket-list-and-goals ul li {
-  list-style: none;
-  margin-top: 10px;
-}
-
-.bucket-list-and-goals ul li span {
-  font-weight: 700;
-}
-
-.bucket-list-and-goals .bucket-list {
-  margin-bottom: 15px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-} */
 
 /*FRIENDS*/
 .friends {
@@ -1628,4 +1458,27 @@ body {
 .msg-container .msg-list-heading h1 {
   font-weight: 300;
   font-size: 190%;
+}
+
+/*ERROR PAGE*/
+.err-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+.err-sub {
+  width: 98%;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.err-sub img {
+  width: 80%;
 }
