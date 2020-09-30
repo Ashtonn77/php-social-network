@@ -1490,3 +1490,28 @@ body {
 .err-sub img {
   width: 80%;
 }
+
+/*SEARCH RESULTS*/
+
+.list-unstyled {
+  width: 200px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 15px;
+  font-size: 80%;
+  list-style: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-unstyled li {
+  cursor: pointer;
+  margin: 4px 0;
+}
