@@ -24,6 +24,17 @@ $friends_list_query = mysqli_query($connect, "SELECT DISTINCT friend_id, friend_
 </head>
 
 <body>
+
+        <script>
+
+        function show(){
+
+            document.querySelector('.sidebar').classList.toggle('active');   
+            
+        }
+
+        </script>
+
    
     <div class="sub-body">
 

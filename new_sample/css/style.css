@@ -1265,7 +1265,6 @@ body {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   cursor: pointer;
-  box-shadow: var(--bx-shadow);
 }
 
 .chat-sub .message-btn:active {
