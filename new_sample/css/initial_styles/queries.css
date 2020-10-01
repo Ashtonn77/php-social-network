@@ -143,6 +143,20 @@
 }
 
 
+@media screen and (max-width:400px) {
+
+    .bottom-container h1,
+    .mid-container h1 {
+        font-size: 250%;
+    }
+}
+
+@media screen and (max-width:244px) {
+    .header-container ul li {
+        margin-bottom: 10px;
+    }
+}
+
 /*********************
 /    REGISTER        /
 /********************/
@@ -192,6 +206,10 @@
 
     footer {
         display: none;
+    }
+
+    .bottom-container footer {
+        display: block;
     }
 
 
