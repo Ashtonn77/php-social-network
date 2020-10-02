@@ -287,9 +287,17 @@ function show(){
            
          
             while($res = mysqli_fetch_array($load_post_query)){
+                $post_user_id = $res['user_id'];
+
+                $check_friend = mysqli_query($connect, "SELECT * FROM friends WHERE friend_id='$post_user_id' AND user_id='$current_user_id' OR user_id='$post_user_id' AND friend_id='$current_user_id'");
+                $check_friend_count = mysqli_num_rows($check_friend);
+
+                if($check_friend_count < 1){
+                    continue;
+                }
 
                 $post_id = $res['post_id'];
-                $post_user_id = $res['user_id'];
+                
                 $post_author = $res['posted_by'];
                 $post_content = $res['post_body'];
                 $post_image_2 = $res['post_image'];
@@ -462,8 +470,7 @@ function show(){
 
      <!-- ppl to invite and adverts -->
     <section class="right-section">
-    <h4>People you may know</h4>
-    
+    <h4>People you may know</h4>    
     
     
     <?php            
@@ -480,7 +487,6 @@ function show(){
             }
 
         ?>     
-
          
                 <form class="possible-friends" action="friend_request.php?id=<?=$res['user_id'];?>" method="POST">
 

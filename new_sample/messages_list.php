@@ -132,7 +132,7 @@ $friends_list_query = mysqli_query($connect, "SELECT DISTINCT friend_id, friend_
 
                 <?php
                         
-                $msg_list_query = mysqli_query($connect, "SELECT DISTINCT user_id_to FROM messages WHERE user_id_from='$current_user_id'");
+                $msg_list_query = mysqli_query($connect, "SELECT DISTINCT * FROM messages WHERE user_id_from='$current_user_id' OR user_id_to='$current_user_id'");
                 $msg_list_count = mysqli_num_rows($msg_list_query);
 
                 $msg_list_count = $msg_list_count ? $msg_list_count : 0;
@@ -164,7 +164,15 @@ $friends_list_query = mysqli_query($connect, "SELECT DISTINCT friend_id, friend_
 
                             while($res = mysqli_fetch_array($msg_list_query)){
 
-                                $msg_user_id = $res['user_id_to'];
+                                if($res['user_id_to'] == $current_user_id){
+                                    $msg_user_id = $res['user_id_from'];
+                                }
+                                else{
+
+                                    $msg_user_id = $res['user_id_to'];
+
+                                }
+                                
                                 $msg_user_profile_pic = get_profile_pic($connect, $msg_user_id);
                                 $msg_username= get_username($connect, $msg_user_id);
 

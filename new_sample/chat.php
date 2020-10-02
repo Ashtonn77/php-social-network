@@ -133,10 +133,7 @@ if(isset($_GET['friend_id'])){
 
 
 
-                <div class="main-chat-wrapper tile">
-
-
-                    
+                <div class="main-chat-wrapper tile">                    
 
 
                         <div class="chat-main" id="chat-main"></div>
@@ -161,7 +158,6 @@ if(isset($_GET['friend_id'])){
         </div>
 
     <script>
-
 
     loadChat();
 
@@ -197,18 +193,19 @@ if(isset($_GET['friend_id'])){
         $('.message').keyup(function(e){
         
         if(e.which == 13){
-            $('form').submit();
+            $('.chat-form').submit();
             $('#message').val('');
         }
 
     });
 
-    $('form').submit(function(){
+    $('.chat-form').submit(function(){
         
         var message = $('.message').val();
         $.post('helpers/chat_helper.php?id=<?=$current_user_id;?>&friend_id=<?=$friend_id;?>&action=sendMessage&message=' + message, function(response){
             
             if(response == 1){
+
                 loadChat();
                 document.querySelector('.chat-form').reset();
                 $('#message').val('');
@@ -217,7 +214,7 @@ if(isset($_GET['friend_id'])){
 
           
         })
-
+        $('#message').val('');
         return false;
     })
 

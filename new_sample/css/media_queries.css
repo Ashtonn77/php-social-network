@@ -258,6 +258,12 @@
 
 }
 
+@media screen and (max-width:340px) {
+    .more_people .sub_more .more_people_icon {
+        display: none;
+    }
+}
+
 /*final-reg*/
 @media screen and (max-width:611px) {
     .final-reg-form {

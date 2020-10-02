@@ -124,7 +124,11 @@ $friends_count = mysqli_num_rows($friends_list_query);
 
     </script>
 
-
+        <div class="more_people">
+           <div class="sub_more">
+                <a href="#">Find more people to befriend</a>&nbsp; <ion-icon name="people-circle-outline" class="more_people_icon"></ion-icon>
+           </div>
+        </div>
 
 
         <div class="main-container">

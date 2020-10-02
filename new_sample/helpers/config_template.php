@@ -11,7 +11,16 @@ if (mysqli_connect_errno()) {
     echo "Failed to connect - " . mysqli_connect_errno();
 }
 
-?>
+
+// echo "<script>
+
+//         if ( window.history.replaceState ) {
+//             window.history.replaceState( null, null, window.location.href );
+//         }
+        
+//     </script>";
+
+// ?>
 
 <!-- <!DOCTYPE html>
 <html lang="en">
