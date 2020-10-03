@@ -173,6 +173,9 @@ $friends_count = mysqli_num_rows($friends_list_query);
                         $friend_first_name = $user_list_res['first_name'];
                         $friend_profile_pic = $user_list_res['profile_pic'];
 
+                        $name = get_username($connect, $current_user_id);
+                        $message =  "sent you a hug";
+
                         ?>
 
                          <div class="friend">
@@ -180,7 +183,9 @@ $friends_count = mysqli_num_rows($friends_list_query);
                             <div class="friend-pro-pic"><img src="<?=$friend_profile_pic;?>" alt=""></div>
                             <div class="friend-name"><a href="profile_alt.php?id=<?=$friend_id;?>"><?=$friend_name;?></a></div>
                             <div class="friend-action">
-                            <a href="#">Send <?=$friend_first_name;?> a hug</a>    
+                            <a href="helpers/test_helper.php?id=<?=$current_user_id;?>&friend_id=<?=$friend_id;?>">
+                            Send <?=$friend_first_name;?> a hug
+                           </a>    
                             <a href="chat.php?id=<?=$current_user_id;?>&friend_id=<?=$friend_id;?>">Send <?=$friend_first_name;?> a message</a>
                             </div>
 

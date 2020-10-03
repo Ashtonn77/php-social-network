@@ -300,17 +300,15 @@
 
     </form>
     <!-- start accordion -->
-    
-                </div>
-                <!-- end container -->
+
+
+      <!-- end container -->           
  
 
   </section>
 
 
-      <footer>    
-            <p>designed by Ashton Naidoo <sup>&copy;</sup> All rights reserved.</p>
-        </footer>
+      
     
     <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
 </body>

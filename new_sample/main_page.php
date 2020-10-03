@@ -292,7 +292,7 @@ function show(){
                 $check_friend = mysqli_query($connect, "SELECT * FROM friends WHERE friend_id='$post_user_id' AND user_id='$current_user_id' OR user_id='$post_user_id' AND friend_id='$current_user_id'");
                 $check_friend_count = mysqli_num_rows($check_friend);
 
-                if($check_friend_count < 1){
+                if($check_friend_count < 1 && $post_user_id != $current_user_id){
                     continue;
                 }
 
