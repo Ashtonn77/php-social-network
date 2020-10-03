@@ -1560,3 +1560,24 @@ body {
   cursor: pointer;
   margin: 4px 0;
 }
+
+/*PEOPLE*/
+.people {
+  width: 90%;
+  max-width: 400px;
+  height: fit-content;
+  margin: 0 auto;
+}
+
+.people h4 {
+  font-size: 120%;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 0.6px;
+}
+
+.people .name-pic {
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+}
