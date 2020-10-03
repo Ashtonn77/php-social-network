@@ -18,8 +18,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finer Details</title>
-    <link rel="stylesheet" href="./css/style.css?v=<?php echo time(); ?>">
-    <link rel="stylesheet" href="./css/media_queries.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="./css/reg-styles/style.css?v=<?php echo time(); ?>">
+     <link href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -107,10 +107,70 @@
     
     ?>
 
-   
-    <form action="final_reg.php" method="POST" class="final-reg-form">
+
+     <div class="nav">
+           <a href="javascript:history.back()">
+                <ion-icon name="arrow-back-outline" size="large" class="back-arrow"></ion-icon>
+    </a>
+     </div>
+
+  <section> 
+
+      <!-- start container -->
+<div class="accordion-container">
+
+      <div class="heading">
+     <p>Dont rush the process... good things take time!</p>
+      </div>
+
+
+<!-- start accordion -->
+    <form action="final_reg.php" method="POST" class="accordion">
     
-    <div class="left-top">
+
+      <!-- start item 1 -->
+     <div class="accordion-item" id="item1">
+
+     <a href="#item1" class="accordion-link">
+         <span>Personals:</span>
+         <ion-icon class="down-icon icon-ion" name="add-outline"></ion-icon>
+        <ion-icon class="up-icon icon-ion" name="remove-outline"></ion-icon>     
+     </a>
+
+       <div class="accordion-details">
+      
+        
+        <label for="fav-movie">blah</label>
+        <input type="text" name="fav-movie" class="fav-movie" placeholder="Enter movie__" autocomplete="off" required>
+       
+        <label for="fav-book">blah:</label>
+        <input type="text" name="fav-book" class="fav-book" placeholder="Enter book__" autocomplete="off" required>
+       
+        <label for="fav-artist">blah:</label>
+        <input type="text" name="fav-artist" class="fav-artist" placeholder="Enter artist__" autocomplete="off" required>
+       
+        <label for="fav-song">blah:</label>
+        <input type="text" name="fav-song" class="fav-song" placeholder="Enter song__" autocomplete="off" required>
+       
+        <label for="fav-food">blah:</label>
+        <input type="text" name="fav-food" class="fav-food" placeholder="Enter food__" autocomplete="off" required>
+        
+    </div>
+
+     </div>
+      <!-- end item 1 -->
+
+
+    <!-- start item 2 -->
+     <div class="accordion-item" id="item2">
+
+     <a href="#item2" class="accordion-link">
+        <span>Favorites:</span>
+        <ion-icon class="down-icon icon-ion" name="add-outline"></ion-icon>
+        <ion-icon class="up-icon icon-ion" name="remove-outline"></ion-icon>    
+    </a>
+
+       <div class="accordion-details">
       
         
         <label for="fav-movie">Favorite movie:</label>
@@ -130,7 +190,21 @@
         
     </div>
 
-    <div class="right-bottom">
+     </div>
+      <!-- end item 2 -->
+  
+
+
+      <!-- start item 3 -->
+    <div class="accordion-item" id="item3">
+
+     <a href="#item3" class="accordion-link">
+         <span>Last but not least:</span>
+         <ion-icon class="down-icon icon-ion" name="add-outline"></ion-icon>
+        <ion-icon class="up-icon icon-ion" name="remove-outline"></ion-icon>          
+    </a>
+
+     <div class="accordion-details">
 
         <label for="reg-user-bio">Bio:</label>
         <textarea class="reg-user-bio"" name="reg-user-bio" id="reg-user-bio" placeholder="Tell us a lil' about yourself__"></textarea>
@@ -138,17 +212,18 @@
 
         <div class="reg-hobbies">
             <label for="reg-hobbies">Hobbies:</label>
-            <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="hobbies[]" onclick="return limitSelection()" value="music">&nbsp; <span>Music</span> <br>
-            <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="hobbies[]" onclick="return limitSelection()" value="coding">&nbsp; <span>Coding</span><br>
-            <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="hobbies[]" onclick="return limitSelection()" value="fishing">&nbsp; <span>Fishing</span> <br>
-            <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="hobbies[]" onclick="return limitSelection()" value="cooking">&nbsp; <span>Cooking</span><br>
-            <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="hobbies[]" onclick="return limitSelection()" value="gaming">&nbsp; <span>Gaming</span><br>
-            <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="hobbies[]" onclick="return limitSelection()" value="gym">&nbsp; <span>Workout</span><br>
-            <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="hobbies[]" onclick="return limitSelection()" value="movies">&nbsp; <span>Movies</span> <br>
-            <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="hobbies[]" onclick="return limitSelection()" value="painting">&nbsp; <span>Painting</span><br>
-            <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="hobbies[]" onclick="return limitSelection()" value="reading">&nbsp; <span>Reading</span><br>
-            <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="hobbies[]" onclick="return limitSelection()" value="traveling">&nbsp; <span>Travelling</span><br>
+            <div class="hobbie-container"> <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="hobbies[]" onclick="return limitSelection()" value="music">&nbsp; <span>Music</span> </div>
+            <div class="hobbie-container"> <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="hobbies[]" onclick="return limitSelection()" value="coding">&nbsp; <span>Coding</span></div>
+            <div class="hobbie-container"> <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="hobbies[]" onclick="return limitSelection()" value="fishing">&nbsp; <span>Fishing</span></div>
+            <div class="hobbie-container"> <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="hobbies[]" onclick="return limitSelection()" value="cooking">&nbsp; <span>Cooking</span></div>
+            <div class="hobbie-container"> <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="hobbies[]" onclick="return limitSelection()" value="gaming">&nbsp; <span>Gaming</span></div>
+            <div class="hobbie-container"> <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="hobbies[]" onclick="return limitSelection()" value="gym">&nbsp; <span>Workout</span></div>
+            <div class="hobbie-container"> <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="hobbies[]" onclick="return limitSelection()" value="movies">&nbsp; <span>Movies</span></div>
+            <div class="hobbie-container"> <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="hobbies[]" onclick="return limitSelection()" value="painting">&nbsp; <span>Painting</span></div>
+            <div class="hobbie-container"> <input class="reg-hobbies" type="checkbox" id="reg-hobbies" name="hobbies[]" onclick="return limitSelection()" value="reading">&nbsp; <span>Reading</span></div>
+            <div class="hobbie-container"> <input class="reg-hobbies last-check" type="checkbox" id="reg-hobbies" name="hobbies[]" onclick="return limitSelection()" value="traveling">&nbsp; <span>Travelling</span></div>
         </div>
+
         <div class="chkbox-err"></div>
 
 
@@ -218,10 +293,24 @@
     
     </div>
 
+     </div>
+        <!-- end item 3-->
+    
+
 
     </form>
-
+    <!-- start accordion -->
     
+                </div>
+                <!-- end container -->
+ 
+
+  </section>
+
+
+      <footer>    
+            <p>designed by Ashton Naidoo <sup>&copy;</sup> All rights reserved.</p>
+        </footer>
     
     <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
 </body>

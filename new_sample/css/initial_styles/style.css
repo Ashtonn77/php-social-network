@@ -157,6 +157,9 @@ footer ul li {
 .form-btns-bottom {
     display: flex;
     justify-content: space-between;
+    font-weight: 400;
+    letter-spacing: 0.6px;
+    font-size: 90%;
 }
 
 .form-btns-bottom li a:link,

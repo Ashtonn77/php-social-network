@@ -2,7 +2,7 @@
 
 require 'helpers/config_template.php';
 require 'helpers/spirit_animal.php';
-require 'helpers/user_functions.php';
+require 'helpers/user_functions.php';    
 
 //variables form form
 $first_name = "";
@@ -156,7 +156,7 @@ if (isset($_POST['reg_submit_btn'])) {
 
         <nav class="top-nav">
 
-            <a href="#">
+            <a href="javascript:history.back()">
                 <ion-icon name="arrow-back-outline" size="large" class="back-arrow"></ion-icon>
             </a>
 
@@ -234,11 +234,7 @@ if (isset($_POST['reg_submit_btn'])) {
         </div>
 
         <footer>
-            <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+    
             <p>designed by Ashton Naidoo <sup>&copy;</sup> All rights reserved.</p>
         </footer>
 

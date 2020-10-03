@@ -56,7 +56,7 @@
 
     <div class="container">
         <nav class="top-nav">
-            <a href="#">
+            <a href="javascript:history.back()">
                 <ion-icon name="arrow-back-outline" size="large" class="back-arrow"></ion-icon>
             </a>
         </nav>
@@ -87,12 +87,7 @@
         </div>
 
 
-        <footer>
-            <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+        <footer>           
             <p>designed by Ashton Naidoo <sup>&copy;</sup> All rights reserved.</p>
         </footer>
     </div>
