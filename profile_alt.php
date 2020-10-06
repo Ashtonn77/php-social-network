@@ -112,12 +112,6 @@ $pending_count = mysqli_num_rows($check_pending);
 
                         </p>
 
-                        <p>
-
-                            <span>Place of Business:</span> Richfield
-
-                        </p>
-
                         </div>
 
                     </div>

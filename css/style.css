@@ -1579,5 +1579,14 @@ body {
 .people .name-pic {
   width: 80%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.people .name-pic img {
+  margin-left: 10px;
+}
+
+.people .name-pic a {
+  margin-right: 20px;
 }

@@ -95,12 +95,7 @@ if(isset($_FILES['file'])){
 
                         </p>
 
-                        <p>
-
-                            <span>Place of Business:</span> Richfield
-
-                        </p>
-
+                   
                         </div>
 
                     </div>

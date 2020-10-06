@@ -1,13 +1,13 @@
 <?php
 
-//     require 'helpers/config_template.php';
+    require 'helpers/config_template.php';
 
-//     if(isset($_SESSION['username'])){
-//     $currentUserLoggedIn = $_SESSION['username'];
-// }
-// else{
-//     header("Location: register_2.php");
-// }
+    if(isset($_SESSION['username'])){
+    $currentUserLoggedIn = $_SESSION['username'];
+    }
+    else{
+        header("Location: register_2.php");
+    }
 
 ?>
 
@@ -36,22 +36,28 @@
          $user_id = $row['user_id'];
               
 
-         $fav_movie = ucwords($_POST['fav-movie']); 
+         $fav_movie = ucwords($_POST['fav-movie']);
+         $fav_movie = mysqli_real_escape_string($connect, $fav_movie); 
          
 
          $fav_book = ucwords($_POST['fav-book']);   
+         $fav_book = mysqli_real_escape_string($connect, $fav_book);
          
 
-         $fav_artist = ucwords($_POST['fav-artist']);  
+         $fav_artist = ucwords($_POST['fav-artist']);
+         $fav_artist = mysqli_real_escape_string($connect, $fav_artist);  
         
 
-         $fav_song = ucwords($_POST['fav-song']);  
+         $fav_song = ucwords($_POST['fav-song']);
+         $fav_song = mysqli_real_escape_string($connect, $fav_song);  
          
          
-         $fav_food = ucwords($_POST['fav-food']);    
+         $fav_food = ucwords($_POST['fav-food']);
+         $fav_food = mysqli_real_escape_string($connect, $fav_food);    
       
 
-         $bio = ucfirst($_POST['reg-user-bio']);   
+         $bio = ucwords($_POST['reg-user-bio']);   
+         $bio = mysqli_real_escape_string($connect, $bio);
          
 
          $hobbies = array("default", "default", "default", "default");
@@ -68,28 +74,36 @@
 
          }      
 
-         $bckt_list1 = ucfirst($_POST['reg-bucket-list-1']); 
+         $bckt_list1 = ucfirst($_POST['reg-bucket-list-1']);
+         $bckt_list1 = mysqli_real_escape_string($connect, $bckt_list1); 
         
 
-         $bckt_list2 = ucfirst($_POST['reg-bucket-list-2']);      
+         $bckt_list2 = ucfirst($_POST['reg-bucket-list-2']);    
+         $bckt_list2 = mysqli_real_escape_string($connect, $bckt_list2);  
         
 
          $bckt_list3 = ucfirst($_POST['reg-bucket-list-3']);
+         $bckt_list3 = mysqli_real_escape_string($connect, $bckt_list3);
          
 
          $bckt_list4 = ucfirst($_POST['reg-bucket-list-4']);   
+         $bckt_list4 = mysqli_real_escape_string($connect, $bckt_list4);
          
 
-         $goal1 = ucfirst($_POST['reg-goals-1']);    
+         $goal1 = ucfirst($_POST['reg-goals-1']);
+         $goal1 = mysqli_real_escape_string($connect, $goal1);    
          
 
-         $goal2 = ucfirst($_POST['reg-goals-2']);    
+         $goal2 = ucfirst($_POST['reg-goals-2']);
+         $goal2 = mysqli_real_escape_string($connect, $goal2);    
         
 
-         $goal3 = ucfirst($_POST['reg-goals-3']);   
+         $goal3 = ucfirst($_POST['reg-goals-3']);
+         $goal3 = mysqli_real_escape_string($connect, $goal3);   
         
 
-         $goal4 = ucfirst($_POST['reg-goals-4']);          
+         $goal4 = ucfirst($_POST['reg-goals-4']);
+         $goal4 = mysqli_real_escape_string($connect, $goal4);          
         
 
          
@@ -125,41 +139,7 @@
 
 
 <!-- start accordion -->
-    <form action="final_reg.php" method="POST" class="accordion">
-    
-
-      <!-- start item 1 -->
-     <div class="accordion-item" id="item1">
-
-     <a href="#item1" class="accordion-link">
-         <span>Personals:</span>
-         <ion-icon class="down-icon icon-ion" name="add-outline"></ion-icon>
-        <ion-icon class="up-icon icon-ion" name="remove-outline"></ion-icon>     
-     </a>
-
-       <div class="accordion-details">
-      
-        
-        <label for="fav-movie">blah</label>
-        <input type="text" name="fav-movie" class="fav-movie" placeholder="Enter movie__" autocomplete="off" required>
-       
-        <label for="fav-book">blah:</label>
-        <input type="text" name="fav-book" class="fav-book" placeholder="Enter book__" autocomplete="off" required>
-       
-        <label for="fav-artist">blah:</label>
-        <input type="text" name="fav-artist" class="fav-artist" placeholder="Enter artist__" autocomplete="off" required>
-       
-        <label for="fav-song">blah:</label>
-        <input type="text" name="fav-song" class="fav-song" placeholder="Enter song__" autocomplete="off" required>
-       
-        <label for="fav-food">blah:</label>
-        <input type="text" name="fav-food" class="fav-food" placeholder="Enter food__" autocomplete="off" required>
-        
-    </div>
-
-     </div>
-      <!-- end item 1 -->
-
+    <form action="new_reg.php" method="POST" class="accordion">    
 
     <!-- start item 2 -->
      <div class="accordion-item" id="item2">
@@ -207,7 +187,7 @@
      <div class="accordion-details">
 
         <label for="reg-user-bio">Bio:</label>
-        <textarea class="reg-user-bio"" name="reg-user-bio" id="reg-user-bio" placeholder="Tell us a lil' about yourself__"></textarea>
+        <textarea class="reg-user-bio" name="reg-user-bio" id="reg-user-bio" placeholder="Tell us a lil' about yourself__"></textarea>
          <span class="final-reg-err"><?php if(in_array("**Bio must be at least five characters long**", $error_array)){ echo "**Bio must be at least five characters long**"; } ?></span>
 
         <div class="reg-hobbies">

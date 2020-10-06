@@ -162,10 +162,20 @@ $friends_count = mysqli_num_rows($friends_list_query);
 
                     <?php
                     
+                    $friends_array = array();
+
                     while($friends_list_res = mysqli_fetch_array($friends_list_query)){
 
                         $friend_id = $friends_list_res['friend_id'];
                         $friend_name = $friends_list_res['friend_name'];
+
+                        if(in_array($friend_id, $friends_array)){
+                            continue;
+                        }
+                        else{
+                            array_push($friends_array, $friend_id);
+                        }
+
 
                         $user_list_query = mysqli_query($connect, "SELECT first_name, profile_pic FROM users WHERE user_id='$friend_id'");
                         $user_list_res = mysqli_fetch_array($user_list_query); 

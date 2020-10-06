@@ -100,7 +100,9 @@ section {
 
 .profile-picture img {
     width: 90%;
+    height: 90%;
     max-width: 180px;
+    max-height: 180px;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
