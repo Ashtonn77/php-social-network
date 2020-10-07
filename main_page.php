@@ -14,7 +14,7 @@ $error_array = array();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>HQ</title>
 
     <link rel="stylesheet" href="./css/style.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="./css/media_queries.css?v=<?php echo time(); ?>">
@@ -34,7 +34,6 @@ function show(){
 </script>
 
 <body>
-
 
       <!-- MODAL FOR POST AND ATTACH BTNS -->
     <!-- POST MODAL -->

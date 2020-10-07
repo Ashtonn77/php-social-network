@@ -1590,3 +1590,75 @@ body {
 .people .name-pic a {
   margin-right: 20px;
 }
+
+/*PASSWORD RESET*/
+
+.reset-wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reset-form {
+  display: flex;
+  flex-flow: column;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 300px;
+  padding: 15px;
+}
+
+
+.reset-form label {
+  font-size: 70%;
+  margin: 3px 0;
+}
+
+.reset-form input {
+  border: 1px solid #333;
+  margin-bottom: 10px;
+  padding: 5px 4px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.reset-form input:focus {
+  border: 1px solid var(--base-clr);
+}
+
+.reset-form button {
+  margin-top: 10px;
+  width: 85px;
+  border: 0;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  color: #fff;
+  padding: 5px;
+  background-color: var(--base-clr);
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+}
+
+.reset-form button:hover {
+  cursor: pointer;
+  background-color: var(--btn-hover-one);
+  color: #000;
+}
+
+.reset-form span {
+  font-size: 65%;
+  color: var(--err-msg);
+}

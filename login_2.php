@@ -78,7 +78,7 @@
                 </ul>
                                        
                 <ul class="form-btns-bottom">
-                    <li><a href="#" class="forgot_password">Forgot password?</a></li>
+                    <li><a href="password_reset.php" class="forgot_password">Forgot password?</a></li>
                     <li><span>Don't have an account?</span>&nbsp; <a href="register_2.php" class="present_member">Register</a></li>
                 </ul>
 
