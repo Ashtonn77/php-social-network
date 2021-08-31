@@ -2,7 +2,7 @@
 ## Social Network Application
 
 A social network for those still tumbling down the rabbit hole. Share your strange with the world. <br/>
-A fully responsive social media application that can be used on any size device. From mobile phones to full size desktops
+A fully responsive social media application that can be used on any size device, from mobile phones to full size desktops.
 
 ### Technologies used:
 1. PHP
